@@ -8,7 +8,13 @@ const businessUserSchema = new Schema({
     companyName:{type: String, required:true},
     businessOwner: String,
     emailAddress:{type: String, required:true, unique:true},
-    businessAddress: {type: String, required:true},
+    businessAddress: [
+        {
+            street: {type: String, required:true},
+            zipcode: {type: Number, required:true},
+            city: {type: String, required:true},
+        }
+    ],
     businessTelephone: Number,
     typeOfBusiness: {type: String, required:true},
     companyHistory: String,
