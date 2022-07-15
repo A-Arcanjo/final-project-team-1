@@ -6,7 +6,7 @@ import About from "./components/pages/About.js";
 import Services from "./components/pages/Services.js";
 import Rating from "./components/pages/Rating.js";
 import Contact from "./components/pages/Contact.js";
-import Signup from "./components/pages/Signup.js";
+import Signin from "./components/pages/Signin.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
 
@@ -23,7 +23,7 @@ function App() {
             <Route path="/services" component={Services} />
             <Route path="/rating" component={Rating} />
             <Route path="/contact" component={Contact} />
-            <Route path="/signup" component={Signup} />
+            <Route path="/signin" component={Signin} />
         </Switch>
       </Router>
     </div>
