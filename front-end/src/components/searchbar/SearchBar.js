@@ -2,19 +2,32 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 
 function SearchBar ({ placeholder, data }) {
-    const [message, setMessage] = useState("Wish something");
-    const handleChange = event => {
-        setMessage(event.target.value)
-    };
+    const [filteredData, setFilteredData] = useState([]);
+    const handleFilter = (event) => {
+        const searchWord = event.target.value;
+        const newFilter = data.filter((value) => {
+            return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        });
+        if(searchWord === ""){
+            setFilteredData([]);
+        }else{
+            setFilteredData(newFilter)
+        }
+        
+    }
     return (
         <div className="search">
             <div className="search-inputs">
-                <input id="message" name="message" type="text" onChange={handleChange} value={message}/>
-                <div className="search-icon">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
+                <input id="message" name="message" type="text" placeholder={placeholder} onChange={handleFilter}/>
+                <button className="search-icon">Search</button>
             </div>
-            <div className="data-result"></div>
+            {filteredData.length !== 0 && (
+            <div className="data-result">
+                {filteredData.slice(0, 15).map((value, key) => {
+                    return <a className="data-item" href="value.link" target="_blank"><p>{value.name}</p></a>
+                })}
+            </div>
+            )}
         </div>
     );
 }

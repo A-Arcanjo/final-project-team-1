@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MenuList } from "./MenuList";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
-import DataBook from "../../Data.json";
+import DataFood from "../../Data.json";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -20,14 +20,14 @@ const Navbar = () => {
     return (
         <nav>
             <div className="logo">
-                <span>Gusto</span>
+                
             </div>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
             </div>
             <ul className={clicked ? "menu-list" : "menu-list close"}>
                 {menuList}
-                <SearchBar data={DataBook}/>
+                <SearchBar data={DataFood}/>
             </ul>
         </nav>
     );
