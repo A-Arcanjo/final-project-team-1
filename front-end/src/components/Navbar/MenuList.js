@@ -20,7 +20,7 @@ export const MenuList = [
         url: "/contact"
     },
     {
-        title: "Signup",
-        url: "/signup"
+        title: "Sign in",
+        url: "/signin"
     }
 ]
