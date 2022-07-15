@@ -7,11 +7,13 @@ import Services from "./components/pages/Services.js";
 import Rating from "./components/pages/Rating.js";
 import Contact from "./components/pages/Contact.js";
 import Signup from "./components/pages/Signup.js";
+import Footer from "./components/Footer/Footer.js";
 import './App.css';
 
 
 function App() {
   return (
+    <div className="flex">
     <div className="container">
       <Router>
         <Navbar />
@@ -24,6 +26,8 @@ function App() {
             <Route path="/signup" component={Signup} />
         </Switch>
       </Router>
+    </div>
+    <Footer />
     </div>
   );
 }

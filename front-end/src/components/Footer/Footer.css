@@ -1,0 +1,52 @@
+
+
+.footer{
+    background-color: #fae6b1;
+    position: relative;
+    color: #31525b;
+    flex: 1;
+    height: fit-content;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.column{
+    flex: 3;
+}
+
+.column-logo{
+    flex:1;
+    margin-right: 20px;
+}
+
+.column-logo h2{
+    position: relative;
+    top: 30%;
+    min-width: 50px;
+    min-height: 20px;
+}
+
+.list li{
+    list-style-type: none;
+}
+
+.rights{
+    text-align: center;
+    padding: 1rem;
+}
+
+.rights .logo{
+    min-height: 15px;
+    display: inline-block;
+    top: 3px;
+}
+
+hr{
+    border-color:#31525b ;
+}

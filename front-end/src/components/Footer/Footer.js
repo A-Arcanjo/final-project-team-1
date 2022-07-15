@@ -1,28 +1,47 @@
 import React from "react";
-import { Container, Wrapper, Row, Column, Link, Title } from "styled-components";
+import "./Footer.css"
 
-const Footer = (children, ...restProps) => {
-    return <Container {...restProps}> {children} </Container>
-}
-
-Footer.Wrapper = function FooterWrapper({children, ...restProps}) {
-    return <Wrapper{...restProps}>{children}</Wrapper>
-}
-
-Footer.Row = function FooterRow({children, ...restProps}) {
-    return <Row{...restProps}>{children}</Row>
-}
-
-Footer.Column = function FooterColumn({children, ...restProps}) {
-    return <Column{...restProps}>{children}</Column>
-}
-
-Footer.Link = function FooterLink({children, ...restProps}) {
-    return <Link{...restProps}>{children}</Link>
-}
-
-Footer.Title = function FooterTitle({children, ...restProps}) {
-    return <Title{...restProps}>{children}</Title>
+const Footer = () => {
+    return(
+        <div className="footer">
+            <div className="content">
+                <div className="row">
+                    <div className="column-logo">
+                        <h2 className="logo">
+                        </h2>
+                    </div>
+                    <div className="column">
+                        <h4>About Us</h4>
+                        <ul className="list">
+                            <li>Team</li>
+                            <li>Clients</li>
+                            <li>Partners</li>
+                        </ul>
+                    </div>
+                    <div className="column">
+                        <h4>Services</h4>
+                        <ul className="list">
+                            <li>Places</li>
+                            <li>Products</li>
+                            <li>Recipes</li>
+                        </ul>
+                    </div>
+                    <div className="column">
+                        <h4>Contact Us</h4>
+                        <ul className="list">
+                            <li>E-Mail</li>
+                            <li>Facebook</li>
+                            <li>Call US</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div className="rights">
+                    <p>&copy; {new Date().getFullYear()} <span className="logo"></span> | All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Footer;
