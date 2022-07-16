@@ -17,7 +17,7 @@ export const Register = ({ setIsLoginForm }) => {
             type="text"
             placeholder="Confirm password"
           />
-          <Button value="Register" />
+          <Button value="Sign up" />
         </form>
         <p className="text">
           Already registered?
@@ -25,7 +25,7 @@ export const Register = ({ setIsLoginForm }) => {
         </p>
         <style jsx>{`
           .card {
-            margin: 10px auto;
+            margin: 70px auto;
             background: #fae6b1;
             padding: 40px 40px;
             width: 100%;
@@ -44,18 +44,14 @@ export const Register = ({ setIsLoginForm }) => {
 
           .input-field {
             margin-bottom: 20px;
-            width: 300px;
 
             height: 35px;
           }
 
           .text {
-            margin-top: 20px;
             color: #31525b;
           }
           .page-blocker {
-            display: grid;
-            place-content: center;
             width: 100%;
             height: 100vh;
             right: 0px;

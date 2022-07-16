@@ -14,7 +14,7 @@ export const SmallButton = ({ value, onSmallButtonClick }) => {
           font-size: 0.9rem;
           font-weight: bold;
           padding: 5px;
-          margin-top: 60px;
+          margin-top: 40px;
           border-radius: 5px;
         }
       `}</style>

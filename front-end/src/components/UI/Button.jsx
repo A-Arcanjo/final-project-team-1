@@ -14,7 +14,7 @@ export const Button = ({ value, onButtonClick }) => {
           font-size: 1.2rem;
           font-weight: bold;
           padding: 10px;
-          margin-top: 60px;
+          margin-top: 30px;
           border-radius: 5px;
         }
       `}</style>

@@ -43,13 +43,13 @@ function App() {
               />
             }
           />
-          <Route path="/slideshow" exact component={Slideshow} />
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/rating" component={Rating} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/signIn" component={SignIn} />
+          <Route path="/slideshow" exact element={Slideshow} />
+          <Route path="/" exact element={Home} />
+          <Route path="/about" element={About} />
+          <Route path="/services" element={Services} />
+          <Route path="/rating" element={Rating} />
+          <Route path="/contact" element={Contact} />
+          <Route path="/signIn" element={SignIn} />
           <Route path="*" element={<p>Ops!!! The page does not exist</p>} />
         </Routes>
       </div>

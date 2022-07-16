@@ -22,9 +22,9 @@ export const Modal = ({ setOpenModal }) => {
           </button>
         </div>
         <div className="modal-content">
-          <p className="text">You are not logged in...</p>
+          <p className="text-modal">You are not logged in...</p>
           <button className="login-btn" onClick={navigateToLogin}>
-            Login
+            Sign in
           </button>
         </div>
       </div>
@@ -39,8 +39,7 @@ export const Modal = ({ setOpenModal }) => {
           background: #f7b830;
           backdrop-filter: blur(3px);
         }
-        .text {
-          margin-top: 30px;
+        .text-modal {
           font-size: 1.2rem;
         }
 

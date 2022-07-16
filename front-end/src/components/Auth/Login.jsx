@@ -12,7 +12,7 @@ export const Login = ({ setIsLoginForm }) => {
         <form className="form-container">
           <input className="input-field" type="text" placeholder="email" />
           <input className="input-field" type="text" placeholder="password" />
-          <Button value="Login" />
+          <Button value="Sign in" />
         </form>
         <p className="text">
           Not registered?
@@ -20,7 +20,7 @@ export const Login = ({ setIsLoginForm }) => {
         </p>
         <style jsx>{`
           .card {
-            margin: 10px auto;
+            margin: 70px auto;
             background: #fae6b1;
             padding: 40px 40px;
             width: 100%;
@@ -39,18 +39,14 @@ export const Login = ({ setIsLoginForm }) => {
 
           .input-field {
             margin-bottom: 20px;
-            width: 300px;
 
             height: 35px;
           }
 
           .text {
-            margin-top: 20px;
             color: #31525b;
           }
           .page-blocker {
-            display: grid;
-            place-content: center;
             width: 100%;
             height: 100vh;
             right: 0px;
