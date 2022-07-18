@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import morgan from "morgan";
 
 const app = express();
 
@@ -21,8 +22,12 @@ mongoose.connection.on("error", () => console.error);
 // allow cors requests
 app.use(cors());
 
-// parse JSOn data received
+// parse JSON data received
 app.use(express.json());
+
+// Use morgan to make a small log every time a request is received
+app.use(morgan("tiny"));
+
 
 app.listen(3001, () => {
   console.log(`Server has started on port  ${3001}!`);
