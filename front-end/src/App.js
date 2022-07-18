@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js"
-import Home from "./components/pages/Home.js";
+import Home from "./components/pages/Home/Home.js";
 import About from "./components/pages/About.js";
 import Services from "./components/pages/Services.js";
 import Rating from "./components/pages/Rating.js";
 import Contact from "./components/pages/Contact.js";
-import Signin from "./components/pages/Signin.js";
+import Signin from "./components/pages/Signin/Signin.js"
 import Signup from "./components/pages/Signup/Signup.js";
 import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
