@@ -23,7 +23,7 @@ export const registerCustomerPost = async (req, res, next) => {
   
   // try to find the emailAddress
   try {
-    foundEmail = await User.findOne({ emailAddress: emailAddress });
+    foundEmail = await CustomerUser.findOne({ emailAddress: emailAddress });
   } catch {
     return next(
       createError(500, "Database could not be queried. Please try again!")

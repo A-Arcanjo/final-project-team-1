@@ -1,7 +1,7 @@
 import createError from "http-errors";
 import BusinessUser from "../models/businessUser.js";
 
-export const registerCustomerPost = async (req, res, next) => {
+export const registerBusinessPost = async (req, res, next) => {
   const {
     username,
     password,
@@ -40,7 +40,7 @@ export const registerCustomerPost = async (req, res, next) => {
 
   // try to find the emailAddress
   try {
-    foundEmail = await User.findOne({ emailAddress: emailAddress });
+    foundEmail = await BusinessUser.findOne({ emailAddress: emailAddress });
   } catch {
     return next(
       createError(500, "Database could not be queried. Please try again!")
