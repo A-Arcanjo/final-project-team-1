@@ -20,6 +20,8 @@ const Home = () => {
 
             </Carousel>
 
+
+
             <style jsx>{`
  .slider-img {
    width: 100%;
