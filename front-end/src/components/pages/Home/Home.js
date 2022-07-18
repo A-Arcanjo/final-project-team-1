@@ -10,7 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Home = () => {
     return (
         <>
-            <Carousel showArrows={true} showThumbs={false} autoPlay autoPlayInterval="2000">
+            <Carousel showArrows={true} showThumbs={false} autoPlay autoPlayInterval="1000">
 
                 <img alt="" src={image1} className="slider-img" />
                 <img alt="" src={image2} className="slider-img" />
