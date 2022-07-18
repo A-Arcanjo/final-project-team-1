@@ -1,11 +1,7 @@
-
-
 .footer{
     background-color: #fae6b1;
     position: relative;
     color: #31525b;
-    flex: 1;
-    height: fit-content;
 }
 
 .row{

@@ -3,6 +3,8 @@
     width: 10rem;
     display: inline-block;
     top: 0;
+    left: 8%;
+    margin-top: 3px;
 }
 
 .search-inputs{
@@ -66,3 +68,23 @@ input:focus{
     background-color: #3019002f;
 }
 /*End Data Result Window*/
+
+/*Responsive Start*/
+@media screen and (max-width: 900px){
+    .search{
+        width: 7rem;
+        right: 8%;
+    }
+}
+@media screen and (max-width: 600px){
+    .search{
+        margin-top: 0px;
+        margin-right: 5rem;
+        width: 55%;
+    }
+}
+@media screen and (max-width: 300px){
+    .search{
+        width: 5rem;
+    }
+}

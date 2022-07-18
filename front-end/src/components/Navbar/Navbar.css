@@ -13,6 +13,8 @@ nav{
     color: #31525b;
     position: relative;
     z-index: 999999;
+    min-height: 2.3rem;
+    padding-top: 0.2rem;
 }
 
 /*Begin the Icon*/
@@ -34,7 +36,7 @@ nav{
 /*End The Icon*/
 
 .logo{
-    background-image: url(../images/logo.png);
+    background-image: url(../images/logo-bold.png);
     background-repeat: no-repeat;
     background-size: 50px;
     min-width: 50px;
@@ -77,12 +79,6 @@ nav{
     top: 0.55rem;
 }
 
-
-.menu-list li:last-child a:hover {
-    background-color:#331711ea;
-    border: 1px solid #77736c;
-}
-
 .menu-list li:hover a{
     background-color: #ffa101;
 }
@@ -107,23 +103,21 @@ nav{
         display: block;
     }
     .menu-list{
-        flex-direction: column;
+        display: block;
         width: 100%;
         position: absolute;
         padding: 20px;
         transition: all 0.5s ease-in-out;
         background-color: #fae6b1;
         right: 0;
-        top: 1.2rem;
+        top: 2.35rem;
+        height: 95vh;
     }
     .menu-list li{
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         width: 100%;
         text-align: center;
         border: 0px;
-    }
-    .menu-list li:last-child{
-        margin-bottom: 0px;
     }
     .menu-list li a,
     .menu-list li:last-child a{
