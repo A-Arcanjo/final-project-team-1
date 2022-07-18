@@ -18,16 +18,16 @@ function App() {
     <div className="home">
         <Navbar />
         <div className="container">
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/rating" element={<Rating />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/client" element={<Client />} />
-        </Routes>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/rating" element={<Rating />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/signin" element={<Signin />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/client" element={<Client />} />
+            </Routes>
         </div>
     <Footer />
     </div>

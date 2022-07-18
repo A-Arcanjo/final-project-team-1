@@ -45,7 +45,7 @@ const Signup = () => {
     
     return (
         <div className="signup-container">
-            {Object.keys(formErrors).length === 0 && isSubmit? ( history.push("/signin") ): (<p></p>)}
+            {Object.keys(formErrors).length === 0 && isSubmit? ( history("/signin") ): (<p></p>)}
             <form onSubmit={handleSubmit}>
                 <h1>Sign Up</h1>
                 <hr/>

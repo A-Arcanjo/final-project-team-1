@@ -1,10 +1,10 @@
 .search{
     position: relative;
-    width: 10rem;
+    width: 20%;
     display: inline-block;
     top: 0;
-    left: 8%;
-    margin-top: 3px;
+    left: 5%;
+    margin-top: 5px;
 }
 
 .search-inputs{
