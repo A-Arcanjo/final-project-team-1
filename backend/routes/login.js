@@ -8,3 +8,15 @@ const router = express.Router();
 router.post("/", requiredValues(["username", "password"]), checkValidation);
 
 export default router;
+
+const newUser = new User({
+  username: username,
+  password: password,
+  firstName: firstName,
+  lastName: lastName,
+  emailAddress: emailAddress,
+  isAdmin: false,
+  albums: [],
+});
+
+

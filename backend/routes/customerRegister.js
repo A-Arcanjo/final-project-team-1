@@ -6,7 +6,7 @@ import checkValidation from "../validators/checkvalidation";
 
 const router = express.Router();
 
-// TODO: Add BusinessRegister Controller into the router.
+// TODO: Add BusinessRegister Controller into the router..
 
 router.post(
   "/",
