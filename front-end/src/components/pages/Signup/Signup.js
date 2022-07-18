@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
@@ -41,7 +41,7 @@ const Signup = () => {
         return errors;
     }
 
-    const history = useHistory();
+    const history = useNavigate();
     
     return (
         <div className="signup-container">
