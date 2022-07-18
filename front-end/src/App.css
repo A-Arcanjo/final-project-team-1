@@ -1,31 +1,34 @@
+/*Start general styles*/
+:root{
+    --first-color: #ffa101;
+    --second-color: #31525b;
+    --third-color: #fae6b1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*End general styles*/
 
-.container{
-    height: 100vh;
-    width: 100%;
-    position: relative;
+/*Home page style*/
+.home{
     overflow: hidden;
-}
-
-.flex{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
-/*.container::after{
-    background: rgba(0,0,0,0.3);
-    content: "";
+.container{
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}*/
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+/*Home page style*/

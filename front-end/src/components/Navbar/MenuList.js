@@ -22,5 +22,9 @@ export const MenuList = [
     {
         title: "Sign in",
         url: "/signin"
+    },
+    {
+        title: "Sign Up",
+        url: "/signup"
     }
 ]

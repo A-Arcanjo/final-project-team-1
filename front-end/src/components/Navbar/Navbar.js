@@ -19,15 +19,14 @@ const Navbar = () => {
     };
     return (
         <nav>
-            <div className="logo">
-                
-            </div>
+            <div className="logo"></div>
+            <SearchBar data={DataFood}/>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
             </div>
             <ul className={clicked ? "menu-list" : "menu-list close"}>
                 {menuList}
-                <SearchBar data={DataFood}/>
+                
             </ul>
         </nav>
     );
