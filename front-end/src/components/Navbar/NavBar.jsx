@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { MenuList } from "./MenuList";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import DataFood from "../../Data.json";
 import "./Navbar.css";
@@ -29,22 +29,18 @@ export const NavBar = () => {
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
-
-      {currentUser.token ? (
+      {/* {currentUser.token ? (
         <>
           <Link to="/foods">List</Link>
           <Link to="/add">Add</Link>
         </>
       ) : (
         <>
-          <Link to="/auth"></Link>
-
-          <ul className={clicked ? "menu-list" : "menu-list close"}>
-            {menuList}
-            <SearchBar data={DataFood} />
-          </ul>
-        </>
-      )}
+          <Link to="/auth"></Link> */}
+      <ul className={clicked ? "menu-list" : "menu-list close"}>
+        {menuList}
+        <SearchBar data={DataFood} />
+      </ul>
     </nav>
   );
 };
