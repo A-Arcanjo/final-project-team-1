@@ -15,6 +15,8 @@ import "./Home.css";
 
 
 const Home = () => {
+
+
     return (
         <>
             <Carousel showArrows={true} showThumbs={false} autoPlay autoPlaySpeed="3000" infiniteLoop={true}>
@@ -28,72 +30,72 @@ const Home = () => {
 
             </Carousel>
             <div className="home-container">
-            <h2 className="Text">Services</h2>
+                <h2 className="Text">Services</h2>
 
-<div className="services-container">
+                <div className="services-container">
 
-    <img alt="" src={chef} className="chef" />
+                    <img alt="" src={chef} className="chef" />
 
-    <div className="services">
+                    <div className="services">
 
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
-<div className="services-container">
-    <div className="services">
+                </div>
+                <div className="services-container">
+                    <div className="services">
 
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
 
-    </div>
+                    </div>
 
-    <img alt="" src={chef2} className="chef2" />
-</div>
+                    <img alt="" src={chef2} className="chef2" />
+                </div>
 
-<div className="services-container">
-    <img alt="" src={cow} className="cow" />
+                <div className="services-container">
+                    <img alt="" src={cow} className="cow" />
 
-    <div className="services">
+                    <div className="services">
 
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
-        <div className="box">
-            <p> ipsedixit
-            </p>
-        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
+                        <div className="box">
+                            <p> ipsedixit
+                            </p>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
             </div>
 
             <div className="partner-container">
