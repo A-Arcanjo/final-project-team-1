@@ -4,7 +4,7 @@ import "./Signup.css";
 
 const BusinessSignup = () => {
 
-    const initialValues = { username:"", fullName:"", companyName:"", city:"", street:"", zipCode:"", businessTelephone:"", email:"", password:"" };
+    const initialValues = { username:"", companyOwner:"", companyName:"", city:"", street:"", zipCode:"", businessTelephone:"", email:"", password:"" };
 
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -30,8 +30,8 @@ const BusinessSignup = () => {
         const errors = {};
         const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-        if(!values.fullName) {
-            errors.fullName = "Full name is required";
+        if(!values.companyOwner) {
+            errors.companyOwner = "Owner name is required";
         }
 
         if(!values.companyName) {
@@ -79,10 +79,10 @@ const BusinessSignup = () => {
                 <hr/>
                 <div className="form">
                     <div className="field">
-                        <label>Full Name</label>
-                        <input type="text" name="fullName" placeholder="Full Name" value={ formValues.fullName } onChange={handleChange} />
+                        <label>Company Owner</label>
+                        <input type="text" name="companyOwner" placeholder="Owner Name" value={ formValues.fullName } onChange={handleChange} />
                     </div>
-                    <p className="err">{formErrors.fullName}</p>
+                    <p className="err">{formErrors.companyOwner}</p>
                     <div className="field">
                         <label>Company Name</label>
                         <input type="text" name="companyName" placeholder="Company Name" value={ formValues.companyName } onChange={handleChange} />
