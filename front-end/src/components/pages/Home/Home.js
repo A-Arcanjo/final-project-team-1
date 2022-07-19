@@ -91,7 +91,7 @@ const Home = () => {
                 </div>
 
             </div>
-
+            <h2 className="text">Partners</h2>
             <div className="partner-container">
                 <div className="partners">
 
