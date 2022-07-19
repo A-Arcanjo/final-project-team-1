@@ -1,75 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import "./Signup.css";
 
 const Signup = () => {
-
-    const initialValues = { username:"", email:"", password:"" };
-
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-
-    useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit){
-        }
-    },[formErrors])
-
-    const handleChange = event => {
-        const { name, value } = event.target;
-        setFormValues({ ...formValues, [name]: value })
-    };
-    
-    const handleSubmit = event => {
-        event.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-    };
-
-    const validate = (values) => {
-        const errors = {};
-        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        if(!values.username) {
-            errors.username = "Username is required";
-        }
-        if(!values.email) {
-            errors.email = "Email is required";
-        }
-        if(!values.password) {
-            errors.password = "Password is required";
-        }
-        return errors;
-    }
-
-    const history = useNavigate();
-    
-    return (
+    return(
         <div className="signup-container">
-            {Object.keys(formErrors).length === 0 && isSubmit? ( history("/signin") ): (<p></p>)}
-            <form onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
-                <hr/>
-                <div className="form">
-                    <div className="field">
-                        <label>Username</label>
-                        <input type="text" name="username" placeholder="Username" value={ formValues.username } onChange={handleChange} />
-                    </div>
-                    <p>{formErrors.username}</p>
-                    <div className="field">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="Email" value={ formValues.email } onChange={handleChange} />
-                    </div>
-                    <p>{formErrors.email}</p>
-                    <div className="field">
-                        <label>Password</label>
-                        <input type="password" name="password" placeholder="Password" value={ formValues.password } onChange={handleChange} />
-                    </div>
-                    <p>{formErrors.password}</p>
-                    <button>Sign Up</button>
+            <div className="main-signup">
+                <h2>Choose an account</h2>
+                <div className="box">
+                    <a href="business-signup">
+                        <h3>Business account</h3>
+                        <p>We are aiming to upgrade your business and help you to reach out more customers.</p>
+                    </a>
                 </div>
-            </form>
+                <div className="box">
+                    <a href="customer-signup">
+                        <h3>Customer</h3>
+                        <p>We're giving you the most easy way to reach out what you are looking for.</p>
+                    </a>
+                </div>
+            </div>
         </div>
     )
-};
+}
 
 export default Signup;

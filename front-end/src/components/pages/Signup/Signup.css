@@ -1,3 +1,33 @@
+.main-signup{
+    width:400px;
+    border: 1px solid #31525b;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fae6b1;
+}
+
+.main-signup h2{
+    color: #31525b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.main-signup .box{
+    min-height: 8rem;
+    margin-bottom: 1rem;
+    background-color: #ffa2017a;
+    color: #31525b;
+    border-radius: 4px;
+    border: 2px solid #31525b;
+    position: relative;
+    z-index:1;
+}
+
+.main-signup .box a{
+    padding: 1rem;
+    display: block;
+}
+/*Customer*/
 .signup-container{
     display: flex ;
     flex-direction: column;
@@ -9,12 +39,18 @@
     width: 100%;
 }
 
-.signup-container > form{
+.signup-container form{
     width:400px;
     border: 1px solid #31525b;
     padding: 20px;
     border-radius: 5px;
     background: #fae6b1;
+    margin: 20px 0;
+}
+
+.signup-container form .err{
+    color: red;
+    font-weight: 500;
 }
 
 .signup-container > form h1{
@@ -24,25 +60,25 @@
     color: #31525b;
 }
 
-.signup-container > form hr{
+.signup-container form hr{
     margin-bottom: 20px;
 }
 
-.signup-container > form .form{
+.signup-container form .form{
     display: flex;
     flex-direction: column;
 }
 
-.signup-container > form .form .field{
+.signup-container form .form .field{
     margin-top: 20px;
 }
 
-.signup-container > form .form .field label{
+.signup-container form .form .field label{
     display: block;
     margin-bottom: 5px;
 }
 
-.signup-container > form .form .field input{
+.signup-container form .form .field input{
     width: 100%;
     background-color: white;
     border: 0;
@@ -62,4 +98,16 @@
     padding: 0px 10px;
     border-radius: 3px;
     margin: 20px 0;
+}
+
+/*Business*/
+.address{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.address-input{
+    width: 45%;
+    margin-top: 1rem;
 }
