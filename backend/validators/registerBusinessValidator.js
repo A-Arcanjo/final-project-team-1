@@ -12,7 +12,7 @@ const registerBusinessValidator = () => {
     check("password")
       .escape()
       .trim()
-      .isStrongpassword({ minLength: 10, minLowerCase: 2 })
+      .isStrongPassword({ minLength: 10, minLowerCase: 2 })
       .withMessage(
         "Password is not valid! Must be minimum 10 characters long and include two lowercase, one uppercase, one symbol (e.g. @, !, # etc) and one number."
       ),
