@@ -88,7 +88,7 @@ nav{
 }
 
 /*Start Responsive*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1400px) {
     .logo{
         font-size: 20px;
     }
@@ -96,9 +96,12 @@ nav{
         font-size: 14px;
         margin: 0px;
     }
+    .menu-list{
+        right: 0;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     .menu-icon{
         display: block;
     }
