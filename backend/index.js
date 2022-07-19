@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
+import productsRouter from "./routes/products.js"
+
 const app = express();
 
 dotenv.config();
@@ -27,6 +29,9 @@ app.use(express.json());
 
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
+
+//! test product router
+app.use("/products", productsRouter)
 
 
 app.listen(3001, () => {
