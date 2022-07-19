@@ -26,8 +26,10 @@ const Home = () => {
                 <img alt="" src={iceCream} className="slider-img" />
 
             </Carousel>
-            <h2 className="text">Services</h2>
+
             <div className="services-container">
+
+                <h2 className="Text">Services</h2>
 
                 <img alt="" src={chef} className="chef" />
 
@@ -91,8 +93,9 @@ const Home = () => {
                 </div>
 
             </div>
-            <h2 className="text">Partners</h2>
+
             <div className="partner-container">
+                <h2 className="Text">Partners</h2>
                 <div className="partners">
 
                     <div className="box-partner">
@@ -152,10 +155,10 @@ const Home = () => {
 
 }
 
-.text{
+.Text{
     color:#31525b;
     text-align: center;
-    margin-top:40px;
+    margin-top:50px;
 }
 
 .services-container {
@@ -229,7 +232,6 @@ const Home = () => {
 
 
 .partner-container {
-   
     width:100%;
     margin: auto;
     margin-top:30px;
