@@ -13,17 +13,30 @@ import BusinessSignup from "./components/pages/Signup/BusinessSignup.js";
 import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
+import { Dashboard } from "./Dashboard/dashboardUser.js";
+import { AuthContext } from "./context/AuthProvider.js";
 
+
+// const { currentUser } = useContext(".....");
+//const userType = "standard";
+
+// const currentUser = {
+// _id: "1234345erfjef",
+// username: "cicciolina",
+// userType: userType
+// };
 
 
 
 function App() {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="home">
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
