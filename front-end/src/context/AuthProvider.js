@@ -1,14 +1,15 @@
 import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext({});
-const userType = "standard";
+
 export const AuthProvider = ({ children }) => {
+    const userType = "standard";
 
 
     const [currentUser, setCurrentUser] = useState({
         _id: null,
         username: null,
-        userType: null,
+        userType: userType,
     });
 
     return (
