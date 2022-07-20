@@ -1,45 +1,51 @@
 import React from 'react';
 import './Cards.css';
 import CardItem from '../CardItem.js';
+import strawberries from "../images/strawberries.jpeg";
+import nutrition from "../images/nutrition.jpg";
+import sensory from "../images/sensory.jpg";
+import convenience from "../images/convenience.jpg";
+import sustainable from "../images/sustainable.jpg";
+
 
 function Cards() {
     return (
         <div className='cards'>
-            <h1>Check out these EPIC Destinations!</h1>
+            <h1>Food Health And Safety? - We Keep your Food Safe & Fresh</h1>
             <div className='cards__container'>
                 <div className='cards__wrapper'>
                     <ul className='cards__items'>
                         <CardItem
-                            src='images/img-9.jpg'
-                            text='Explore the hidden waterfall deep inside the Amazon Jungle'
-                            label='Adventure'
-                            path='/about'
+                            src={nutrition}
+                            text=' Read up on the innovations seeking to make the food sector healthier'
+                            label='Nutrition'
+                            path='/signup'
                         />
                         <CardItem
-                            src='images/img-2.jpg'
-                            text='Travel through the Islands of Bali in a Private Cruise'
-                            label='Luxury'
-                            path='/about'
+                            src={sensory}
+                            text='Make sense of product perception'
+                            label='Sensory'
+                            path='/signup'
                         />
                     </ul>
                     <ul className='cards__items'>
                         <CardItem
-                            src='images/img-3.jpg'
-                            text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-                            label='Mystery'
-                            path='/about'
+                            src={convenience}
+                            text='Discover how to eat food for maximum benefit, how to fast & how to maintain high energy'
+                            label='Convenience'
+                            path='/signup'
                         />
                         <CardItem
-                            src='images/img-4.jpg'
-                            text='Experience Football on Top of the Himilayan Mountains'
-                            label='Adventure'
-                            path='/about'
+                            src={strawberries}
+                            text='Food safety – a critical matter for your brand’s reputation'
+                            label='Food Safety'
+                            path='/signup'
                         />
                         <CardItem
-                            src='images/img-8.jpg'
-                            text='Ride through the Sahara Desert on a guided camel tour'
-                            label='Adrenaline'
-                            path='/sign-up'
+                            src={sustainable}
+                            text='What is Sustainable Food? A Guide to Eating More Sustainably'
+                            label='Sustainable'
+                            path='/signup'
                         />
                     </ul>
                 </div>

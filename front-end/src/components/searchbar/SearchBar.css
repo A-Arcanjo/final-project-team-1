@@ -17,7 +17,7 @@ font-family: sans-serif;
     width:90%;
 }
 .search input{
-    width: 100%;
+    width: 50%;
     background-color: white;
     border: 0;
     border-radius: 2px;
@@ -29,7 +29,7 @@ font-family: sans-serif;
 }
 
 .search-icon{
-        height: 30px;
+    height: 30px;
     background: #ffa101;
     color: #31525b;
     font-size: 15px;
@@ -88,7 +88,7 @@ input:focus{
     .search{
         margin-top: 0px;
         margin-right: 5rem;
-        width: 55%;
+        width: 50%;
     }
 }
 @media screen and (max-width: 300px){
