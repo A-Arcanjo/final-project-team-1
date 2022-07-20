@@ -29,7 +29,6 @@ const Navbar = () => {
             </div>
             <ul className={clicked ? "menu-list" : "menu-list close"}>
                 {menuList}
-
             </ul>
         </nav>
     );
