@@ -71,7 +71,7 @@ const Contact = () => {
                     </div>
                     <div className="field">
                         <label>Message</label>
-                        <input className="message" type="text" name="message" placeholder="Write your message" value={ formValues.message } onChange={handleChange} />
+                        <textarea className="message" type="text" name="message" placeholder="Write your message" value={ formValues.message } onChange={handleChange} />
                     </div>
                     <p className="err">{formErrors.message}</p>
                     <button>Send</button>
