@@ -137,5 +137,10 @@ nav{
         margin-top: 5px;
     }
 }
+@media screen and (max-width: 600px){
+.logo {
+    margin-top: 10px;
+}
+}
 /*End Responsive*/
 
