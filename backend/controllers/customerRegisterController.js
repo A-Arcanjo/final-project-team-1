@@ -2,7 +2,7 @@ import createError from "http-errors";
 import CustomerUser from "../models/user.js";
 
 export const registerCustomerPost = async (req, res, next) => {
-  const { username, password, firstName, lastName, emailAddress } = req.body;
+  const { firstName, lastName, username, emailAddress, password } = req.body;
 
   let foundUsername;
 
@@ -12,11 +12,18 @@ export const registerCustomerPost = async (req, res, next) => {
       username: username,
     });
   } catch {
-    return next(createError(500, "Could not query database. Please try again!"));
+    return next(
+      createError(500, "Could not query database. Please try again!")
+    );
   }
 
   if (foundUsername) {
-    return next(createError(409, `${username} has already been taken. Please try a different username!`));
+    return next(
+      createError(
+        409,
+        `${username} has already been taken. Please try a different username!`
+      )
+    );
   }
 
   let foundEmail;
@@ -41,22 +48,23 @@ export const registerCustomerPost = async (req, res, next) => {
 
   // create a new user
   const newUser = new CustomerUser({
-    username: username,
-    password: password,
     firstName: firstName,
     lastName: lastName,
+    username: username,
     emailAddress: emailAddress,
-    favoiteBusiness: [],
+    password: password,
+    favoriteBusiness: [],
     favoriteProducts: [],
-    isAdmin: false
+    isAdmin: false,
   });
 
   try {
     await newUser.save();
   } catch {
-    return next(createError(500, `New user could not be created. Please try again!`));
+    return next(
+      createError(500, `New user could not be created. Please try again!`)
+    );
   }
 
   res.status(201).json({ id: newUser._id });
-
 };
