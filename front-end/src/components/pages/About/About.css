@@ -18,6 +18,21 @@
     margin-left: -50px; 
 }
 
+@media only screen and (max-width: 1600px) {
+    .about {
+        display: inline-block;
+   position: relative;
+   left:10%;
+   top:10px;
+   width: 400px;
+   height: 400px;
+   overflow: hidden;
+   border-radius: 50%;
+
+     
+    }
+  }
+
 
 @media only screen and (max-width: 600px) {
     .about {
