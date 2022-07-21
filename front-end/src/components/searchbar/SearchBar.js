@@ -1,35 +1,62 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SearchBar.css";
+var data = require("../../Data.json");
 
-function SearchBar({ placeholder, data }) {
-    const [filteredData, setFilteredData] = useState([]);
-    const handleFilter = (event) => {
-        const searchWord = event.target.value;
-        const newFilter = data.filter((value) => {
-            return value.name.toLowerCase().includes(searchWord.toLowerCase());
-        });
-        if (searchWord === "") {
-            setFilteredData([]);
-        } else {
-            setFilteredData(newFilter);
-        }
+const SearchBar = () => {
+    const [value, setValue] = useState("");
 
+    const onChange = (event) => {
+        setValue(event.target.value);
     };
+
+    const onSearch = (searchTerm) => {
+        setValue(searchTerm);
+        // our api to fetch the search result
+        console.log("search ", searchTerm);
+    };
+
     return (
         <div className="search">
             <div className="search-inputs">
-                <input id="message" name="message" type="text" placeholder={placeholder} onChange={handleFilter} />
-                <button className="search-icon">Search</button>
+                <input type="text" value={value} onChange={onChange} />
+                <button className="search-icon" onClick={() => onSearch(value)}> Search </button>
             </div>
-            {filteredData.length !== 0 && (
-                <div className="data-result">
-                    {filteredData.slice(0, 15).map((value, key) => {
-                        return <a className="data-item" href={value.link} target="_blank" rel="noreferrer"><p>{value.name}</p></a>;
+            <div className="data-result">
+                {data
+                    .filter((item) => {
+                        const searchTerm = value.toLowerCase();
+                        const foodName = item.foodName.toLowerCase();
+
+                        return (
+                            searchTerm &&
+                            foodName.startsWith(searchTerm) &&
+                            foodName !== searchTerm
+                        );
+                    })
+                    .slice(0, 10)
+                    .map((item) => {
+
+                        return (
+
+
+                            <a className="data-item" href={item.wikipedia} target="_blank" rel="noreferrer"
+                                onClick={() => onSearch(item.foodName)}
+                                key={item.foodName}>
+
+                                {item.foodName}
+
+                            </a>
+
+                        );
                     })}
-                </div>
-            )}
+            </div>
         </div>
+
+
     );
-}
+};
+
+
+
 
 export default SearchBar;

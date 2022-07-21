@@ -1,9 +1,15 @@
 import React from "react";
+import Cards from "../../components/Cards/Cards.js";
+import services from "../images/services.jpg";
 
-const Services = () => {
+const About = () => {
     return (
-        <div>Services</div>
-    )
-}
+        <>
+            <img alt="" src={services} className="blueberry" />
+            <Cards />
+        </>
 
-export default Services;
+    );
+};
+
+export default About;
