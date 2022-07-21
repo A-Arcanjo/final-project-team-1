@@ -7,20 +7,13 @@ const CustomerSignup = (props) => {
     firstname: "",
     lastname: "",
     username: "",
-    email: "",
+    emailAddress: "",
     password: "",
   };
 
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
-  // *useState to set input values
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("")
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -30,26 +23,6 @@ const CustomerSignup = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
-    // *update the input value
-    // switch (event.target.name) {
-    //     case "firstname":
-    //         setFirstName(event.target.value);
-    //         break;
-    //     case "lastname":
-    //         setLastName(event.target.value);
-    //         break;
-    //     case "username":
-    //         setUsername(event.target.value);
-    //         break;
-    //     case "email":
-    //         setEmail(event.target.value);
-    //         break;
-    //     case "password":
-    //         setPassword(event.target.value);
-    //         break;
-    //     default:
-    //         break;
-    // }
   };
 
   const handleSubmit = async (event) => {
@@ -59,19 +32,19 @@ const CustomerSignup = (props) => {
       firstName: formValues.firstname,
       lastName: formValues.lastname,
       username: formValues.username,
-      emailAddress: formValues.email,
+      emailAddress: formValues.emailAddress,
       password: formValues.password,
     };
-
+console.log(newUser);
     // settings
     const settings = {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {
-        "Content-Type": "applecation/json",
+        "Content-Type": "application/json",
       },
     };
-console.log(newUser);
+
     // POST REQUEST
     const response = await fetch(
       process.env.REACT_APP_SERVER_URL + "/registerCustomer",
@@ -81,7 +54,6 @@ console.log(newUser);
 
     try {
       if (response.ok) {
-        //setFormValues(parsedRes.id);
         props.setCurrentUserId(parsedRes.id);
         setFormErrors(validate(formValues));
         setIsSubmit(true);
@@ -95,8 +67,8 @@ console.log(newUser);
 
   const validate = (values) => {
     const errors = {};
-    const regex =
-      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    // const regex =
+    //   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     if (!values.firstname) {
       errors.firstname = "First name is required";
@@ -110,8 +82,8 @@ console.log(newUser);
       errors.username = "Username is required";
     }
 
-    if (!values.email) {
-      errors.email = "Email is required";
+    if (!values.emailAddress) {
+      errors.emailAddress = "Email is required";
     }
 
     if (!values.password) {
@@ -171,13 +143,13 @@ console.log(newUser);
             <label>Email</label>
             <input
               type="email"
-              name="email"
+              name="emailAddress"
               placeholder="Email"
-              value={formValues.email}
+              value={formValues.emailAddress}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.email}</p>
+          <p className="err">{formErrors.emailAddress}</p>
           <div className="field">
             <label>Password</label>
             <input

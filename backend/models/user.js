@@ -7,7 +7,7 @@ const customerUserSchema = new Schema({
   lastName: String,
   username: { type: String, required: true, unique: true },
   userType: { type: String, required: true, enum: ['business', 'standard'], default: 'standard' },
-  emailAdress: { type: String, required: true, unique: true },
+  emailAddress: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   favoriteBusiness: [{ businessName: String }],
   favoriteProducts: [{ productName: String }],
