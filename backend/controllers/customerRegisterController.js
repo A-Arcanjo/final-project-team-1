@@ -41,12 +41,12 @@ export const registerCustomerPost = async (req, res, next) => {
 
   // create a new user
   const newUser = new CustomerUser({
-    username: username,
-    password: password,
     firstName: firstName,
     lastName: lastName,
+    username: username,
     emailAddress: emailAddress,
-    favoiteBusiness: [],
+    password: password,
+    favoriteBusiness: [],
     favoriteProducts: [],
     isAdmin: false
   })
