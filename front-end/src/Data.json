@@ -1,20 +1,20 @@
 [
     {
       "type": "Fruits",
-      "name": "Apple",
+      "foodName": "Apple",
       "imageLink": "",
-      "link": "https://en.wikipedia.org/wiki/Apple"
+      "wikipedia": "https://en.wikipedia.org/wiki/Apple"
     },
     {
       "type": "Vegetables",
-      "name": "Cucumber",
+      "foodName": "Cucumber",
       "imageLink": "",
-      "link": "https://en.wikipedia.org/wiki/Cucumber"
+      "wikipedia": "https://en.wikipedia.org/wiki/Cucumber"
     },
     {
       "type": "Cookies",
-      "name": "cake",
+      "foodName": "cake",
       "imageLink": "",
-      "link": "https://en.wikipedia.org/wiki/Cake"
+      "wikipedia": "https://en.wikipedia.org/wiki/Cake"
     }
 ]
