@@ -17,44 +17,41 @@ const SearchBar = () => {
 
     return (
         <div className="search">
-
-
-            <div className="search-container">
-                <div className="search-inner">
-                    <input type="text" value={value} onChange={onChange} />
-                    <button className="search-icon" onClick={() => onSearch(value)}> Search </button>
-                </div>
-                <div className="data-result">
-                    {data
-                        .filter((item) => {
-                            const searchTerm = value.toLowerCase();
-                            const foodName = item.foodName.toLowerCase();
-
-                            return (
-                                searchTerm &&
-                                foodName.startsWith(searchTerm) &&
-                                foodName !== searchTerm
-                            );
-                        })
-                        .slice(0, 10)
-                        .map((item) => {
-
-                            return (
-
-
-                                <a className="data-item" href={item.wikipedia} target="_blank" rel="noreferrer"
-                                    onClick={() => onSearch(item.foodName)}
-                                    key={item.foodName}>
-
-                                    {item.foodName}
-
-                                </a>
-
-                            );
-                        })}
-                </div>
+            <div className="search-inputs">
+                <input type="text" value={value} onChange={onChange} />
+                <button className="search-icon" onClick={() => onSearch(value)}> Search </button>
             </div>
-        </div >
+            <div className="data-result">
+                {data
+                    .filter((item) => {
+                        const searchTerm = value.toLowerCase();
+                        const foodName = item.foodName.toLowerCase();
+
+                        return (
+                            searchTerm &&
+                            foodName.startsWith(searchTerm) &&
+                            foodName !== searchTerm
+                        );
+                    })
+                    .slice(0, 10)
+                    .map((item) => {
+
+                        return (
+
+
+                            <a className="data-item" href={item.wikipedia} target="_blank" rel="noreferrer"
+                                onClick={() => onSearch(item.foodName)}
+                                key={item.foodName}>
+
+                                {item.foodName}
+
+                            </a>
+
+                        );
+                    })}
+            </div>
+        </div>
+
 
     );
 };
