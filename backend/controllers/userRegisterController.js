@@ -5,22 +5,22 @@ export const registerCustomerPost = async (req, res, next) => {
   const { username, password, firstName, lastName, emailAddress } = req.body;
 
   let foundUsername;
- 
+
   // try to find the username
   try {
-      foundUsername = await CustomerUser.findOne({
-          username: username,
-      })
+    foundUsername = await CustomerUser.findOne({
+      username: username,
+    });
   } catch {
-      return next(createError(500, "Could not query database. Please try again!"));
+    return next(createError(500, "Could not query database. Please try again!"));
   }
 
-  if(foundUsername) {
-      return next(createError(409, `${username} has already been taken. Please try a different username!`))
+  if (foundUsername) {
+    return next(createError(409, `${username} has already been taken. Please try a different username!`));
   }
 
   let foundEmail;
-  
+
   // try to find the emailAddress
   try {
     foundEmail = await CustomerUser.findOne({ emailAddress: emailAddress });
@@ -49,14 +49,14 @@ export const registerCustomerPost = async (req, res, next) => {
     favoiteBusiness: [],
     favoriteProducts: [],
     isAdmin: false
-  })
+  });
 
   try {
-    await newUser.save()
-} catch {
-    return next(createError(500, `New user could not be created. Please try again!`))
-}
+    await newUser.save();
+  } catch {
+    return next(createError(500, `New user could not be created. Please try again!`));
+  }
 
-res.status(201).json({id: newUser._id })
+  res.status(201).json({ id: newUser._id });
 
 };
