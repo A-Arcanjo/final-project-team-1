@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/pages/Home/Home.js";
@@ -16,6 +16,8 @@ import './App.css';
 
 
 function App() {
+  const [currentUserId, setCurrentUserId] = useState("");
+
   return (
     <div className="home">
         <Navbar />
@@ -28,7 +30,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/customer-signup" element={<CustomerSignup />} />
+                <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId}/>} />
                 <Route path="/business-signup" element={<BusinessSignup />} />
                 <Route path="/client" element={<Client />} />
             </Routes>
