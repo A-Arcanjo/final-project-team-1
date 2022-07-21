@@ -77,7 +77,29 @@
 /*Start Responsive*/
 @media screen and (max-width: 300px){
     .signin-container form{
-        width: 100%;
+        width: 70%;
+        margin: 10% auto;
+    }
+
+    .signin-container form h1{
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .signin-container form hr{
+        margin: 5px auto;
+        width: 90%;
+        margin-bottom: 5px;
+    }
+    .signin-container form .form .field{
+        margin-top: 5px;
+    }
+    .form{
+        font-size: 12px;
+    }
+    .signin-container form .form .field input{
+        font-size: 10px;
+        height: 30px;
     }
 }
 /*End Responsive*/
