@@ -114,12 +114,40 @@
 
 /*Start Responsive*/
 @media screen and (max-width: 300px){
-    .signup-container form{
-        width: 100%;
-    }
     .main-signup{
         width: 100%;
         margin: 2rem 0;
     }
+
+    .signup-container form{
+        width: 70%;
+        margin: 10% auto;
+    }
+
+    .signup-container form h1{
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .signup-container form hr{
+        margin: 5px auto;
+        width: 90%;
+        margin-bottom: 5px;
+    }
 }
 /*End Responsive*/
+
+@media screen and (max-width: 300px){
+    
+    
+    .signup-container form .form .field{
+        margin-top: 5px;
+    }
+    .form{
+        font-size: 12px;
+    }
+    .signin-container form .form .field input{
+        font-size: 10px;
+        height: 30px;
+    }
+}

@@ -93,4 +93,7 @@ input:focus{
     .search{
         width: 5rem;
     }
+    .data-result{
+        width: 140px;
+    }
 }

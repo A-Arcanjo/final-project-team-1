@@ -78,7 +78,7 @@
 .partners-container{
     display: flex;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
 }
 .partners-box{
@@ -88,7 +88,7 @@
 .partners-box img{
     cursor: pointer;
     height: 70px;
-    width: 100px;
+    width: 80px;
 }
 /*End Partner Section*/
 
@@ -159,7 +159,6 @@
 .partners-container{
     display: flex;
     flex-wrap: wrap;
-    max-width: 900px;
     justify-content: space-between;
 }
 .partners-box{
