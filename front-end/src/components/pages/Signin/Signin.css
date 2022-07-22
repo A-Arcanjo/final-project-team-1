@@ -80,10 +80,12 @@
         width: 70%;
         margin: 10% auto;
     }
+
     .signin-container form h1{
         font-size: 1.2rem;
         margin-bottom: 5px;
     }
+
     .signin-container form hr{
         margin: 5px auto;
         width: 90%;
