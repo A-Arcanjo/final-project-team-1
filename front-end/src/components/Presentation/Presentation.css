@@ -1,0 +1,27 @@
+
+.containerAbout{
+    width: 100%;
+    position: relative;
+    left:5%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin-left:10px;
+}
+
+.containerPresentation{
+margin-top:-15%;
+text-align: center;
+position: fixed;
+font-family: 'Real Nova', serif;
+line-height:1.6;
+}
+
+
+.textPresentation{
+    line-height:1.5;
+
+}
+
+

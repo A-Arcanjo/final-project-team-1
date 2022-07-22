@@ -2,7 +2,7 @@ import React from "react";
 import "./Signup.css";
 
 const Signup = () => {
-    return(
+    return (
         <div className="signup-container">
             <div className="main-signup">
                 <h2>Choose an account</h2>
@@ -20,7 +20,7 @@ const Signup = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Signup;

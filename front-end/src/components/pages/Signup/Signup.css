@@ -119,6 +119,7 @@
         margin: 2rem 0;
     }
 
+
     .main-signup h2{
         margin-bottom: 5px;
         font-size: 1.2rem;
@@ -131,6 +132,7 @@
     .main-signup .sign-box a p{
         font-size: 12px;
     }
+
 
     .signup-container form{
         width: 70%;
@@ -147,6 +149,7 @@
         width: 90%;
         margin-bottom: 5px;
     }
+
     .signup-container form .form .field{
         margin-top: 5px;
     }
@@ -157,5 +160,22 @@
         font-size: 10px;
         height: 30px;
     }
+
+
 }
 /*End Responsive*/
+
+@media screen and (max-width: 300px){
+    
+    
+    .signup-container form .form .field{
+        margin-top: 5px;
+    }
+    .form{
+        font-size: 12px;
+    }
+    .signin-container form .form .field input{
+        font-size: 10px;
+        height: 30px;
+    }
+}
