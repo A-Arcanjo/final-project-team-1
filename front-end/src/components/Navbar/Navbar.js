@@ -6,17 +6,20 @@ import Data from "../../Data.json";
 import "./Navbar.css";
 
 const Navbar = () => {
+
+
     const [clicked, setClicked] = useState(false);
+    const handleClick = () => {
+        setClicked(!clicked);
+    };
     const menuList = MenuList.map(({ url, title }, index) => {
         return (
-            <li key={index}>
+            <li key={index} onClick={handleClick}>
                 <NavLink to={url} className="active">{title}</NavLink>
             </li>
         );
     });
-    const handleClick = () => {
-        setClicked(!clicked);
-    };
+
     return (
         <nav>
             <div className="logo"></div>
