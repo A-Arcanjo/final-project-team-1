@@ -13,7 +13,7 @@ import BusinessSignup from "./components/pages/Signup/BusinessSignup.js";
 import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
-import { Dashboard } from "./Dashboard/dashboardUser.js";
+import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
 import { AuthContext } from "./context/AuthProvider.js";
 
 

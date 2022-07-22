@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./SearchBar.css";
-var data = require("../../Data.json");
+const data = require("../../Data.json");
 
 const SearchBar = () => {
     const [value, setValue] = useState("");

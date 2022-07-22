@@ -1,8 +1,6 @@
 /*Start general styles*/
 
-@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500&family=Maven+Pro&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 
 :root{
     --first-color: #ffa101;
@@ -15,7 +13,7 @@ html{
 }
 
 *{
-    font-family:  'Real Nova', serif;
+    font-family: 'Maven Pro', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

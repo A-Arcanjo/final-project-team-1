@@ -6,6 +6,8 @@ import Data from "../../Data.json";
 import "./Navbar.css";
 
 const Navbar = () => {
+
+
     const [clicked, setClicked] = useState(false);
     const menuList = MenuList.map(({ url, title }, index) => {
         return (
