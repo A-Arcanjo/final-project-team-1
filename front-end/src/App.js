@@ -1,4 +1,4 @@
-import React, {useState, useContext }from "react";
+import React, { useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/pages/Home/Home.js";
@@ -17,14 +17,14 @@ import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
 import { AuthContext } from "./context/AuthProvider.js";
 
 
-// const { currentUser } = useContext(".....");
-//const userType = "standard";
+// const { currentUserId } = useContext(".....");
+const userType = "standard";
 
-// const currentUser = {
-// _id: "1234345erfjef",
-// username: "cicciolina",
-// userType: userType
-// };
+const currentUser = {
+  _id: "1234345ecxxxccxrfjef",
+  username: "sole",
+  userType: userType
+};
 
 
 
@@ -33,22 +33,22 @@ function App() {
   const { currentUser } = useContext(AuthContext);
   return (
     <div className="home">
-        <Navbar />
-        <div className="container">
-            <Routes>
-                <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/rating" element={<Rating />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/signin" element={<Signin />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/business-signup" element={<BusinessSignup />} />
-                <Route path="/client" element={<Client />} />
-            </Routes>
-        </div>
-    <Footer />  
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/rating" element={<Rating />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/business-signup" element={<BusinessSignup />} />
+          <Route path="/client" element={<Client />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }

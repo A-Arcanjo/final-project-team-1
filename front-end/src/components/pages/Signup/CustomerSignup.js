@@ -18,7 +18,7 @@ const CustomerSignup = (props) => {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmit]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,7 +35,7 @@ const CustomerSignup = (props) => {
       emailAddress: formValues.emailAddress,
       password: formValues.password,
     };
-console.log(newUser);
+    console.log(newUser);
     // settings
     const settings = {
       method: "POST",
@@ -98,7 +98,7 @@ console.log(newUser);
   return (
     <div className="signup-container">
       {Object.keys(formErrors).length === 0 && isSubmit ? (
-        navigate("/signin")
+        navigate("/home")
       ) : (
         <p></p>
       )}
