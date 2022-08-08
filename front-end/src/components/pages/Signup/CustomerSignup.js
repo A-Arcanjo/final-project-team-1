@@ -4,8 +4,8 @@ import "./Signup.css";
 
 const CustomerSignup = (props) => {
   const initialValues = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     username: "",
     emailAddress: "",
     password: "",
@@ -29,13 +29,13 @@ const CustomerSignup = (props) => {
     event.preventDefault();
     // create a new user
     const newUser = {
-      firstName: formValues.firstname,
-      lastName: formValues.lastname,
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
       username: formValues.username,
       emailAddress: formValues.emailAddress,
       password: formValues.password,
     };
-console.log(newUser);
+    
     // settings
     const settings = {
       method: "POST",
@@ -44,7 +44,7 @@ console.log(newUser);
         "Content-Type": "application/json",
       },
     };
-
+    
     // POST REQUEST
     const response = await fetch(
       process.env.REACT_APP_SERVER_URL + "/registerCustomer",
@@ -70,12 +70,12 @@ console.log(newUser);
     // const regex =
     //   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    if (!values.firstname) {
-      errors.firstname = "First name is required";
+    if (!values.firstName) {
+      errors.firstName = "First name is required";
     }
 
-    if (!values.lastname) {
-      errors.lastname = "Last name is required";
+    if (!values.lastName) {
+      errors.lastName = "Last name is required";
     }
 
     if (!values.username) {
@@ -110,24 +110,24 @@ console.log(newUser);
             <label>First Name</label>
             <input
               type="text"
-              name="firstname"
+              name="firstName"
               placeholder="First Name"
-              value={formValues.firstname}
+              value={formValues.firstName}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.firstname}</p>
+          <p className="err">{formErrors.firstName}</p>
           <div className="field">
             <label>Last Name</label>
             <input
               type="text"
-              name="lastname"
+              name="lastName"
               placeholder="Last Name"
-              value={formValues.lastname}
+              value={formValues.lastName}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.lastname}</p>
+          <p className="err">{formErrors.lastName}</p>
           <div className="field">
             <label>Username</label>
             <input
