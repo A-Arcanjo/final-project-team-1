@@ -6,12 +6,12 @@ export const registerBusinessPost = async (req, res, next) => {
     username,
     password,
     companyName,
-    businessOwner,
+    companyOwner,
     emailAddress,
-    businessAddress,
+    street,
+    zipCode,
+    city,
     businessTelephone,
-    typeOfBusiness,
-    companyHistory,
   } = req.body;
 
   let foundUsername;
@@ -61,27 +61,19 @@ export const registerBusinessPost = async (req, res, next) => {
     username: username,
     password: password,
     companyName: companyName,
-    businessOwner: businessOwner,
+    companyOwner: companyOwner,
     emailAddress: emailAddress,
-
-    //! to be tested 
-    businessAddress: [
-      {
-        street: businessAddress.street,
-        zipcode: businessAddress.zipcode,
-        city: businessAddress.city,
-      },
-    ],
+    street: street,
+    zipCode: zipCode,
+    city: city,
     businessTelephone: businessTelephone,
-    typeOfBusiness: typeOfBusiness,
-    companyHistory: companyHistory,
   });
 
   try {
     await newBusinessUser.save();
   } catch {
     return next(
-      createError(500, `New Player could not be created. Please try again!`)
+      createError(500, `New user could not be created. Please try again!`)
     );
   }
 

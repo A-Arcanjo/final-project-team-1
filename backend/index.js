@@ -6,6 +6,7 @@ import morgan from "morgan";
 
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
+import registerBusinessRouter from "./routes/businessRegister.js";
 
 const app = express();
 
@@ -33,6 +34,9 @@ app.use(morgan("tiny"));
 
 // register customer user
 app.use("/registerCustomer", registerCustomerRouter);
+
+// register business user
+app.use("/registerBusiness", registerBusinessRouter);
 
 app.use(globalErrorHandler);
 

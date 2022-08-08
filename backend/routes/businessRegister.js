@@ -1,18 +1,17 @@
 import express from "express";
-
-import requiredValues from "../validators/requiredValues";
-import registerBusinessValidator from "../validators/registerBusinessValidator";
-import checkValidation from "../validators/checkvalidation";
+import {registerBusinessPost} from "../controllers/businessRegisterController.js";
+import requiredValues from "../validators/requiredValues.js";
+import registerBusinessValidator from "../validators/registerBusinessValidator.js";
+import checkValidation from "../validators/checkValidation.js";
 
 const router = express.Router();
 
-// TODO: Add BusinessRegister Controller into the router..
-
 router.post(
   "/",
-  requiredValues(["username", "password", "emailAdress"]),
+  requiredValues(["username", "password", "emailAddress"]),
   registerBusinessValidator(),
-  checkValidation
+  checkValidation, 
+  registerBusinessPost
 );
 
 export default router;
