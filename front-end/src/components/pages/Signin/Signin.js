@@ -21,6 +21,8 @@ const Signin = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
 
     // create login data
     const loginData = {
