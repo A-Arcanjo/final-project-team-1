@@ -1,122 +1,143 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Signin.css";
-
+import { Icon } from 'react-icons-kit';
+import {eyeDisabled} from 'react-icons-kit/ionicons/eyeDisabled';
+import {eye} from 'react-icons-kit/ionicons/eye';
 const Signin = (props) => {
-  const initialValues = { username: "", password: "" };
+    const initialValues = { username: "", password: "" };
 
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+    /* Start Password visibility */
+    const [type, setType] = useState("password");
+    const [icon, setIcon] = useState(eyeDisabled);
 
-  useEffect(() => {
+    const handleToggle = () => {
+        if(type === "password"){
+            setIcon(eye);
+            setType("text")
+        } else{
+            setIcon(eyeDisabled);
+            setType("password")
+        }
+    }
+    /* End Password visibility */
+
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+
+    useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
     }
-  }, [formErrors]);
+    }, [formErrors]);
 
-  const handleChange = (event) => {
+    const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
-  };
+    };
 
-  const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
     event.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
 
     // create login data
     const loginData = {
-      username: formValues.username,
-      password: formValues.password,
+        username: formValues.username,
+        password: formValues.password,
     };
 
     // define the POST request
     const settings = {
-      method: "POST",
-      body: JSON.stringify(loginData),
-      headers: {
+        method: "POST",
+        body: JSON.stringify(loginData),
+        headers: {
         "Content-Type": "application/json",
-      },
+        },
     };
 
     // make a POST request
     const response = await fetch(
-      process.env.REACT_APP_SERVER_URL + "/login",
-      settings
+        process.env.REACT_APP_SERVER_URL + "/login",
+        settings
     );
     const parsedRes = await response.json();
 
     try {
-      if (response.ok) {
+        if (response.ok) {
         props.setCurrentUserId(parsedRes.id);
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-      } else {
+        } else {
         throw new Error(parsedRes.message);
-      }
+        }
     } catch (err) {
-      alert(err.message);
-      setFormValues(initialValues);
+        alert(err.message);
+        setFormValues(initialValues);
     }
-  };
+    };
 
-  const validate = (values) => {
+    const validate = (values) => {
     const errors = {};
     if (!values.username) {
-      errors.username = "Username is required";
+        errors.username = "Username is required";
     }
     if (!values.password) {
-      errors.password = "Password is required";
+        errors.password = "Password is required";
     }
     return errors;
-  };
+    };
 
-  const history = useNavigate();
+    const history = useNavigate();
 
-  return (
+    return (
     <div className="signin-container">
+
       {Object.keys(formErrors).length === 0 && isSubmit ? (
         history("/dashboard")
       ) : (
         <></>
-      )}
-      <form onSubmit={handleSubmit}>
+        )}
+        <form onSubmit={handleSubmit}>
         <h1>Sign In</h1>
         <hr />
         <div className="form">
-          <div className="field">
+            <div className="field">
             <label>Username</label>
             <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={formValues.username}
-              onChange={handleChange}
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={formValues.username}
+                onChange={handleChange}
             />
-          </div>
-          <p className="err">{formErrors.username}</p>
-          <div className="field">
+            </div>
+            <p className="err">{formErrors.username}</p>
+            <div className="field">
             <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formValues.password}
-              onChange={handleChange}
-            />
-          </div>
-          <p className="err">{formErrors.password}</p>
-          <button>Sign in</button>
-          <p>
+            <div className="pass-eye">
+                <input
+                type={type}
+                name="password"
+                placeholder="Password"
+                value={formValues.password}
+                onChange={handleChange}
+                />
+                <span onClick={handleToggle} className="eye"><Icon icon={icon}/></span>
+            </div>
+            </div>
+            <p className="err">{formErrors.password}</p>
+            <button>Sign in</button>
+            <p>
             Not registered?<span> </span>
             <a className="sign-button" href="Signup">
-              Sign Up
+                Sign Up
             </a>
-          </p>
+            </p>
         </div>
-      </form>
+        </form>
     </div>
-  );
+    );
 };
 
 export default Signin;

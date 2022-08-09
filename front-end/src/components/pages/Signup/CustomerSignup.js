@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Icon } from 'react-icons-kit';
+import {eyeDisabled} from 'react-icons-kit/ionicons/eyeDisabled';
+import {eye} from 'react-icons-kit/ionicons/eye';
 import "./Signup.css";
 
 const CustomerSignup = (props) => {
@@ -10,6 +13,21 @@ const CustomerSignup = (props) => {
     emailAddress: "",
     password: "",
   };
+
+  /* Start Password visibility */
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeDisabled);
+
+  const handleToggle = () => {
+      if(type === "password"){
+          setIcon(eye);
+          setType("text")
+      } else{
+          setIcon(eyeDisabled);
+          setType("password")
+      }
+  }
+  /* End Password visibility */
 
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -154,13 +172,16 @@ const CustomerSignup = (props) => {
           <p className="err">{formErrors.emailAddress}</p>
           <div className="field">
             <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formValues.password}
-              onChange={handleChange}
-            />
+            <div className="pass-eye">
+                <input
+                type={type}
+                name="password"
+                placeholder="Password"
+                value={formValues.password}
+                onChange={handleChange}
+                />
+                <span onClick={handleToggle} className="eye"><Icon icon={icon}/></span>
+            </div>
           </div>
           <p className="err">{formErrors.password}</p>
           <button>Sign Up</button>

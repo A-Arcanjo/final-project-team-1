@@ -69,6 +69,19 @@
     margin: 20px 0;
 }
 
+.pass-eye{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.eye{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
 .sign-button{
     color: #31525b;
     font-weight: bold;
