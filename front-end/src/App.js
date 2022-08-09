@@ -1,4 +1,4 @@
-import React, {useState, useContext }from "react";
+import React, { useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/pages/Home/Home.js";
@@ -17,13 +17,13 @@ import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
 import { AuthContext } from "./context/AuthProvider.js";
 
 
-// const { currentUser } = useContext(".....");
-//const userType = "standard";
+// const { currentUserId } = useContext(".....");
+const userType = "standard";
 
 // const currentUser = {
-// _id: "1234345erfjef",
-// username: "cicciolina",
-// userType: userType
+//   _id: "1234345ecxxxccxrfjef",
+//   username: "sole",
+//   userType: userType
 // };
 
 
@@ -33,6 +33,7 @@ function App() {
   const { currentUser } = useContext(AuthContext);
   return (
     <div className="home">
+
         <Navbar />
         <div className="container">
             <Routes>

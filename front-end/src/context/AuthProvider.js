@@ -7,8 +7,8 @@ export const AuthProvider = ({ children }) => {
 
 
     const [currentUser, setCurrentUser] = useState({
-        _id: null,
-        username: null,
+        _id: "dddddsdsdsds",
+        username: "giorgio",
         userType: userType,
     });
 
