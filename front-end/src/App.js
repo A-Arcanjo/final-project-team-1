@@ -20,11 +20,11 @@ import { AuthContext } from "./context/AuthProvider.js";
 // const { currentUserId } = useContext(".....");
 const userType = "standard";
 
-const currentUser = {
-  _id: "1234345ecxxxccxrfjef",
-  username: "sole",
-  userType: userType
-};
+// const currentUser = {
+//   _id: "1234345ecxxxccxrfjef",
+//   username: "sole",
+//   userType: userType
+// };
 
 
 
@@ -33,41 +33,22 @@ function App() {
   const { currentUser } = useContext(AuthContext);
   return (
     <div className="home">
-<<<<<<< HEAD
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<Signin />} />
+          <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/business-signup" element={<BusinessSignup />} />
+          <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
           <Route path="/client" element={<Client />} />
         </Routes>
       </div>
       <Footer />
-=======
-        <Navbar />
-        <div className="container">
-            <Routes>
-                <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/rating" element={<Rating />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/signin" element={<Signin />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/client" element={<Client />} />
-            </Routes>
-        </div>
-    <Footer />  
->>>>>>> 38fc06ea7b65d39eaa8106cbf97e481f1a67ad47
     </div>
   );
 }
