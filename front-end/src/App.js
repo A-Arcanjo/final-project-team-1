@@ -34,6 +34,7 @@ function App() {
   return (
     <div className="home">
 
+
       <Navbar />
       <div className="container">
         <Routes>
@@ -50,6 +51,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+
     </div>
   );
 }
