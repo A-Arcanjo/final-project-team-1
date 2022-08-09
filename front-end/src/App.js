@@ -41,7 +41,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/rating" element={<Rating />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/signin" element={<Signin />} />
+                <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId}/>} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId}/>} />
                 <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId}/>} />

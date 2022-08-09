@@ -1,39 +1,39 @@
-import User from "../models/user";
-import BusinessUser from "../models/businessUser";
+import User from "../models/user.js";
+import BusinessUser from "../models/businessUser.js";
 
 export const loginPost = async (req, res, next) => {
   const { username, password } = req.body;
-};
 
-let foundUser;
-
-// TODO Verify user model. Only User or BusinessUser too?
-
-try {
-  foundUser = await User.findOne({ username: username });
-} catch {
-  return next(
-    createError(500, "Database couldn't be queried. Please try again")
-  );
-}
-
-if (found) {
-  // TODO Check Password
-  let isValidPassword;
+  let foundUser;
 
   try {
-    // TODO Encryption missing.
+    foundUser = await User.findOne({ username: username, password: password });
+    if (!foundUser) {
+      try {
+        foundUser = await BusinessUser.findOne({
+          username: username,
+          password: password,
+        });
+      } catch {
+        return next(
+          createError(
+            500,
+            "Database couldn't be queried. Please try again"
+          )
+        );
+      }
+    }
   } catch {
     return next(
-      createError(500, "Logging in process failed. Please try again")
+      createError(500, "Database couldn't be queried. Please try again")
     );
   }
 
-  if (!isValidPassword) {
-    return next(createError(401, "Incorrect password. Please try again"));
-  }
+  res.json({ id: foundUser._id });
+};
 
-  // TOKEN????
+// TODO Encryption missing.
 
-  // TODO Response for user-mistake.
-}
+// TOKEN????
+
+// TODO Response for user-mistake.

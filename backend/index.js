@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
+import loginRouter from "./routes/login.js"
 import registerCustomerRouter from "./routes/customerRegister.js";
 import registerBusinessRouter from "./routes/businessRegister.js";
 
@@ -37,6 +38,9 @@ app.use("/registerCustomer", registerCustomerRouter);
 
 // register business user
 app.use("/registerBusiness", registerBusinessRouter);
+
+// login post
+app.use("/login", loginRouter)
 
 app.use(globalErrorHandler);
 
