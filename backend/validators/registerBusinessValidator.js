@@ -12,14 +12,14 @@ const registerBusinessValidator = () => {
     check("password")
       .escape()
       .trim()
-      .isStrongPassword({ minLength: 10, minLowerCase: 2 })
+      .isStrongPassword({ minLength: 8, minLowerCase: 2 })
       .withMessage(
-        "Password is not valid! Must be minimum 10 characters long and include two lowercase, one uppercase, one symbol (e.g. @, !, # etc) and one number."
+        "Password is not valid! Must be minimum 8 characters long and include two lowercase, one uppercase, one symbol (e.g. @, !, # etc) and one number."
       ),
     // check company name
     check("companyName").escape(),
     // check business owner
-    check("businessOwner")
+    check("companyOwner")
     .escape(), 
     // check email address
     check("emailAddress")
@@ -28,17 +28,14 @@ const registerBusinessValidator = () => {
       .withMessage("Email address is not valid!"),
       // check address
       check("street").escape(),
-      check("zipcode").isNumeric(),
+      check("zipCode").isNumeric(),
       check("city").escape().trim(),
     // check business telephone
     check("businessTelephone")
       .isNumeric()
       .isLength({ min: 5 })
       .withMessage("Telephone details must be a number!"),
-    // check company history
-    check("companyHistory")
-    .escape()  
-  ];
+  ]
 };
 
 export default registerBusinessValidator;

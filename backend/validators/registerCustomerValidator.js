@@ -10,11 +10,11 @@ const registerCustomerValidator = () => {
     check("password")
       .escape()
       .trim()
-      .isStrongPassword()
+      .isStrongPassword({ minLength: 8, minLowercase: 2 })
       .withMessage(
-        "Password is not valid! Must be minimum 10 characters long and include two lowercase, one uppercase, one symbol (e.g. @, !, # etc) and one number."
+        "Password is not valid! Must be minimum 8 characters long and include two lowercase, one uppercase, one symbol (e.g. @, !, # etc) and one number."
       ),
-    check("emailAdress")
+    check("emailAddress")
       .normalizeEmail()
       .isEmail()
       .withMessage("Email address is not valid!"),

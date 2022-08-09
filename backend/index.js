@@ -4,7 +4,12 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
-import productsRouter from "./routes/products.js"
+import productsRouter from "./routes/products.js";
+import globalErrorHandler from "./middleware/globalErrorHandler.js";
+import loginRouter from "./routes/login.js";
+import registerCustomerRouter from "./routes/customerRegister.js";
+import registerBusinessRouter from "./routes/businessRegister.js";
+import customerUsersRouter from "./routes/customerUsers.js";
 
 const app = express();
 
@@ -30,10 +35,23 @@ app.use(express.json());
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
 
-//! test product router
-app.use("/products", productsRouter)
+// register customer user
+app.use("/registerCustomer", registerCustomerRouter);
 
+// register business user
+app.use("/registerBusiness", registerBusinessRouter);
+
+// login post
+app.use("/login", loginRouter);
+
+//! test product router
+app.use("/products", productsRouter);
+
+// customer Users
+app.use("/customerUsers", customerUsersRouter);
+
+app.use(globalErrorHandler);
 
 app.listen(3001, () => {
-  console.log(`Server has started on port  ${3001}!`);
+  console.log(`Server has started on port  3001!`);
 });

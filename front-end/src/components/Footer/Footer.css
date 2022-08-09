@@ -10,10 +10,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.column{
-    flex: 3;
+.footer-column{
+    flex: 6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .column-logo{
@@ -46,3 +51,17 @@
 hr{
     border-color:#31525b ;
 }
+
+.media-icon{
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+/*Start Responsive*/
+@media screen and (max-width: 300px){
+    .column{
+        margin-bottom: 1rem;
+    }
+}
+/*End Responsive*/
