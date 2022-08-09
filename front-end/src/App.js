@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
+          <Route path="/dashboard" element={currentUserId ? <Dashboard currentUserId={currentUserId}/> : <Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />

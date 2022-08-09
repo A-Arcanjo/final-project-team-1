@@ -1,5 +1,5 @@
 import createError from "http-errors";
-import CustomerUser from "../models/user.js";
+import CustomerUser from "../models/customerUser.js";
 
 export const registerCustomerPost = async (req, res, next) => {
   const { firstName, lastName, username, emailAddress, password } = req.body;

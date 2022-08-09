@@ -1,4 +1,5 @@
-import User from "../models/user.js";
+import createError from "http-errors";
+import CustomerUser from "../models/customerUser.js";
 import BusinessUser from "../models/businessUser.js";
 
 export const loginPost = async (req, res, next) => {
@@ -6,8 +7,12 @@ export const loginPost = async (req, res, next) => {
 
   let foundUser;
 
+  // try to find the user in the CustomerUser collection, if !found try the BusinessUser collection
   try {
-    foundUser = await User.findOne({ username: username, password: password });
+    foundUser = await CustomerUser.findOne({
+      username: username,
+      password: password,
+    });
     if (!foundUser) {
       try {
         foundUser = await BusinessUser.findOne({
@@ -16,10 +21,7 @@ export const loginPost = async (req, res, next) => {
         });
       } catch {
         return next(
-          createError(
-            500,
-            "Database couldn't be queried. Please try again"
-          )
+          createError(500, "Database couldn't be queried. Please try again")
         );
       }
     }

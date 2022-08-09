@@ -1,7 +1,8 @@
 import express from "express";
+import { getUserData } from "../controllers/customerController.js";
 
 const router = express.Router();
 
-// TODO: Routes logic for different views.
+router.get("/:id", getUserData);  
 
 export default router;
