@@ -6,6 +6,7 @@
     --first-color: #ffa101;
     --second-color: #31525b;
     --third-color: #fae6b1;
+    --main-transition: 0.3s;
 }
 
 html{
