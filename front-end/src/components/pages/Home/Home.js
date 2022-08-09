@@ -48,6 +48,7 @@ const Home = () => {
             <div className="services">
                 <h2>Services</h2>
                 <div className="services-container">
+
                     <div className="services-box">
                         <img src={services1} alt="" />
                         <div className="services-content">
@@ -55,6 +56,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services2} alt="" />
                         <div className="services-content">
@@ -62,6 +64,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services3} alt="" />
                         <div className="services-content">
@@ -69,6 +72,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services4} alt="" />
                         <div className="services-content">
@@ -76,6 +80,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services5} alt="" />
                         <div className="services-content">
@@ -83,6 +88,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services6} alt="" />
                         <div className="services-content">
@@ -90,6 +96,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services7} alt="" />
                         <div className="services-content">
@@ -97,6 +104,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services8} alt="" />
                         <div className="services-content">
@@ -104,6 +112,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+
                     <div className="services-box">
                         <img src={services9} alt="" />
                         <div className="services-content">
@@ -111,6 +120,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             {/* End Services Section */}
