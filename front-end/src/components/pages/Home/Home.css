@@ -1,8 +1,30 @@
+
+
+.carousel-root{
+    margin:10px;
+}
+
+.carousel.carousel-slider{
+    margin: 10px 0;
+}  
+
 .slider-img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
 }
+
+
+.carousel .control-dots {
+    position: absolute;
+    bottom: 0;
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
 /*Start Services Section*/
 .services{
     background-color: #31525B;
@@ -45,9 +67,11 @@
 }
 .services-content h3{
     text-align: center;
+
 }
 .services-box p{
 }
+
 /*End Services Section*/
 /*Start Partner Section*/
 .partners{
@@ -78,9 +102,115 @@
 /*End Partner Section*/
 /*Responsive Start*/
 @media screen and (max-width: 900px){
+
+
+    .carousel.carousel-slider{
+        margin: 20px 0;
+    }  
+    
+.slider-img {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .carousel .control-dots {
+        position: absolute;
+        bottom: 0;
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
+
+.box{
+    width: 20rem;
+    right: 8%;
 }
+
+
+.services-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-top:30px;
+    padding:25px 10px;
+    flex: 1 1;
+    width: 100%;
+}
+}
+
+
+@media screen and (max-width: 600px){
+    
+    .carousel.carousel-slider{
+        margin: 20px 0;
+    }  
+    
+.slider-img {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .carousel .control-dots {
+        position: absolute;
+        bottom: 0;
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
+}
+   
 @media screen and (max-width:400px){
+.carousel.carousel-slider{
+        margin: 20px 0;
+    }  
+    
+.slider-img {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+    }
+
+    .carousel .control-dots {
+        position: absolute;
+        bottom: 0;
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
+    
 }
+@media screen and (max-width: 300px){
+
+.carousel.carousel-slider{
+    margin: 20px 0;
+}  
+
+.slider-img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.carousel .control-dots {
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+}
+
 @media screen and (max-width: 600px){
 .partners-container{
     display: flex;
