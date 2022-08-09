@@ -4,8 +4,8 @@ import "./Signup.css";
 
 const CustomerSignup = (props) => {
   const initialValues = {
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     username: "",
     emailAddress: "",
     password: "",
@@ -27,15 +27,17 @@ const CustomerSignup = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
     // create a new user
     const newUser = {
-      firstName: formValues.firstName,
-      lastName: formValues.lastName,
+      firstName: formValues.firstname,
+      lastName: formValues.lastname,
       username: formValues.username,
       emailAddress: formValues.emailAddress,
       password: formValues.password,
     };
-    
+console.log(newUser);
     // settings
     const settings = {
       method: "POST",
@@ -44,7 +46,7 @@ const CustomerSignup = (props) => {
         "Content-Type": "application/json",
       },
     };
-    
+
     // POST REQUEST
     const response = await fetch(
       process.env.REACT_APP_SERVER_URL + "/registerCustomer",
@@ -70,12 +72,12 @@ const CustomerSignup = (props) => {
     // const regex =
     //   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    if (!values.firstName) {
-      errors.firstName = "First name is required";
+    if (!values.firstname) {
+      errors.firstname = "First name is required";
     }
 
-    if (!values.lastName) {
-      errors.lastName = "Last name is required";
+    if (!values.lastname) {
+      errors.lastname = "Last name is required";
     }
 
     if (!values.username) {
@@ -100,7 +102,7 @@ const CustomerSignup = (props) => {
       {Object.keys(formErrors).length === 0 && isSubmit ? (
         navigate("/signin")
       ) : (
-        <p></p>
+        <></>
       )}
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
@@ -110,24 +112,24 @@ const CustomerSignup = (props) => {
             <label>First Name</label>
             <input
               type="text"
-              name="firstName"
+              name="firstname"
               placeholder="First Name"
-              value={formValues.firstName}
+              value={formValues.firstname}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.firstName}</p>
+          <p className="err">{formErrors.firstname}</p>
           <div className="field">
             <label>Last Name</label>
             <input
               type="text"
-              name="lastName"
+              name="lastname"
               placeholder="Last Name"
-              value={formValues.lastName}
+              value={formValues.lastname}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.lastName}</p>
+          <p className="err">{formErrors.lastname}</p>
           <div className="field">
             <label>Username</label>
             <input

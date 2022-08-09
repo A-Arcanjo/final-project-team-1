@@ -31,6 +31,8 @@ const BusinessSignup = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
 
     // cate a new business user
     const newBusinessUser = {
