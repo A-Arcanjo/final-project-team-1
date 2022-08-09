@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const Dashboard = (props) => {
+export const Dashboard = (currentUserId) => {
     const [firstName, setFirstName] = useState("");
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export const Dashboard = (props) => {
                 credentials: "include"
             };
 
-            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/users/${props.currentUserId}`, settings);
+            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/registerCustomer/${currentUserId}`, settings);
             const parsedRes = await response.json();
 
 
@@ -36,7 +36,7 @@ export const Dashboard = (props) => {
         };
 
         fetchUserData();
-    }, [props.currentUserId]);
+    }, [currentUserId]);
 
     return (
         <div>
