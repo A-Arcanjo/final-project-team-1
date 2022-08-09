@@ -1,22 +1,13 @@
 import express from "express";
-import requiredValues from "../validators/requiredValues";
-import checkValidation from "../validators/checkvalidation";
+import requiredValues from "../validators/requiredValues.js";
+import checkValidation from "../validators/checkValidation.js";
+import { loginPost } from "../controllers/loginController.js";
 
 const router = express.Router();
 
-// TODO: Add Login Controller into the router.
-router.post("/", requiredValues(["username", "password"]), checkValidation);
+router.post("/", requiredValues(["username", "password"]), checkValidation, loginPost);
 
 export default router;
 
-const newUser = new User({
-  username: username,
-  password: password,
-  firstName: firstName,
-  lastName: lastName,
-  emailAddress: emailAddress,
-  isAdmin: false,
-  albums: [],
-});
 
 
