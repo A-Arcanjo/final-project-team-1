@@ -7,9 +7,6 @@ import image5 from "../../images/image5.jpg";
 import iceCream from "../../images/ice-cream.jpg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import chef from "../../images/chef.png";
-import chef2 from "../../images/chef2.jpg";
-import cow from "../../images/cow.png";
 import partner1 from "../../images/partner-1.png";
 import partner2 from "../../images/partner-2.png";
 import partner3 from "../../images/partner-3.png";
@@ -22,6 +19,15 @@ import partner9 from "../../images/partner-9.png";
 import partner10 from "../../images/partner-10.png";
 import partner11 from "../../images/partner-11.png";
 import partner12 from "../../images/partner-12.png";
+import services1 from "../../images/Bioproducts.png";
+import services2 from "../../images/Bakeries.png";
+import services3 from "../../images/Desserts.png";
+import services4 from "../../images/Foodmarkets.png";
+import services5 from "../../images/Halalproducts.png";
+import services6 from "../../images/Recipes.png";
+import services7 from "../../images/Restaurants.png";
+import services8 from "../../images/Spices&Herbs.png";
+import services9 from "../../images/Vegan.png";
 import "./Home.css";
 
 
@@ -38,68 +44,87 @@ const Home = () => {
                 <img alt="" src={image5} className="slider-img" />
                 <img alt="" src={iceCream} className="slider-img" />
             </Carousel>
-            <div className="home-container">
-                <h2 className="Text">Services</h2>
+             {/* Start Services Section */}
+            <div className="services">
+                <h2>Services</h2>
                 <div className="services-container">
-                    <img alt="" src={chef} className="chef" />
-                    <div className="services">
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
+
+                    <div className="services-box">
+                        <img src={services1} alt="" />
+                        <div className="services-content">
+                            <h3>Bio Products</h3>
+                            <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
-                </div>
-                <div className="services-container">
-                    <div className="services">
 
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
+                    <div className="services-box">
+                        <img src={services2} alt="" />
+                        <div className="services-content">
+                            <h3>Bakeries</h3>
+                            <p>Here we are offering you the best food quality around you</p>
                         </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-
                     </div>
 
-                    <img alt="" src={chef2} className="chef2" />
-                </div>
-
-                <div className="services-container">
-                    <img alt="" src={cow} className="cow" />
-
-                    <div className="services">
-
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
+                    <div className="services-box">
+                        <img src={services3} alt="" />
+                        <div className="services-content">
+                            <h3>Desserts</h3>
+                            <p>Here we are offering you the best food quality around you</p>
                         </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-                        <div className="box">
-                            <p> ipsedixit
-                            </p>
-                        </div>
-
                     </div>
 
+                    <div className="services-box">
+                        <img src={services4} alt="" />
+                        <div className="services-content">
+                            <h3>Food Markets</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+
+                    <div className="services-box">
+                        <img src={services5} alt="" />
+                        <div className="services-content">
+                            <h3>Halal Products</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+
+                    <div className="services-box">
+                        <img src={services6} alt="" />
+                        <div className="services-content">
+                            <h3>Recipes</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+
+                    <div className="services-box">
+                        <img src={services7} alt="" />
+                        <div className="services-content">
+                            <h3>Restaurants</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+
+                    <div className="services-box">
+                        <img src={services8} alt="" />
+                        <div className="services-content">
+                            <h3>Spices & Herbs</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+
+                    <div className="services-box">
+                        <img src={services9} alt="" />
+                        <div className="services-content">
+                            <h3>Vegan</h3>
+                            <p>Here we are offering you the best food quality around you</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
+            {/* End Services Section */}
+
             {/* Start Partner Section */}
             <div className="partners">
                 <h2>Our Partners</h2>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .carousel-root{
     margin:10px;
@@ -7,11 +8,14 @@
     margin: 10px 0;
 }  
 
+=======
+>>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 .slider-img {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     object-fit: cover;
 }
+<<<<<<< HEAD
 
 .carousel .control-dots {
     position: absolute;
@@ -26,6 +30,54 @@
 
 
 
+=======
+/*Start Services Section*/
+.services{
+    background-color: #31525B;
+    position: relative;
+}
+.services-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+.services h2{
+    color: #FAE6B1;
+    text-align: center;
+    margin: 2rem auto;
+}
+.services-box{
+    background-color: #fae6b1c7;
+    color: #31525B;
+    width: 250px;
+    text-align: center;
+    margin: 2rem 1rem;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+    padding: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform var(--main-transition), box-shadow var(--main-transition);
+    cursor: pointer;
+}
+.services-box:hover{
+    transform: translateY(-10px);
+    box-shadow:0 2px 15px rgb(0 0 0 / 90%) ;
+}
+.services-box img{
+    width: 100%;
+    height: 150px;
+    margin: 2rem auto;
+}
+.services-content h3{
+    text-align: center;
+}
+.services-box p{
+}
+/*End Services Section*/
+>>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 /*Start Partner Section*/
 .partners{
     padding: 2rem 5%;
@@ -35,7 +87,7 @@
 .partners h2{
     text-align: center;
     padding: 2rem 0;
-    color: #31525b;
+    color: #31525B;
 }
 .partners-container{
     display: flex;
@@ -53,9 +105,9 @@
     width: 80px;
 }
 /*End Partner Section*/
-
 /*Responsive Start*/
 @media screen and (max-width: 900px){
+<<<<<<< HEAD
 
     .carousel.carousel-slider{
         margin: 20px 0;
@@ -117,9 +169,12 @@
         z-index: 1;
     }
     
+=======
+>>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 }
    
 @media screen and (max-width:400px){
+<<<<<<< HEAD
 
 .carousel.carousel-slider{
         margin: 20px 0;
@@ -164,4 +219,18 @@
     z-index: 1;
 }
 
+=======
+}
+@media screen and (max-width: 600px){
+.partners-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.partners-box{
+    margin: 2rem auto;
+}
+}
+@media screen and (max-width: 300px){
+>>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 }
