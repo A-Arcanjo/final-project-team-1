@@ -35,7 +35,11 @@ const CustomerSignup = (props) => {
       emailAddress: formValues.emailAddress,
       password: formValues.password,
     };
+<<<<<<< HEAD
     console.log(newUser);
+=======
+    
+>>>>>>> 38fc06ea7b65d39eaa8106cbf97e481f1a67ad47
     // settings
     const settings = {
       method: "POST",
@@ -44,7 +48,7 @@ const CustomerSignup = (props) => {
         "Content-Type": "application/json",
       },
     };
-
+    
     // POST REQUEST
     const response = await fetch(
       process.env.REACT_APP_SERVER_URL + "/registerCustomer",

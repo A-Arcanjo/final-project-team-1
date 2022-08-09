@@ -55,11 +55,11 @@ export const registerCustomerPost = async (req, res, next) => {
     password: password,
     favoriteBusiness: [],
     favoriteProducts: [],
-    isAdmin: false,
+    isAdmin: false
   });
 
   try {
-    await newUser.save();
+    await newUser.save(); 
   } catch {
     return next(
       createError(500, `New user could not be created. Please try again!`)

@@ -19,7 +19,7 @@ const registerBusinessValidator = () => {
     // check company name
     check("companyName").escape(),
     // check business owner
-    check("businessOwner")
+    check("companyOwner")
     .escape(), 
     // check email address
     check("emailAddress")
@@ -28,17 +28,14 @@ const registerBusinessValidator = () => {
       .withMessage("Email address is not valid!"),
       // check address
       check("street").escape(),
-      check("zipcode").isNumeric(),
+      check("zipCode").isNumeric(),
       check("city").escape().trim(),
     // check business telephone
     check("businessTelephone")
       .isNumeric()
       .isLength({ min: 5 })
       .withMessage("Telephone details must be a number!"),
-    // check company history
-    check("companyHistory")
-    .escape()  
-  ];
+  ]
 };
 
 export default registerBusinessValidator;
