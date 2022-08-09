@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-export const Dashboard = (currentUserId) => {
+export const Dashboard = (props) => {
     const [firstName, setFirstName] = useState("");
 
     useEffect(() => {
-        const fetchUserData = async () => { //Welcome Giorgio render App
-            // Make a GET request to the "/users/:id" endpoint in our server...
-            // ... and then handle the response from the server
-
-            const settings = {
-                // headers: {
-                //     "Authorization": "Bearer " + props.token //split the string
-                // }
-                credentials: "include"
-            };
-
-            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/registerCustomer/${currentUserId}`, settings);
+        const fetchUserData = async () => { 
+            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/customerUsers/${props.currentUserId}`);
             const parsedRes = await response.json();
 
 
@@ -36,7 +26,7 @@ export const Dashboard = (currentUserId) => {
         };
 
         fetchUserData();
-    }, [currentUserId]);
+    }, [props.currentUserId]);
 
     return (
         <div>
