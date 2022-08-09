@@ -34,22 +34,22 @@ function App() {
   return (
     <div className="home">
 
-        <Navbar />
-        <div className="container">
-            <Routes>
-                <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/rating" element={<Rating />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId}/>} />
-                <Route path="/client" element={<Client />} />
-            </Routes>
-        </div>
-    <Footer />  
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/rating" element={<Rating />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/client" element={<Client />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }

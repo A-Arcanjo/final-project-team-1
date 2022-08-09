@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 .carousel-root{
     margin:10px;
@@ -8,14 +7,11 @@
     margin: 10px 0;
 }  
 
-=======
->>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 .slider-img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
 }
-<<<<<<< HEAD
 
 .carousel .control-dots {
     position: absolute;
@@ -30,7 +26,6 @@
 
 
 
-=======
 /*Start Services Section*/
 .services{
     background-color: #31525B;
@@ -77,7 +72,6 @@
 .services-box p{
 }
 /*End Services Section*/
->>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 /*Start Partner Section*/
 .partners{
     padding: 2rem 5%;
@@ -107,7 +101,6 @@
 /*End Partner Section*/
 /*Responsive Start*/
 @media screen and (max-width: 900px){
-<<<<<<< HEAD
 
     .carousel.carousel-slider{
         margin: 20px 0;
@@ -169,12 +162,9 @@
         z-index: 1;
     }
     
-=======
->>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 }
    
 @media screen and (max-width:400px){
-<<<<<<< HEAD
 
 .carousel.carousel-slider{
         margin: 20px 0;
@@ -219,7 +209,6 @@
     z-index: 1;
 }
 
-=======
 }
 @media screen and (max-width: 600px){
 .partners-container{
@@ -232,5 +221,4 @@
 }
 }
 @media screen and (max-width: 300px){
->>>>>>> 0591d220f61d7593023a80973aa34e960a5bc009
 }
