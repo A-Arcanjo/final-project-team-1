@@ -1,11 +1,12 @@
 
 .about{
+  display: flex;
+  justify-content: space-between;
    display: inline-block;
    position: relative;
-   left:11%;
-   top:10px;
-   width: 400px;
-   height: 400px;
+  
+   width: 300px;
+   height: 300px;
    overflow: hidden;
    border-radius: 50%;
 
@@ -13,22 +14,34 @@
    
    
 .about img { 
-    width: auto;
-    height: 100%;
-    margin-left: -50px; 
+    width: 200px;
+    height: 200px;
 }
 
 @media only screen and (max-width: 1600px) {
-    .about {
-        display: inline-block;
+    .about img {
+      
    position: relative;
-   left:10%;
+   left:2%;
    top:10px;
-   width: 400px;
-   height: 400px;
+   width: 200px;
+   height: 200px;
    overflow: hidden;
    border-radius: 50%;
 
+     
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .about {
+        display: inline-block;
+        position: relative;
+       
+        width: 180px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 50%;
      
     }
   }
@@ -38,24 +51,22 @@
     .about {
         display: inline-block;
         position: relative;
-        left:11%;
-        top:10px;
-        width: 100px;
-        height: 100px;
+       
+        width: 150px;
+        height: 150px;
         overflow: hidden;
         border-radius: 50%;
      
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 415px) {
     .about {
         display: inline-block;
         position: relative;
-        left:11%;
-        top:10px;
-        width: 50px;
-        height: 50px;
+       
+        width: 100px;
+        height: 100px;
         overflow: hidden;
         border-radius: 50%;
      

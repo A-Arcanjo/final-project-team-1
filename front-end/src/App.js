@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/dashboard" element={currentUserId ? <Dashboard currentUserId={currentUserId}/> : <Home />} />
+          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
@@ -47,7 +47,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
           <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/client" element={<Client />} />
+          {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>
       <Footer />
