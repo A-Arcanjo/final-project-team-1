@@ -76,7 +76,7 @@ const Signin = (props) => {
   return (
     <div className="signin-container">
       {Object.keys(formErrors).length === 0 && isSubmit ? (
-        history("/dashboard")
+        history("/client")
       ) : (
         <></>
       )}

@@ -8,8 +8,6 @@ export const Dashboard = (props) => {
             const response = await fetch(process.env.REACT_APP_SERVER_URL + `/customerUsers/${props.currentUserId}`);
             const parsedRes = await response.json();
 
-
-
             try {
                 // If the request was successful...
                 if (response.ok) {
