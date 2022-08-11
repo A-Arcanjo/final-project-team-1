@@ -66,7 +66,12 @@ const Signin = (props) => {
         console.log("parsedRes", parsedRes);
         try {
             if (response.ok) {
-                props.setCurrentUserId(parsedRes.id);
+                const newUser = {
+                    _id: parsedRes.id,
+                    username: parsedRes.username,
+                    userType: parsedRes.userType,
+                };
+                props.setCurrentUser(newUser);
 
                 setFormErrors(validate(formValues));
                 setIsSubmit(true);

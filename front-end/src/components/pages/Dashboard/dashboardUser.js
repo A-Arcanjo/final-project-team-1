@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from "../../../context/AuthProvider.js";
 
 export const Dashboard = (props) => {
     const [firstName, setFirstName] = useState("");
+    const { currentUser, setCurrentUser } = useContext(AuthContext);
+
 
     useEffect(() => {
-        const fetchUserData = async () => { 
-            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/customerUsers/${props.currentUserId}`);
+        const fetchUserData = async () => {
+            const response = await fetch(process.env.REACT_APP_SERVER_URL + `/customerUsers/${currentUser._id}`);
             const parsedRes = await response.json();
 
 

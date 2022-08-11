@@ -29,8 +29,8 @@ const userType = "standard";
 
 
 function App() {
-  const [currentUserId, setCurrentUserId] = useState("");
-  const { currentUser } = useContext(AuthContext);
+  // const [currentUserId, setCurrentUserId] = useState("");
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
   return (
     <div className="home">
 
@@ -38,15 +38,15 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
+          {/* <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} /> */}
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/customer-signup" element={<CustomerSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/business-signup" element={<BusinessSignup setCurrentUser={setCurrentUser} />} />
           {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>

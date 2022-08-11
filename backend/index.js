@@ -5,10 +5,10 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
-import loginRouter from "./routes/login.js"
+import loginRouter from "./routes/login.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
 import registerBusinessRouter from "./routes/businessRegister.js";
-import customerUsersRouter from "./routes/customerUsers.js"
+import customerUsersRouter from "./routes/customerUsers.js";
 
 const app = express();
 
@@ -41,10 +41,10 @@ app.use("/registerCustomer", registerCustomerRouter);
 app.use("/registerBusiness", registerBusinessRouter);
 
 // login post
-app.use("/login", loginRouter)
+app.use("/login", loginRouter);
 
 // customer Users
-app.use("/customerUsers", customerUsersRouter)
+app.use("/customerUsers", customerUsersRouter);
 
 app.use(globalErrorHandler);
 

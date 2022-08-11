@@ -59,7 +59,7 @@ export const registerCustomerPost = async (req, res, next) => {
   });
 
   try {
-    await newUser.save(); 
+    await newUser.save();
   } catch {
     return next(
       createError(500, `New user could not be created. Please try again!`)
