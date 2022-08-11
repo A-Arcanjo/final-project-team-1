@@ -33,6 +33,11 @@ export const MenuList = [
         title: "Sign Up",
         url: "/signup",
         viewauth: false
+    },
+    {
+        title: "Sign out",
+        url: "/logout",
+        viewauth: true
     }
 
 ];

@@ -15,6 +15,7 @@ nav{
     z-index: 999999;
     min-height: 2.3rem;
     padding-top: 0.2rem;
+    padding-bottom: 0.3rem;
 }
 
 /*Begin the Icon*/
@@ -134,13 +135,27 @@ nav{
         transition: all 0.5s ease-in-out;
     }
     .logo{
-        margin-top: 5px;
+        margin-top: 10px;
     }
 }
 @media screen and (max-width: 600px){
 .logo {
     margin-top: 10px;
+    margin-left: 30px;
 }
+}
+
+@media screen and (max-width: 400px) {
+    .menu-icon{
+        position: absolute;
+        left:5px;
+        top:10px
+    }
+    .logo {
+        margin-top: 10px;
+       
+    }
+   
 }
 /*End Responsive*/
 

@@ -13,9 +13,10 @@ import BusinessSignup from "./components/pages/Signup/BusinessSignup.js";
 import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
-import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
+import { Dashboard } from "./components/pages/Dashboard/HomeUser.jsx";
 import { AuthContext } from "./context/AuthProvider.js";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import Logout from "./components/Logout.jsx";
 
 
 // const { currentUserId } = useContext(".....");
@@ -31,7 +32,21 @@ const userType = "standard";
 
 function App() {
   // const [currentUserId, setCurrentUserId] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+
+
   const { currentUser, setCurrentUser } = useContext(AuthContext);
+
+  // logout button
+  const logout = () => {
+    localStorage.removeItem("data");
+    // setToken(false);
+    setCurrentUser("");
+    setIsLoggedIn(false);
+    setShowLogin(true);
+
+  };
   return (
     <div className="home">
 
@@ -51,6 +66,8 @@ function App() {
           <Route path="/profile" element={<ProtectedRoute auth={(currentUser._id != null)}>
             <Dashboard />
           </ProtectedRoute>} />
+          <Route path="/logout" element={<Logout />} />
+
           {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>

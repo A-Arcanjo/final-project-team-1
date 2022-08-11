@@ -5,6 +5,18 @@ import SearchBar from "../searchbar/SearchBar";
 import Data from "../../Data.json";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider.js";
+import styled from "styled-components";
+
+const Nav = styled.nav`
+  background: #ffa101;
+  color: #31525b;
+  font-size: 15px;
+  border: 0px;
+  font-weight: 500;
+  padding: 0px 10px;
+  cursor: pointer;
+`;
+
 
 const Navbar = () => {
     const { currentUser } = useContext(AuthContext);
@@ -27,7 +39,7 @@ const Navbar = () => {
     });
 
     return (
-        <nav>
+        <nav >
             <div className="logo"></div>
             <SearchBar data={Data} />
             <div className="menu-icon" onClick={handleClick}>
