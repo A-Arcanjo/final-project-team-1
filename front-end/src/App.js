@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer.js";
 import './App.css';
 import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
 import { AuthContext } from "./context/AuthProvider.js";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 
 // const { currentUserId } = useContext(".....");
@@ -47,6 +48,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/customer-signup" element={<CustomerSignup setCurrentUser={setCurrentUser} />} />
           <Route path="/business-signup" element={<BusinessSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/profile" element={<ProtectedRoute auth={(currentUser._id != null)}>
+            <Dashboard />
+          </ProtectedRoute>} />
           {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>

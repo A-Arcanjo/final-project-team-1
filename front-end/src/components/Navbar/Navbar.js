@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MenuList } from "./MenuList";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
 import Data from "../../Data.json";
 import "./Navbar.css";
+import { AuthContext } from "../../context/AuthProvider.js";
 
 const Navbar = () => {
+    const { currentUser } = useContext(AuthContext);
 
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
         setClicked(!clicked);
     };
-    const menuList = MenuList.map(({ url, title }, index) => {
-        return (
-            <li key={index} onClick={handleClick}>
-                <NavLink to={url} className="active">{title}</NavLink>
-            </li>
-        );
+    const menuList = MenuList.map(({ url, title, viewauth }, index) => {
+        // return (
+
+        //     <li key={index} onClick={handleClick}>
+        //         <NavLink to={url} className="active">{title}</NavLink>
+        //     </li>
+        // );
+        return (!viewauth && currentUser._id != null ? (<></>) : (<li key={index} onClick={handleClick}>
+            <NavLink to={url} className="active">{title}</NavLink>
+        </li>));
+
     });
 
     return (
