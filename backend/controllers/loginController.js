@@ -19,6 +19,7 @@ export const loginPost = async (req, res, next) => {
           username: username,
           password: password,
         });
+        console.log("FoundUser", foundUser);
       } catch {
         return next(
           createError(500, "Database couldn't be queried. Please try again")
@@ -31,7 +32,7 @@ export const loginPost = async (req, res, next) => {
     );
   }
 
-  res.json({ id: foundUser._id });
+  res.json({ id: foundUser._id, userType: foundUser.userType, username: foundUser.username });
 };
 
 // TODO Encryption missing.

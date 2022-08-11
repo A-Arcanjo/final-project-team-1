@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer.js";
 import './App.css';
 import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
 import { AuthContext } from "./context/AuthProvider.js";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 
 // const { currentUserId } = useContext(".....");
@@ -29,8 +30,8 @@ const userType = "standard";
 
 
 function App() {
-  const [currentUserId, setCurrentUserId] = useState("");
-  const { currentUser } = useContext(AuthContext);
+  // const [currentUserId, setCurrentUserId] = useState("");
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
   return (
     <div className="home">
 
@@ -38,15 +39,18 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={currentUserId ? <Dashboard /> : <Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
+          {/* <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} /> */}
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/customer-signup" element={<CustomerSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/business-signup" element={<BusinessSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/profile" element={<ProtectedRoute auth={(currentUser._id != null)}>
+            <Dashboard />
+          </ProtectedRoute>} />
           {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>

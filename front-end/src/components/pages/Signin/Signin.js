@@ -66,7 +66,12 @@ const Signin = (props) => {
         console.log("parsedRes", parsedRes);
         try {
             if (response.ok) {
-                props.setCurrentUserId(parsedRes.id);
+                const newUser = {
+                    _id: parsedRes.id,
+                    username: parsedRes.username,
+                    userType: parsedRes.userType,
+                };
+                props.setCurrentUser(newUser);
 
                 setFormErrors(validate(formValues));
                 setIsSubmit(true);
@@ -96,7 +101,7 @@ const Signin = (props) => {
         <div className="signin-container">
 
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-                history("/dashboard")
+                history("/")
             ) : (
                 <></>
             )}
