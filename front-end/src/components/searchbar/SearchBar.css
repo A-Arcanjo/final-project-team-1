@@ -78,11 +78,11 @@ input:focus{
     }
    
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 870px){
     .search{
         margin-top: 0px;
         margin-right: 5rem;
-        width: 55%;
+        width: 45%;
     }
     .containerSearch{
         position: relative;
@@ -101,7 +101,7 @@ input:focus{
     display: inline-block;
     top: 0;
     left: 5%;
-    margin-top: 5px;
+    margin-top: 3px;
     }
     
 }
