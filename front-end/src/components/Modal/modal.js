@@ -24,6 +24,26 @@ const ModalWrapper = styled.div`
   position: relative;
   z-index: 10;
   border-radius: 10px;
+  @media screen and (max-width: 900px){
+    width: 550px;
+  height: 350px;
+  };
+  @media screen and (max-width: 600px){
+    width: 450px;
+  height: 250px;
+  };
+  @media screen and (max-width: 450px){
+    width: 350px;
+  height: 200px;
+  };
+  @media screen and (max-width: 360px){
+    width: 300px;
+  height: 170px;
+  };
+  @media screen and (max-width: 315px){
+    width: 250px;
+  height: 160px;
+  };
 `;
 
 const ModalImg = styled.img`
@@ -31,6 +51,7 @@ const ModalImg = styled.img`
   height: 100%;
   border-radius: 10px 0 0 10px;
   background: #000;
+
 `;
 
 const ModalContent = styled.div`
@@ -48,7 +69,25 @@ const ModalContent = styled.div`
     background: #ffa101;;
     color: #fff;
     border: none;
-  }
+  };
+  @media screen and (max-width: 600px){
+    margin-bottom: 5px;
+    font-size:12px;
+  };
+  @media screen and (max-width: 450px){
+    margin-bottom: 2px;
+    font-size:9px;
+  };
+  @media screen and (max-width: 360px){
+    margin-bottom: 2px;
+    p{font-size:9px;}
+    button{padding: 6px 8x;}
+  };
+  @media screen and (max-width: 315px){
+    margin-bottom: 1px;
+    font-size:7px;
+    button{padding: 4px 6px;}
+  };
 `;
 
 const CloseModalButton = styled(MdClose)`
@@ -60,6 +99,24 @@ const CloseModalButton = styled(MdClose)`
   height: 32px;
   padding: 0;
   z-index: 10;
+  @media screen and (max-width: 600px){
+    width: 22px;
+  height: 22px;
+  };
+  @media screen and (max-width: 450px){
+    position: absolute;
+  top: 8px;
+  right:8px;
+    width: 14px;
+  height: 14px;
+  };
+  @media screen and (max-width: 315px){
+    position: absolute;
+  top: 8px;
+  right:8px;
+    width: 10px;
+  height: 10px;
+  };
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
@@ -104,8 +161,9 @@ export const Modal = ({ showModal, setShowModal }) => {
                 <Background onClick={closeModal} ref={modalRef}>
                     <animated.div style={animation}>
                         <ModalWrapper showModal={showModal}>
-                            <ModalImg src={require('./images/pancakes.jpg')} alt='camera' />
-                            <ModalContent>
+
+                            <ModalImg src={require('../images/pancakes.jpg')} alt='camera' />
+                            <ModalContent >
                                 <h1>Are you ready?</h1>
                                 <p>Get our exclusive food.</p>
                                 <button ><a href="signup">Join Now</a></button>
@@ -114,6 +172,7 @@ export const Modal = ({ showModal, setShowModal }) => {
                                 aria-label='Close modal'
                                 onClick={() => setShowModal(prev => !prev)}
                             />
+
                         </ModalWrapper>
                     </animated.div>
                 </Background>
