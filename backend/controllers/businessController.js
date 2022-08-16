@@ -1,9 +1,9 @@
 import createError from "http-errors";
 import BusinessUser from "../models/businessUser.js";
 
+// * GET the business user data 
 export const getUserData = async (req, res, next) => {
   // retrieve the :id parameter from the request
-
   const userId = req.params.id;
 
   let foundUser;
@@ -28,3 +28,5 @@ export const getUserData = async (req, res, next) => {
     return next(createError.NotFound("User could not be found."));
   }
 };
+
+// * PATCH a new product
