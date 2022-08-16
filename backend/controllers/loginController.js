@@ -13,6 +13,7 @@ export const loginPost = async (req, res, next) => {
       username: username,
       password: password,
     });
+
     if (!foundUser) {
       try {
         foundUser = await BusinessUser.findOne({
@@ -25,6 +26,12 @@ export const loginPost = async (req, res, next) => {
           createError(500, "Database couldn't be queried. Please try again")
         );
       }
+      console.log(foundUser);
+      res.json({ id: foundUser._id });
+    } else {
+      return next(
+        createError(401, `User could not be logged in. Please try again!`)
+      );
     }
   } catch {
     return next(
@@ -32,7 +39,11 @@ export const loginPost = async (req, res, next) => {
     );
   }
 
-  res.json({ id: foundUser._id, userType: foundUser.userType, username: foundUser.username });
+  res.json({
+    id: foundUser._id,
+    userType: foundUser.userType,
+    username: foundUser.username,
+  });
 };
 
 // TODO Encryption missing.

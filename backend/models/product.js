@@ -7,7 +7,7 @@ const productSchema = new Schema({
   productName: { type: String, required: true },
   productDescription: { type: String, required: true },
   // TODO: How to implement the photos is not clear yet.
-  photos: [String],
+  productImage: String,
 });
 
 const Product = mongoose.model("Product", productSchema);
