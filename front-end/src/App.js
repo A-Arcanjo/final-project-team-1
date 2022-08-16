@@ -13,8 +13,10 @@ import BusinessSignup from "./components/pages/Signup/BusinessSignup.js";
 import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
-import { Dashboard } from "./components/pages/Dashboard/dashboardUser.js";
+import { Dashboard } from "./components/pages/Dashboard/HomeUser.jsx";
 import { AuthContext } from "./context/AuthProvider.js";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import Logout from "./components/Logout.jsx";
 
 
 // const { currentUserId } = useContext(".....");
@@ -29,8 +31,22 @@ const userType = "standard";
 
 
 function App() {
-  const [currentUserId, setCurrentUserId] = useState("");
-  const { currentUser } = useContext(AuthContext);
+  // const [currentUserId, setCurrentUserId] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+
+
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
+
+  // logout button
+  const logout = () => {
+    localStorage.removeItem("data");
+    // setToken(false);
+    setCurrentUser("");
+    setIsLoggedIn(false);
+    setShowLogin(true);
+
+  };
   return (
     <div className="home">
 
@@ -38,16 +54,21 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/dashboard" element={currentUserId ? <Dashboard currentUserId={currentUserId}/> : <Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
+          {/* <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} /> */}
           <Route path="/services" element={<Services />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<Signin setCurrentUserId={setCurrentUserId} />} />
+          <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/customer-signup" element={<CustomerSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/business-signup" element={<BusinessSignup setCurrentUserId={setCurrentUserId} />} />
-          <Route path="/client" element={<Client currentUserId={currentUserId} />} />
+          <Route path="/customer-signup" element={<CustomerSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/business-signup" element={<BusinessSignup setCurrentUser={setCurrentUser} />} />
+          <Route path="/profile" element={<ProtectedRoute auth={(currentUser._id != null)}>
+            <Dashboard />
+          </ProtectedRoute>} />
+          <Route path="/logout" element={<Logout />} />
+
+          {/* <Route path="/client" element={<Client />} /> */}
         </Routes>
       </div>
       <Footer />

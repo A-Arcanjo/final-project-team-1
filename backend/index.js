@@ -10,7 +10,7 @@ import loginRouter from "./routes/login.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
 import registerBusinessRouter from "./routes/businessRegister.js";
 import customerUsersRouter from "./routes/customerUsers.js";
-import businessUsersRouter from "./routes/businessUsers.js"
+import businessUsersRouter from "./routes/businessUsers.js";
 
 const app = express();
 
@@ -52,7 +52,7 @@ app.use("/products", productsRouter);
 app.use("/customerUsers", customerUsersRouter);
 
 // business Users
-app.use("/businessUsers", businessUsersRouter)
+app.use("/businessUsers", businessUsersRouter);
 
 app.use(globalErrorHandler);
 

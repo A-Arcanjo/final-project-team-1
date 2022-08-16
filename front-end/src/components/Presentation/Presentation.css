@@ -2,7 +2,7 @@
 .containerAbout{
     width: 100%;
     position: relative;
-    left:5%;
+   
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -13,13 +13,15 @@
 .containerPresentation{
 margin-top:-15%;
 text-align: center;
-position: fixed;
+position: relative;
+margin-bottom:10px;
 font-family: 'Real Nova', serif;
 line-height:1.6;
 }
 
 
 .textPresentation{
+    margin-top:30px;
     line-height:1.5;
 
 }
