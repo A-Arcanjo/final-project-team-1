@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
+import postRoutes from './routes/posts.js';
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
 import loginRouter from "./routes/login.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
@@ -28,11 +29,18 @@ mongoose.connection.on("error", () => console.error);
 // allow cors requests
 app.use(cors());
 
+
+
 // parse JSON data received
 app.use(express.json());
 
+
+
+
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
+
+app.use('/posts', postRoutes);
 
 // register customer user
 app.use("/registerCustomer", registerCustomerRouter);
