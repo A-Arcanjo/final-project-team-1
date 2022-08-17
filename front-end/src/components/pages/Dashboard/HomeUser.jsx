@@ -24,6 +24,7 @@ export const Dashboard = (props) => {
       const response = await fetch(
         process.env.REACT_APP_SERVER_URL + `/customerUsers/${currentUser._id}`
       );
+
       const parsedRes = await response.json();
 
       try {
@@ -42,7 +43,7 @@ export const Dashboard = (props) => {
     };
 
     fetchUserData();
-  }, [props.currentUserId]);
+  }, [props.currentUserId, currentUser._id]);
 
   return (
     <div>

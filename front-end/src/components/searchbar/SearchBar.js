@@ -39,13 +39,11 @@ const SearchBar = () => {
 
                             return (
 
-
                                 <a className="data-item" href={item.wikipedia} target="_blank" rel="noreferrer"
                                     onClick={() => onSearch(item.foodName)}
                                     key={item.foodName}>
 
                                     {item.foodName}
-
                                 </a>
 
                             );

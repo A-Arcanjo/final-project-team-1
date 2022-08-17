@@ -7,7 +7,7 @@ export const MenuList = [
     {
         title: "About",
         url: "/about",
-        viewauth: true
+        viewauth: false
     },
     {
         title: "Services",

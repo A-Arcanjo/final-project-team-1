@@ -25,6 +25,11 @@ const Navbar = () => {
     const handleClick = () => {
         setClicked(!clicked);
     };
+
+    if (currentUser._id === 0) {
+
+    }
+
     const menuList = MenuList.map(({ url, title, viewauth }, index) => {
         // return (
 
@@ -32,7 +37,7 @@ const Navbar = () => {
         //         <NavLink to={url} className="active">{title}</NavLink>
         //     </li>
         // );
-        return (!viewauth && currentUser._id != null ? (<></>) : (<li key={index} onClick={handleClick}>
+        return ((!viewauth && currentUser._id != null) ? (<></>) : (<li key={index} onClick={handleClick}>
             <NavLink to={url} className="active">{title}</NavLink>
         </li>));
 
