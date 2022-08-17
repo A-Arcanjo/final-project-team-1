@@ -1,21 +1,12 @@
 import React, { useState, useContext } from "react";
 import { MenuList } from "./MenuList";
 import { NavLink } from "react-router-dom";
-import SearchBar from "../searchbar/SearchBar";
+import SearchBar from "../Searchbar/SearchBar.js";
 import Data from "../../Data.json";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider.js";
-import styled from "styled-components";
 
-const Nav = styled.nav`
-  background: #ffa101;
-  color: #31525b;
-  font-size: 15px;
-  border: 0px;
-  font-weight: 500;
-  padding: 0px 10px;
-  cursor: pointer;
-`;
+
 
 
 const Navbar = () => {
