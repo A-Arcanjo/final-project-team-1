@@ -30,16 +30,16 @@ const Navbar = () => {
 
     }
 
-    const menuList = MenuList.map(({ url, title, viewauth }, index) => {
+    const menuList = MenuList.map(({ url, title, viewauth, viewAlways }, index) => {
         // return (
 
         //     <li key={index} onClick={handleClick}>
         //         <NavLink to={url} className="active">{title}</NavLink>
         //     </li>
         // );
-        return ((!viewauth && currentUser._id != null) ? (<></>) : (<li key={index} onClick={handleClick}>
+        return ((viewAlways || (viewauth && currentUser._id != null) || (!viewauth && currentUser._id === null)) ? (<li key={index} onClick={handleClick}>
             <NavLink to={url} className="active">{title}</NavLink>
-        </li>));
+        </li>) : (<></>));
 
     });
 

@@ -2,42 +2,50 @@ export const MenuList = [
     {
         title: "Home",
         url: "/",
-        viewauth: true
+        viewauth: true,
+        viewAlways: true
     },
     {
         title: "About",
         url: "/about",
-        viewauth: false
+        viewauth: false,
+        viewAlways: true
     },
     {
         title: "Services",
         url: "/services",
-        viewauth: true
+        viewauth: true,
+        viewAlways: true
     },
     {
         title: "Rating",
         url: "/rating",
-        viewauth: true
+        viewauth: true,
+        viewAlways: true
     },
     {
         title: "Contact",
         url: "/contact",
-        viewauth: true
+        viewauth: true,
+        viewAlways: true
     },
     {
         title: "Sign in",
         url: "/signin",
-        viewauth: false
+        viewauth: false,
+        viewAlways: false
     },
     {
         title: "Sign Up",
         url: "/signup",
-        viewauth: false
+        viewauth: false,
+        viewAlways: false
     },
     {
         title: "Sign out",
         url: "/logout",
-        viewauth: true
+        viewauth: true,
+        viewAlways: false
     }
 
 ];
