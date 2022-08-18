@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
         _id: null,
         username: null,
         userType: userType,
+        token: null,
     };
 
     const [currentUser, setCurrentUser] = useState(loginSession);

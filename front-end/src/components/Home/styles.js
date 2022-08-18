@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
 
         },
         marginTop: '30px',
+        marginBottom: '30px',
 
     },
 

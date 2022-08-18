@@ -70,6 +70,7 @@ const Signin = (props) => {
                     _id: parsedRes.id,
                     username: parsedRes.username,
                     userType: parsedRes.userType,
+                    token: parsedRes.token,
                 };
                 props.setCurrentUser(newUser);
 
@@ -95,13 +96,13 @@ const Signin = (props) => {
         return errors;
     };
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className="signin-container">
 
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-                history("/")
+                navigate("/")
             ) : (
                 <></>
             )}

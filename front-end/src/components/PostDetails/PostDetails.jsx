@@ -16,7 +16,7 @@ import useStyles from "./styles";
 const Post = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const classes = useStyles();
   const { id } = useParams();
 
@@ -34,7 +34,7 @@ const Post = () => {
 
   if (!post) return null;
 
-  const openPost = (_id) => history.push(`/posts/${_id}`);
+  const openPost = (_id) => navigate(`/posts/${_id}`);
 
   if (isLoading) {
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -8,17 +8,21 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 
-import { likePost, deletePost } from '../../../actions/posts';
+import { likePost, deletePost } from '../../../actions/posts.js';
 import useStyles from './styles';
+import { AuthContext } from "../../../context/AuthProvider.js";
+
 
 const Post = ({ post, setCurrentId }) => {
-    const user = JSON.parse(localStorage.getItem('profile'));
+    //const user = JSON.parse(localStorage.getItem('login'));
     const [likes, setLikes] = useState(post?.likes);
     const dispatch = useDispatch();
-    const history = useNavigate();
+    const navigate = useNavigate();
+    const { currentUser } = useContext(AuthContext);
+
     const classes = useStyles();
 
-    const userId = user?.result.googleId || user?.result?._id;
+    const userId = currentUser._id;
     const hasLikedPost = post.likes.find((like) => like === userId);
 
     const handleLike = async () => {
@@ -47,7 +51,7 @@ const Post = ({ post, setCurrentId }) => {
     const openPost = (e) => {
         // dispatch(getPost(post._id, history));
 
-        history.push(`/posts/${post._id}`);
+        navigate(`/posts/${post._id}`);
     };
 
     return (
@@ -63,7 +67,7 @@ const Post = ({ post, setCurrentId }) => {
                     <Typography variant="h6">{post.name}</Typography>
                     <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
                 </div>
-                {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
+                {(currentUser.result?._id === post?.creator) && (
                     <div className={classes.overlay2} name="edit">
                         <Button
                             onClick={(e) => {
@@ -86,10 +90,10 @@ const Post = ({ post, setCurrentId }) => {
                 </CardContent>
             </ButtonBase>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
+                <Button size="small" color="primary" disabled={currentUser._id === null} onClick={handleLike}>
                     <Likes />
                 </Button>
-                {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
+                {(currentUser.result === post?.creator) && (
                     <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
                         <DeleteIcon fontSize="small" /> &nbsp; Delete
                     </Button>

@@ -35,14 +35,14 @@ const HomeSearch = () => {
 
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const searchPost = () => {
         if (search.trim() || tags) {
             dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
-            history.push(`/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
+            navigate(`/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
         } else {
-            history.push('/');
+            navigate('/');
         }
     };
 

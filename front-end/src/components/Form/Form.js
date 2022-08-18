@@ -30,8 +30,8 @@ const Form = ({ currentId, setCurrentId }) => {
     const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch();
     const classes = useStyles();
-    const user = JSON.parse(localStorage.getItem('profile'));
-    const history = useNavigate();
+    //const user = JSON.parse(localStorage.getItem('profile'));
+    const navigate = useNavigate();
     const { currentUser } = useContext(AuthContext);
     const clear = () => {
         setCurrentId(0);
@@ -47,7 +47,7 @@ const Form = ({ currentId, setCurrentId }) => {
         e.preventDefault();
 
         if (currentId === 0) {
-            dispatch(createPost({ ...postData, name: currentUser.username }, history));
+            dispatch(createPost({ ...postData, name: currentUser.username }, navigate));
             clear();
         } else {
             dispatch(updatePost(currentId, { ...postData, name: currentUser.username }));
@@ -74,7 +74,8 @@ const Form = ({ currentId, setCurrentId }) => {
     };
 
     return (
-        <Paper className={classes.paper} elevation={6}>
+
+        currentUser.userType !== "standard" ? (<Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? `Editing "${post?.title}"` : 'Creating a Memory'}</Typography>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
@@ -96,7 +97,9 @@ const Form = ({ currentId, setCurrentId }) => {
                     <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
                 </ThemeProvider >
             </form>
-        </Paper>
+        </Paper>) : (<></>)
+
+
     );
 };
 
