@@ -61,8 +61,8 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Navigate to='/posts' />} />
-          <Route path="/posts" element={<HomeSearch />} />
-          <Route path="/posts/search" exact component={<HomeSearch />} />
+          <Route path="/posts" exact element={<HomeSearch />} />
+          {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
           <Route path="/posts/:id" element={<PostDetails />} />
           {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}
           <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/posts" />)} />

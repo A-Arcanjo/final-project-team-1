@@ -7,7 +7,6 @@ import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
-
 import { likePost, deletePost } from '../../../actions/posts.js';
 import useStyles from './styles';
 import { AuthContext } from "../../../context/AuthProvider.js";
@@ -49,10 +48,11 @@ const Post = ({ post, setCurrentId }) => {
     };
 
     const openPost = (e) => {
-        // dispatch(getPost(post._id, history));
+        //  dispatch(getPost(post._id, navigate));
 
         navigate(`/posts/${post._id}`);
     };
+    console.log(openPost);
 
     return (
         <Card className={classes.card} raised elevation={6}>

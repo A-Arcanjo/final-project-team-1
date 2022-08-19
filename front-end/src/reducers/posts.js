@@ -5,6 +5,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => {
         case 'START_LOADING':
             return { ...state, isLoading: true };
         case 'END_LOADING':
+            console.log(state, "loading ended");
             return { ...state, isLoading: false };
         case FETCH_ALL:
             return {
@@ -14,8 +15,11 @@ const variable = (state = { isLoading: true, posts: [] }, action) => {
                 numberOfPages: action.payload.numberOfPages,
             };
         case FETCH_BY_SEARCH:
+            console.log(action.payload, "reducers");
+            return { ...state, posts: action.payload };
+
         case FETCH_BY_CREATOR:
-            return { ...state, posts: action.payload.data };
+            return { ...state, posts: action.payload };
         case FETCH_POST:
             return { ...state, post: action.payload.post };
         case LIKE:

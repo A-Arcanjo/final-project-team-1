@@ -1,5 +1,6 @@
 import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, FETCH_BY_CREATOR } from '../constants/actionTypes.js';
 import * as api from '../api/index.js';
+import { get } from 'mongoose';
 
 export const getPost = (id) => async (dispatch) => {
     try {
@@ -8,6 +9,7 @@ export const getPost = (id) => async (dispatch) => {
         const { data } = await api.fetchPost(id);
 
         dispatch({ type: FETCH_POST, payload: { post: data } });
+
     } catch (error) {
         console.log(error);
     }
@@ -41,8 +43,8 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
     try {
         dispatch({ type: START_LOADING });
         const { data: { data } } = await api.fetchPostsBySearch(searchQuery);
-
-        dispatch({ type: FETCH_BY_SEARCH, payload: { data } });
+        // console.log(data);
+        dispatch({ type: FETCH_BY_SEARCH, payload: data });
         dispatch({ type: END_LOADING });
     } catch (error) {
         console.log(error);
@@ -55,6 +57,7 @@ export const createPost = (post, navigate) => async (dispatch) => {
         const { data } = await api.createPost(post);
 
         dispatch({ type: CREATE, payload: data });
+
         navigate(`/posts/${data._id}`);
     } catch (error) {
         console.log(error);
@@ -72,7 +75,7 @@ export const updatePost = (id, post) => async (dispatch) => {
 };
 
 export const likePost = (id) => async (dispatch) => {
-    const user = JSON.parse(sessionStorage.getItem('login'));
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     try {
         const { data } = await api.likePost(id, user?.token);
@@ -97,7 +100,7 @@ export const commentPost = (value, id) => async (dispatch) => {
 
 export const deletePost = (id) => async (dispatch) => {
     try {
-        await api.deletePost(id);
+        await await api.deletePost(id);
 
         dispatch({ type: DELETE, payload: id });
     } catch (error) {

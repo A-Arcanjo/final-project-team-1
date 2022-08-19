@@ -1,56 +1,49 @@
 import { useState } from "react";
 import "./SearchBar.css";
-const data = require("../../Data.json");
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getPostsBySearch } from '../../actions/posts';
+
+
 
 const SearchBar = () => {
-    const [value, setValue] = useState("");
 
-    const onChange = (event) => {
-        setValue(event.target.value);
+    const [search, setSearch] = useState('');
+    const [tags, setTags] = useState([]);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
+    const searchPost = () => {
+        if (search.trim() || tags) {
+            dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
+            navigate(`/posts?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
+        } else {
+            navigate('/');
+        }
     };
 
-    const onSearch = (searchTerm) => {
-        setValue(searchTerm);
-        // our api to fetch the search result
-        console.log("search ", searchTerm);
+    const handleKeyPress = (e) => {
+        if (e.keyCode === 13) {
+            searchPost();
+        }
     };
 
     return (
         <div className="containerSearch">
             <div className="search">
                 <div className="search-inputs">
-                    <input type="text" value={value} onChange={onChange} />
-                    <button className="search-icon" onClick={() => onSearch(value)}> Search </button>
+                    <input type="text" onKeyDown={handleKeyPress} onChange={(e) => setSearch(e.target.value)} />
+                    <button className="search-icon" onClick={searchPost} > Search </button>
                 </div>
                 <div className="data-result">
-                    {data
-                        .filter((item) => {
-                            const searchTerm = value.toLowerCase();
-                            const foodName = item.foodName.toLowerCase();
 
-                            return (
-                                searchTerm &&
-                                foodName.startsWith(searchTerm) &&
-                                foodName !== searchTerm
-                            );
-                        })
-                        .slice(0, 10)
-                        .map((item) => {
 
-                            return (
 
-                                <a className="data-item" href={item.wikipedia} target="_blank" rel="noreferrer"
-                                    onClick={() => onSearch(item.foodName)}
-                                    key={item.foodName}>
 
-                                    {item.foodName}
-                                </a>
-
-                            );
-                        })}
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 };

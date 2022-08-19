@@ -12,7 +12,13 @@ export default makeStyles((theme) => ({
         borderRadius: 4,
         marginTop: '1rem',
         padding: '16px',
+
     },
+    // [theme.breakpoints.down('sm')]: {
+    //     pagination: {
+    //         marginTop: '25rem',
+    //     }
+    // },
     gridContainer: {
 
         [theme.breakpoints.down('xs-3')]: {
