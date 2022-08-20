@@ -1,11 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose';
-
 import PostMessage from '../models/postMessage.js';
 
 const router = express.Router();
 
-export const getPosts = async (req, res) => {
+export const getPosts = async (req, res, next) => {
     const { page } = req.query;
 
     try {
@@ -19,21 +18,21 @@ export const getPosts = async (req, res) => {
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
+
 };
 
 export const getPostsBySearch = async (req, res) => {
     const { searchQuery, tags } = req.query;
-
     try {
         const title = new RegExp(searchQuery, "i");
+        console.log(searchQuery);
 
         const posts = await PostMessage.find({ $or: [{ title }, { tags: { $in: tags.split(',') } }] });
-
         res.json({ data: posts });
-        console.log("posts", posts);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
+
 };
 
 export const getPostsByCreator = async (req, res) => {
@@ -57,7 +56,6 @@ export const getPost = async (req, res) => {
         res.status(200).json(post);
     } catch (error) {
         res.status(404).json({ message: error.message });
-        console.log(res);
 
 
     }
@@ -97,6 +95,7 @@ export const deletePost = async (req, res) => {
 
     await PostMessage.findByIdAndRemove(id);
 
+
     res.json({ message: "Post deleted successfully." });
 };
 
@@ -118,10 +117,10 @@ export const likePost = async (req, res) => {
     } else {
         post.likes = post.likes.filter((id) => id !== String(req.userId));
     }
+    await post.save();
+    // const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
-
-    res.status(200).json(updatedPost);
+    res.status(200).json(post);
 };
 
 export const commentPost = async (req, res) => {

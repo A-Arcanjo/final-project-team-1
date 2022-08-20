@@ -1,16 +1,16 @@
 import jwt from "jsonwebtoken";
 
-const secret = 'test';
 
-const auth = async (req, res, next) => {
+const auth = async (req, _res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
+        console.log("Token", token);
         const isCustomAuth = token.length < 500;
 
         let decodedData;
 
         if (token && isCustomAuth) {
-            decodedData = jwt.verify(token, secret);
+            decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
             req.userId = decodedData?.id;
         } else {
@@ -18,7 +18,6 @@ const auth = async (req, res, next) => {
 
             req.userId = decodedData?.sub;
         }
-
         next();
     } catch (error) {
         console.log(error);

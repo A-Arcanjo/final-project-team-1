@@ -14,11 +14,14 @@ export default makeStyles((theme) => ({
         padding: '16px',
 
     },
-    // [theme.breakpoints.down('sm')]: {
-    //     pagination: {
-    //         marginTop: '25rem',
-    //     }
-    // },
+    [theme.breakpoints.only('sm')]: {
+        pagination: {
+            position: 'absolute',
+            bottom: "2.7rem",
+            right: "2.5rem",
+            padding: '16px',
+        }
+    },
     gridContainer: {
 
         [theme.breakpoints.down('xs-3')]: {
