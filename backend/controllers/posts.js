@@ -125,7 +125,6 @@ export const likePost = async (req, res) => {
 
 export const commentPost = async (req, res) => {
     const { id } = req.params;
-
     const { value } = req.body;
 
     const post = await PostMessage.findById(id);
