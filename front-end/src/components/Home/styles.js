@@ -27,7 +27,6 @@ export default makeStyles((theme) => ({
 
         [theme.breakpoints.down('xs-3')]: {
             flexDirection: 'column-reverse',
-
         },
         marginTop: '30px',
         marginBottom: '30px',

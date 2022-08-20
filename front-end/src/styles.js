@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
         marginTop: '1rem',
         marginBottom: '1rem',
         display: 'flex',
-        padding: '16px',
+        padding: '18px',
         flexDirection: 'vertical',
     },
     pagination: {
@@ -37,10 +37,6 @@ export default makeStyles((theme) => ({
         marginTop: '20px',
 
     },
-    heading: {
-        color: 'rgba(0,183,255, 1)',
-    },
-    image: {
-        marginLeft: '15px',
-    },
+
+
 }));
