@@ -60,13 +60,13 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Navigate to='/posts' />} />
+          {/* <Route path="/" element={<Navigate to='/' />} /> */}
+          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
           <Route path="/posts" exact element={<HomeSearch />} />
           {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
           <Route path="/posts/:id" element={<PostDetails />} />
           {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}
-          <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/posts" />)} />
-          {/* <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} /> */}
+          <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/home" />)} />
           <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} />
           <Route path="/services" element={currentUser._id ? <Dashboard2 /> : <Services />} />
           <Route path="/rating" element={<Rating />} />

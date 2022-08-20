@@ -40,7 +40,7 @@ app.use(express.json());
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
 
-app.use('/posts', postRoutes);
+// app.use("/home", enterPage);
 
 // register customer user
 app.use("/registerCustomer", registerCustomerRouter);
@@ -53,6 +53,8 @@ app.use("/login", loginRouter);
 
 // customer Users
 app.use("/customerUsers", customerUsersRouter);
+
+app.use('/posts', postRoutes);
 
 app.use(globalErrorHandler);
 

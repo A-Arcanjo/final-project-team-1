@@ -68,7 +68,7 @@ const CommentSection = ({ post }) => {
             <Button
               style={{ marginTop: "10px" }}
               fullWidth
-              disabled={!comment.length}
+              disabled={user._id === null}
               color="primary"
               variant="contained"
               onClick={handleComment}
