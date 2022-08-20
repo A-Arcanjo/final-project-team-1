@@ -20,9 +20,9 @@ import Logout from "./components/Logout.jsx";
 import { Dashboard1 } from "./components/pages/Dashboard/AboutUser.jsx";
 import { Dashboard2 } from "./components/pages/Dashboard/Dashboard2.jsx";
 import PostDetails from './components/PostDetails/PostDetails.jsx';
-import HomeSearch from './components/Home/HomeSearch.js';
+// import HomeSearch from './components/Home/HomeSearch.js';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
-
+import ContainerSearch from "./ContainerSearch.js";
 
 
 // const { currentUserId } = useContext(".....");
@@ -62,7 +62,7 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Navigate to='/' />} /> */}
           <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-          <Route path="/posts" exact element={<HomeSearch />} />
+          <Route path="/posts" exact element={<ContainerSearch />} />
           {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
           <Route path="/posts/:id" element={<PostDetails />} />
           {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}

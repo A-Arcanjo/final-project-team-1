@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
-
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 import { AuthContext } from "../../context/AuthProvider.js";
+
 
 const theme = createTheme({
     palette: {
@@ -59,9 +59,10 @@ const Form = ({ currentId, setCurrentId }) => {
         return (
             <Paper className={classes.paper} elevation={6}>
                 <Typography variant="h6" align="center">
-                    Please Sign In to find our special products and like other's memories.
+                    Please Sign In to find our special products, like and comment other's memories.
                 </Typography>
             </Paper>
+
         );
     }
 
@@ -98,6 +99,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 </ThemeProvider >
             </form>
         </Paper>) : (<></>)
+
 
 
     );

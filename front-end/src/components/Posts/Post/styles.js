@@ -50,6 +50,7 @@ export default makeStyles({
         justifyContent: 'space-between',
     },
     cardAction: {
+
         display: 'block',
         textAlign: 'initial',
     },

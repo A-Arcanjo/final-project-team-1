@@ -83,7 +83,7 @@ const Post = () => {
           <Typography variant="body1">
             {moment(post.createdAt).fromNow()}
           </Typography>
-          <Divider style={{ margin: "20px 0" }} />
+          <Divider style={{ margin: "20px 200px" }} />
           <Typography variant="body1">
             <strong>Realtime Chat - coming soon!</strong>
           </Typography>

@@ -1,10 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-
     appBar: {
         borderRadius: 15,
-
+        textAlign: 'center',
     },
 
     appBarSearch: {
@@ -17,11 +16,11 @@ export default makeStyles((theme) => ({
     },
     pagination: {
         borderRadius: 4,
-        marginTop: '1rem',
-        padding: '16px',
-
-
-
+        margin: '1rem',
+        marginBottom: '1rem',
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: '#fae6b1'
     },
     gridContainer: {
 
@@ -36,7 +35,12 @@ export default makeStyles((theme) => ({
 
     searchButton: {
         marginTop: '20px',
-    }
 
-
+    },
+    heading: {
+        color: 'rgba(0,183,255, 1)',
+    },
+    image: {
+        marginLeft: '15px',
+    },
 }));
