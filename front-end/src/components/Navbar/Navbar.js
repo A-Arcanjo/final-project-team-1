@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { MenuList } from "./MenuList";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../Searchbar/SearchBar.js";
-import Data from "../../Data.json";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider.js";
 
@@ -37,7 +36,7 @@ const Navbar = () => {
     return (
         <nav >
             <div className="logo"></div>
-            <SearchBar data={Data} />
+            <SearchBar />
             <div className="menu-icon" onClick={handleClick}>
                 <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
             </div>

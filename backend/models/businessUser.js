@@ -5,6 +5,8 @@ const { Schema } = mongoose;
 const businessUserSchema = new Schema(
   {
     username: { type: String, required: true, unique: true },
+    firstName: String,
+    lastName: String,
     userType: {
       type: String,
       required: true,

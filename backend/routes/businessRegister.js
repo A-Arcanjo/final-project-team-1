@@ -1,5 +1,5 @@
 import express from "express";
-import {registerBusinessPost} from "../controllers/businessRegisterController.js";
+import { registerBusinessPost } from "../controllers/businessRegisterController.js";
 import requiredValues from "../validators/requiredValues.js";
 import registerBusinessValidator from "../validators/registerBusinessValidator.js";
 import checkValidation from "../validators/checkValidation.js";
@@ -8,9 +8,9 @@ const router = express.Router();
 
 router.post(
   "/",
-  requiredValues(["username", "password", "emailAddress"]),
+  requiredValues(["username", "firstName", "lastName", "password", "emailAddress"]),
   registerBusinessValidator(),
-  checkValidation, 
+  checkValidation,
   registerBusinessPost
 );
 
