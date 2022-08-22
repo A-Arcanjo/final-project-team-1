@@ -30,12 +30,8 @@ mongoose.connection.on("error", () => console.error);
 // allow cors requests
 app.use(cors());
 
-
-
 // parse JSON data received
 app.use(express.json());
-
-
 
 
 // Use morgan to make a small log every time a request is received
@@ -64,8 +60,6 @@ app.use("/businessUsers", businessRouter);
 
 app.use('/posts', postRoutes);
 
-// business Users
-app.use("/businessUsers", businessUsersRouter);
 
 app.use(globalErrorHandler);
 
