@@ -42,14 +42,8 @@ export const loginPost = async (req, res, next) => {
     );
   }
 
-<<<<<<< HEAD
-=======
-  res.json({
-    id: foundUser._id,
-    userType: foundUser.userType,
-    username: foundUser.username,
-  });
->>>>>>> b0bed9ec42ea41b722610fdec73139be03cc2a7a
+
+
 };
 
 // TODO Encryption missing.
