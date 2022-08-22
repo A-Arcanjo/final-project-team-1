@@ -1,6 +1,7 @@
 import createError from "http-errors";
 import CustomerUser from "../models/customerUser.js";
 import BusinessUser from "../models/businessUser.js";
+import jwt from "jsonwebtoken";
 
 export const loginPost = async (req, res, next) => {
   const { username, password } = req.body;
@@ -32,12 +33,23 @@ export const loginPost = async (req, res, next) => {
       createError(500, "Database couldn't be queried. Please try again")
     );
   }
+  if (foundUser) {
+    const token = jwt.sign({ username: foundUser.username, id: foundUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    return res.json({ id: foundUser._id, userType: foundUser.userType, username: foundUser.username, token });
+  } else {
+    return next(
+      createError(500, "User not found")
+    );
+  }
 
+<<<<<<< HEAD
+=======
   res.json({
     id: foundUser._id,
     userType: foundUser.userType,
     username: foundUser.username,
   });
+>>>>>>> b0bed9ec42ea41b722610fdec73139be03cc2a7a
 };
 
 // TODO Encryption missing.

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
   const navigate = useNavigate();
-  const userType = "standard";
   const { setCurrentUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -12,7 +11,7 @@ export default function Logout() {
       setCurrentUser({
         _id: null,
         username: null,
-        userType: userType,
+        userType: null,
       });
       navigate("/signin");
     }

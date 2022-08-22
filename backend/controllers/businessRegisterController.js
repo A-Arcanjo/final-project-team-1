@@ -4,6 +4,8 @@ import BusinessUser from "../models/businessUser.js";
 export const registerBusinessPost = async (req, res, next) => {
   const {
     username,
+    firstName,
+    lastName,
     password,
     companyName,
     companyOwner,
@@ -59,6 +61,8 @@ export const registerBusinessPost = async (req, res, next) => {
   // create a new business
   const newBusinessUser = new BusinessUser({
     username: username,
+    firstName: firstName,
+    lastName: lastName,
     password: password,
     companyName: companyName,
     companyOwner: companyOwner,

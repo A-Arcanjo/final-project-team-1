@@ -30,7 +30,7 @@ const Signin = (props) => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-    }, [formErrors]);
+    }, [formErrors, isSubmit]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -61,15 +61,17 @@ const Signin = (props) => {
         const response = await fetch(
             process.env.REACT_APP_SERVER_URL + "/login",
             settings
+
         );
+        console.log("RESPONSE", response);
         const parsedRes = await response.json();
-        console.log("parsedRes", parsedRes);
         try {
             if (response.ok) {
                 const newUser = {
                     _id: parsedRes.id,
                     username: parsedRes.username,
                     userType: parsedRes.userType,
+                    token: parsedRes.token,
                 };
                 props.setCurrentUser(newUser);
 
@@ -95,13 +97,13 @@ const Signin = (props) => {
         return errors;
     };
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className="signin-container">
 
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-                history("/")
+                navigate("/")
             ) : (
                 <></>
             )}
