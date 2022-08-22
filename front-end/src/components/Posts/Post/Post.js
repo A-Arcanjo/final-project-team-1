@@ -90,13 +90,15 @@ const Post = ({ post, setCurrentId }) => {
                 </CardContent>
             </ButtonBase>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" disabled={currentUser._id === null} onClick={handleLike}>
+                <Button size="small" color="primary" disabled={userId === null} onClick={handleLike}>
                     <Likes />
                 </Button>
+
                 {(currentUser.result === post?.creator) && (
-                    <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-                        <DeleteIcon fontSize="small" /> &nbsp; Delete
-                    </Button>
+                    currentUser.userType !== "customerUsers" ?
+                        (<Button size="small" color="secondary" disabled={userId === null} onClick={() => dispatch(deletePost(post._id))}>
+                            <DeleteIcon fontSize="small" /> &nbsp; Delete
+                        </Button>) : (<></>)
                 )}
             </CardActions>
         </Card>

@@ -101,7 +101,7 @@ const ContainerSearch = () => {
 
                         <Paper className={classes.pagination} elevation={6}>
                             <Pagination page={page} />
-                        </Paper>)
+                        </Paper>
 
 
 
