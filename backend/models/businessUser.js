@@ -10,8 +10,8 @@ const businessUserSchema = new Schema(
     userType: {
       type: String,
       required: true,
-      enum: ["business", "standard"],
-      default: "business",
+      enum: ["businessUsers", "customerUsers"],
+      default: "businessUsers",
     },
     password: { type: String, required: true },
     companyName: { type: String, required: true },

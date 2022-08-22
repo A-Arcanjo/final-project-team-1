@@ -61,9 +61,10 @@ const Signin = (props) => {
         const response = await fetch(
             process.env.REACT_APP_SERVER_URL + "/login",
             settings
+
         );
+        console.log("RESPONSE", response);
         const parsedRes = await response.json();
-        console.log("parsedRes", parsedRes);
         try {
             if (response.ok) {
                 const newUser = {

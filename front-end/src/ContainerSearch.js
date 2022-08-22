@@ -99,8 +99,9 @@ const ContainerSearch = () => {
                         {(!searchQuery && !tags.length) && (
                             <Paper className={classes.pagination} elevation={6}>
                                 <Pagination page={page} />
-                            </Paper>
-                        )}
+                            </Paper>)}
+
+
 
 
 

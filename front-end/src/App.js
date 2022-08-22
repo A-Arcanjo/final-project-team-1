@@ -25,16 +25,6 @@ import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 import ContainerSearch from "./ContainerSearch.js";
 
 
-// const { currentUserId } = useContext(".....");
-const userType = "standard";
-
-// const currentUser = {
-//   _id: "1234345ecxxxccxrfjef",
-//   username: "sole",
-//   userType: userType
-// };
-
-
 
 function App() {
   // const [currentUserId, setCurrentUserId] = useState("");

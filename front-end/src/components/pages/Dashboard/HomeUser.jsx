@@ -25,7 +25,6 @@ export const Dashboard = (props) => {
         process.env.REACT_APP_SERVER_URL +
           `/${currentUser.userType}/${currentUser._id}`
       );
-      console.log("QUESTO E´ L´ID DELLO USER", currentUser._id);
       const parsedRes = await response.json();
 
       try {
