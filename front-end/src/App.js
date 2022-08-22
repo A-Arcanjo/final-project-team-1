@@ -52,7 +52,7 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Navigate to='/' />} /> */}
           <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-          <Route path="/posts" exact element={<ContainerSearch />} />
+          <Route path="/posts" element={<ContainerSearch />} />
           {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
           <Route path="/posts/:id" element={<PostDetails />} />
           {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}

@@ -9,8 +9,8 @@ import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from './styles';
-import { Pagination } from '@material-ui/lab';
 import { getPostsBySearch } from '../src/actions/posts.js';
+import Pagination from '../src/components/Pagination.jsx';
 
 
 
@@ -92,14 +92,16 @@ const ContainerSearch = () => {
                                 </AppBar>
 
                                 <Form currentId={currentId} setCurrentId={setCurrentId} />
+
+
+
                             </Grid>
                         </Grid>
                         <Divider style={{ margin: "20px 0" }} />
 
-                        {(!searchQuery && !tags.length) && (
-                            <Paper className={classes.pagination} elevation={6}>
-                                <Pagination page={page} />
-                            </Paper>)}
+                        <Paper className={classes.pagination} elevation={6}>
+                            <Pagination page={page} />
+                        </Paper>)
 
 
 
