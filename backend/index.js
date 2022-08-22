@@ -4,13 +4,22 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
+<<<<<<< HEAD
 import postRoutes from './routes/posts.js';
+=======
+import productsRouter from "./routes/products.js";
+>>>>>>> b0bed9ec42ea41b722610fdec73139be03cc2a7a
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
 import loginRouter from "./routes/login.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
 import registerBusinessRouter from "./routes/businessRegister.js";
+<<<<<<< HEAD
 import customerRouter from "./routes/customerUsers.js";
 import businessRouter from "./routes/businessUsers.js";
+=======
+import customerUsersRouter from "./routes/customerUsers.js";
+import businessUsersRouter from "./routes/businessUsers.js";
+>>>>>>> b0bed9ec42ea41b722610fdec73139be03cc2a7a
 
 const app = express();
 
@@ -52,6 +61,9 @@ app.use("/registerBusiness", registerBusinessRouter);
 // login post
 app.use("/login", loginRouter);
 
+//products router
+app.use("/products", productsRouter);
+
 // customer Users
 app.use("/customerUsers", customerRouter);
 
@@ -60,6 +72,9 @@ app.use("/businessUsers", businessRouter);
 
 
 app.use('/posts', postRoutes);
+
+// business Users
+app.use("/businessUsers", businessUsersRouter);
 
 app.use(globalErrorHandler);
 
