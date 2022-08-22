@@ -1,16 +1,16 @@
 
 
 .carousel-root{
-    margin:10px;
+    margin:2px;
 }
 
 .carousel.carousel-slider{
-    margin: 10px 0;
+    margin: 1px 0;
 }  
 
 .slider-img {
     width: 100%;
-    height: 100vh;
+    height: 94vh;
     object-fit: cover;
 }
 
