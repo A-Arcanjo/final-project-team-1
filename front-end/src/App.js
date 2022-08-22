@@ -31,7 +31,7 @@ const userType = "standard";
 
 
 function App() {
-  // const [currentUserId, setCurrentUserId] = useState("");
+  //const [currentUserId, setCurrentUserId] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
 
@@ -68,7 +68,7 @@ function App() {
           </ProtectedRoute>} />
           <Route path="/logout" element={<Logout />} />
 
-          {/* <Route path="/client" element={<Client />} /> */}
+           <Route path="/client" element={<Client setCurrentUser={currentUser._id}/>} /> 
         </Routes>
       </div>
       <Footer />

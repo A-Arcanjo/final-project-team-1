@@ -3,6 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
+// ! To upload an image and retrieve image
+import bodyParser from "body-parser";
+import fs from "fs";
+import path from "path";
 
 import productsRouter from "./routes/products.js";
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
@@ -15,6 +19,10 @@ import businessUsersRouter from "./routes/businessUsers.js";
 const app = express();
 
 dotenv.config();
+
+// ! To upload an image and retrieve image
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // connect to mongodb
 mongoose.connect(
