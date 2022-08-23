@@ -15,7 +15,7 @@ const customerUserSchema = new Schema({
   favoriteBusiness: [{ businessName: String }],
   favoriteProducts: [{ productName: String }],
   isAdmin: { type: Boolean, required: true },
-});
+}, { timestamps: true });
 
 const CustomerUser = mongoose.model("CustomerUser", customerUserSchema);
 
