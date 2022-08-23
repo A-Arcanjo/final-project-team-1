@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider.js";
 import Logout from "../../Logout.jsx";
 import styled from "styled-components";
+import { HomeBusiness } from "./HomeBusiness.jsx";
+import { HomeCustomer } from "./HomeCustomer.jsx";
 
 const Nav = styled.nav`
   background: #fae6b1;
@@ -51,6 +53,11 @@ export const Dashboard = (props) => {
       <Nav>
         <h2 id="greeting">Welcome {firstName}!</h2>
       </Nav>
+      {currentUser.userType !== "customerUsers" ? (
+        <HomeBusiness />
+      ) : (
+        <HomeCustomer />
+      )}
     </div>
   );
 };
