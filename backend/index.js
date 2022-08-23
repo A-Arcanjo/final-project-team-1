@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
-
 import postRoutes from './routes/posts.js';
 
 import productsRouter from "./routes/products.js";
@@ -37,13 +36,8 @@ mongoose.connection.on("error", () => console.error);
 // allow cors requests
 app.use(cors());
 
-
-
 // parse JSON data received
 app.use(express.json());
-
-
-
 
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
@@ -68,10 +62,7 @@ app.use("/customerUsers", customerRouter);
 // business Users
 app.use("/businessUsers", businessRouter);
 
-
 app.use('/posts', postRoutes);
-
-
 
 app.use(globalErrorHandler);
 
