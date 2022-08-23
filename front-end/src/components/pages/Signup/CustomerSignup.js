@@ -118,7 +118,7 @@ const CustomerSignup = (props) => {
   return (
     <div className="signup-container">
       {Object.keys(formErrors).length === 0 && isSubmit ? (
-        navigate("/home")
+        navigate("/signin")
       ) : (
         <></>
       )}

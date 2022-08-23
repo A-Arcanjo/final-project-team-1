@@ -5,9 +5,11 @@ import { eyeDisabled } from 'react-icons-kit/ionicons/eyeDisabled';
 import { eye } from 'react-icons-kit/ionicons/eye';
 import "./Signup.css";
 
-const BusinessSignup = (props) => {
+const BusinessSignup = () => {
   const initialValues = {
     username: "",
+    firstName: "",
+    lastName: "",
     companyOwner: "",
     companyName: "",
     city: "",
@@ -41,7 +43,7 @@ const BusinessSignup = (props) => {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmit]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -56,6 +58,8 @@ const BusinessSignup = (props) => {
     // cate a new business user
     const newBusinessUser = {
       username: formValues.username,
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
       companyOwner: formValues.companyOwner,
       companyName: formValues.companyName,
       city: formValues.city,
@@ -121,6 +125,12 @@ const BusinessSignup = (props) => {
 
     if (!values.businessTelephone) {
       errors.businessTelephone = "required";
+    }
+    if (!values.firstName) {
+      errors.firstName = "First name is required";
+    }
+    if (!values.lastName) {
+      errors.lastName = "Last name is required";
     }
 
     if (!values.username) {
@@ -228,6 +238,26 @@ const BusinessSignup = (props) => {
               name="username"
               placeholder="Username"
               value={formValues.username}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label>First name</label>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name"
+              value={formValues.firstName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label>Last name</label>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={formValues.lastName}
               onChange={handleChange}
             />
           </div>

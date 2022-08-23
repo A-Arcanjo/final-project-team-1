@@ -1,8 +1,7 @@
 import createError from "http-errors";
 import BusinessUser from "../models/businessUser.js";
 
-// * GET the business user data
-export const getUserData = async (req, res, next) => {
+export const getBusinessData = async (req, res, next) => {
   // retrieve the :id parameter from the request
   const userId = req.params.id;
 
@@ -20,8 +19,7 @@ export const getUserData = async (req, res, next) => {
 
   if (foundUser) {
     const userData = {
-      companyName: foundUser.companyName,
-      products: [],
+      firstName: foundUser.firstName,
     };
 
     res.json(userData);
@@ -66,19 +64,18 @@ export const updateProducts = async (req, res, next) => {
         createError(500, "User could not be updated. Please try again!")
       );
     }
-  
 
-  // populate the array with the product values
-  await updatedUser.populate("products", {
-    _id: true,
-    productType:true,
-    productName:true,
-    productDescription: true,
-    productImage:true,
-  });
+    // populate the array with the product values
+    await updatedUser.populate("products", {
+      _id: true,
+      productType: true,
+      productName: true,
+      productDescription: true,
+      selectedFile: true,
+    });
 
-  res.json({ products: updatedUser.products });
-} else {
-  next(409, "The item already exists!");
-}
+    res.json({ products: updatedUser.products });
+  } else {
+    next(409, "The item already exists!");
+  }
 };

@@ -5,11 +5,13 @@ const { Schema } = mongoose;
 const businessUserSchema = new Schema(
   {
     username: { type: String, required: true, unique: true },
+    firstName: String,
+    lastName: String,
     userType: {
       type: String,
       required: true,
-      enum: ["business", "standard"],
-      default: "business",
+      enum: ["businessUsers", "customerUsers"],
+      default: "businessUsers",
     },
     password: { type: String, required: true },
     companyName: { type: String, required: true },

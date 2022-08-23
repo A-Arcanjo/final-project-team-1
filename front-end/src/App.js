@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/pages/Home/Home.js";
 import About from "./components/pages/About/About.js";
@@ -14,19 +14,15 @@ import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
 import { Dashboard } from "./components/pages/Dashboard/HomeUser.jsx";
-import { AuthContext } from "./context/AuthProvider.js";
+import { AuthContext, AuthProvider } from "./context/AuthProvider.js";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Logout from "./components/Logout.jsx";
-
-
-// const { currentUserId } = useContext(".....");
-const userType = "standard";
-
-// const currentUser = {
-//   _id: "1234345ecxxxccxrfjef",
-//   username: "sole",
-//   userType: userType
-// };
+import { Dashboard1 } from "./components/pages/Dashboard/AboutUser.jsx";
+import { Dashboard2 } from "./components/pages/Dashboard/Dashboard2.jsx";
+import PostDetails from './components/PostDetails/PostDetails.jsx';
+// import HomeSearch from './components/Home/HomeSearch.js';
+import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
+import ContainerSearch from "./ContainerSearch.js";
 
 
 
@@ -54,9 +50,15 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
+          {/* <Route path="/" element={<Navigate to='/' />} /> */}
           <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
-          {/* <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} /> */}
-          <Route path="/services" element={<Services />} />
+          <Route path="/posts" element={<ContainerSearch />} />
+          {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
+          <Route path="/posts/:id" element={<PostDetails />} />
+          {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}
+          <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/home" />)} />
+          <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} />
+          <Route path="/services" element={currentUser._id ? <Dashboard2 /> : <Services />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
@@ -68,7 +70,7 @@ function App() {
           </ProtectedRoute>} />
           <Route path="/logout" element={<Logout />} />
 
-           <Route path="/client" element={<Client setCurrentUser={currentUser._id}/>} /> 
+      {/* <Route path="/client" element={<Client/>} />  */}
         </Routes>
       </div>
       <Footer />

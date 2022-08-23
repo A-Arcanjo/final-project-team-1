@@ -22,7 +22,8 @@ export const Dashboard = (props) => {
   useEffect(() => {
     const fetchUserData = async () => {
       const response = await fetch(
-        process.env.REACT_APP_SERVER_URL + `/customerUsers/${currentUser._id}`
+        process.env.REACT_APP_SERVER_URL +
+          `/${currentUser.userType}/${currentUser._id}`
       );
       const parsedRes = await response.json();
 
@@ -32,6 +33,7 @@ export const Dashboard = (props) => {
           console.log("Server response", parsedRes);
           setFirstName(parsedRes.firstName);
 
+          console.log("firstName", parsedRes.firstName);
           // If the request was unsuccessful...
         } else {
           throw new Error(parsedRes.message);
@@ -42,7 +44,7 @@ export const Dashboard = (props) => {
     };
 
     fetchUserData();
-  }, [props.currentUserId]);
+  }, [props.currentUserId, currentUser._id, currentUser.userType]);
 
   return (
     <div>

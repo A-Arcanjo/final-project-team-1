@@ -3,26 +3,24 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
-// ! To upload an image and retrieve image
-import bodyParser from "body-parser";
-import fs from "fs";
-import path from "path";
+
+import postRoutes from './routes/posts.js';
 
 import productsRouter from "./routes/products.js";
+
 import globalErrorHandler from "./middleware/globalErrorHandler.js";
 import loginRouter from "./routes/login.js";
 import registerCustomerRouter from "./routes/customerRegister.js";
 import registerBusinessRouter from "./routes/businessRegister.js";
-import customerUsersRouter from "./routes/customerUsers.js";
-import businessUsersRouter from "./routes/businessUsers.js";
+
+import customerRouter from "./routes/customerUsers.js";
+import businessRouter from "./routes/businessUsers.js";
+
+
 
 const app = express();
 
 dotenv.config();
-
-// ! To upload an image and retrieve image
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 
 // connect to mongodb
 mongoose.connect(
@@ -44,6 +42,8 @@ app.use(express.json());
 // Use morgan to make a small log every time a request is received
 app.use(morgan("tiny"));
 
+// app.use("/home", enterPage);
+
 // register customer user
 app.use("/registerCustomer", registerCustomerRouter);
 
@@ -57,10 +57,12 @@ app.use("/login", loginRouter);
 app.use("/products", productsRouter);
 
 // customer Users
-app.use("/customerUsers", customerUsersRouter);
+app.use("/customerUsers", customerRouter);
 
 // business Users
-app.use("/businessUsers", businessUsersRouter);
+app.use("/businessUsers", businessRouter);
+
+app.use('/posts', postRoutes);
 
 app.use(globalErrorHandler);
 
