@@ -2,6 +2,7 @@
 display: inline-block;
 top: 0;
 left: 5%;
+color: #31525B;
 margin-top:0px;
 }
 .search{
@@ -17,6 +18,7 @@ margin-top:0px;
 }
 .search input{
     width: 100%;
+    color: #31525B;
     background-color: white;
     border: 0;
     border-radius: 2px;
@@ -29,12 +31,12 @@ margin-top:0px;
 .search-icon{
     position: absolute;
     height: 30px;
-    background: #FFA101;
+    
     color: #31525B;
     font-size: 15px;
     border: 0px;
     font-weight: 500;
-    padding: 0px 10px;
+    
     cursor: pointer;
 }
 input:focus{
@@ -85,7 +87,7 @@ input:focus{
     }
    
 }
-@media screen and (max-width: 870px){
+@media screen and (max-width: 880px){
     .search{
         margin-top: 0px;
         margin-right: 5rem;
@@ -93,22 +95,24 @@ input:focus{
     }
     .containerSearch{
         position: relative;
-    width:55%;
+    width:65%;
     display: inline-block;
-    top: 0;
+bottom:3rem;
     left: 5%;
-    margin-top: 5px;
+    margin-top: 3px;
     }
 }
-@media screen and (max-width: 385px){
+@media screen and (max-width: 355px){
    
     .containerSearch{
         position: relative;
-    width:55%;
+        
+        left: auto;
+    width:65%;
     display: inline-block;
     top: 0;
-    left: 5%;
-    margin-top: 3px;
+   
+    
     }
     
 }
