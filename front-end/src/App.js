@@ -70,7 +70,7 @@ function App() {
           </ProtectedRoute>} />
           <Route path="/logout" element={<Logout />} />
 
-      {/* <Route path="/client" element={<Client/>} />  */}
+          {/* <Route path="/client" element={<Client/>} />  */}
         </Routes>
       </div>
       <Footer />

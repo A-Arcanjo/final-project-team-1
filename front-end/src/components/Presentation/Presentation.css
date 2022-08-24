@@ -2,7 +2,6 @@
 .containerAbout{
     width: 100%;
     position: relative;
-   
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -11,8 +10,6 @@
 }
 
 .containerPresentation{
-margin-top:-15%;
-text-align: center;
 position: relative;
 margin-bottom:10px;
 font-family: 'Real Nova', serif;
@@ -21,9 +18,32 @@ line-height:1.6;
 
 
 .textPresentation{
-    margin-top:30px;
+    margin-top:auto;
+    margin-right:10px;
     line-height:1.5;
 
 }
 
 
+@media only screen and (max-width: 415px) {
+    .containerPresentation{
+        position: relative;
+        margin-bottom:10px;
+        font-family: 'Real Nova', serif;
+        line-height:1.6;
+        }
+
+
+    .containerAbout{
+        width: 100%;
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding:10px;
+        margin-left:10px;
+    }
+
+
+    
+  }

@@ -1,12 +1,9 @@
 
 .about{
-  display: flex;
-  justify-content: space-between;
    display: inline-block;
-   position: relative;
-  
-   width: 300px;
-   height: 300px;
+   padding: 2rem;
+   width: 250px;
+   height: 250px;
    overflow: hidden;
    border-radius: 50%;
 
@@ -18,20 +15,7 @@
     height: 200px;
 }
 
-@media only screen and (max-width: 1600px) {
-    .about img {
-      
-   position: relative;
-   left:2%;
-   top:10px;
-   width: 200px;
-   height: 200px;
-   overflow: hidden;
-   border-radius: 50%;
 
-     
-    }
-  }
 
   @media only screen and (max-width: 800px) {
     .about {
@@ -60,13 +44,27 @@
     }
   }
 
-  @media only screen and (max-width: 415px) {
+  @media only screen and (max-width: 465px) {
     .about {
         display: inline-block;
         position: relative;
-       
-        width: 100px;
-        height: 100px;
+       bottom: 20rem;
+       left:2rem;
+        width: 9rem;
+        height: 9rem;
+        overflow: hidden;
+        border-radius: 50%;
+     
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .about {
+        display: none;
+        position: relative;
+       left:13rem;
+        width: 5rem;
+        height: 5rem;
         overflow: hidden;
         border-radius: 50%;
      

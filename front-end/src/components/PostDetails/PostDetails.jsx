@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Paper,
   Typography,
@@ -19,10 +19,17 @@ const Post = () => {
   const navigate = useNavigate();
   const classes = useStyles();
   const { id } = useParams();
-
+  const [recommendedPosts, setRecommendedPosts] = useState([...posts]);
   useEffect(() => {
     dispatch(getPost(id));
   }, [id]);
+
+  // useEffect(() => {
+  //   console.log("posts", posts);
+  //   if (recommendedPosts.length > 0) {
+  //     setRecommendedPosts(posts.filter(({ _id }) => _id !== post._id));
+  //   }
+  // }, [post, posts]);
 
   useEffect(() => {
     if (post) {
@@ -44,8 +51,8 @@ const Post = () => {
     );
   }
 
-  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
-
+  // const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+  // const recommendedPosts = posts;
   return (
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
       <div className={classes.card}>
@@ -109,8 +116,9 @@ const Post = () => {
           </Typography>
           <Divider />
           <div className={classes.recommendedPosts}>
-            {recommendedPosts.map(
-              ({ title, name, message, likes, selectedFile, _id }) => (
+            {recommendedPosts
+              .slice(0, 3)
+              .map(({ title, name, message, likes, selectedFile, _id }) => (
                 <div
                   style={{ margin: "20px", cursor: "pointer" }}
                   onClick={() => openPost(_id)}
@@ -130,8 +138,7 @@ const Post = () => {
                   </Typography>
                   <img src={selectedFile} width="200px" alt="myImage" />
                 </div>
-              )
-            )}
+              ))}
           </div>
         </div>
       )}

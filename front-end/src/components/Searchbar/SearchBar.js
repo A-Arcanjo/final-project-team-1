@@ -37,10 +37,6 @@ const SearchBar = () => {
                     <button className="search-icon" onClick={searchPost} > Search </button>
                 </div>
                 <div className="data-result">
-
-
-
-
                 </div>
             </div>
         </div >

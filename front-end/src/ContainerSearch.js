@@ -92,9 +92,6 @@ const ContainerSearch = () => {
                                 </AppBar>
 
                                 <Form currentId={currentId} setCurrentId={setCurrentId} />
-
-
-
                             </Grid>
                         </Grid>
                         <Divider style={{ margin: "20px 0" }} />
@@ -102,11 +99,6 @@ const ContainerSearch = () => {
                         <Paper className={classes.pagination} elevation={6}>
                             <Pagination page={page} />
                         </Paper>
-
-
-
-
-
                     </Container>
                 </ThemeProvider >
             </Grow>
