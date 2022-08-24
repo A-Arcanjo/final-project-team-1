@@ -79,3 +79,23 @@ export const updateProducts = async (req, res, next) => {
     next(409, "The item already exists!");
   }
 };
+
+//* DELETE one product
+
+export const deleteProduct =  async (req, res, next) => {
+  const userId = req.params.id;
+  const productId = req.params.productId;
+
+  let deleteOne;
+  try {
+    deleteOne = await BusinessUser.findByIdAndUpdate(userId,
+      {$pull: {products: productId }},
+      {new:true, runValidators: true});
+  } catch {
+    return next(createError(500, "Database could not be queried.Please try again!"))
+  }
+
+  await deleteOne.populate(`products`);
+
+  res.status(201).json({ products: deleteOne.products});
+}
