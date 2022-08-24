@@ -3,8 +3,6 @@ import Product from "../models/product.js";
 
 
 export const productPost  = async (req, res, next) => {
-    // const {productType, productName, productDescription} = req.body;
-
     // create a new product
 
         let newProduct;

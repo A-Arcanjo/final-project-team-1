@@ -34,19 +34,20 @@ export const loginPost = async (req, res, next) => {
     );
   }
   if (foundUser) {
-    const token = jwt.sign({ username: foundUser.username, id: foundUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-    return res.json({ id: foundUser._id, userType: foundUser.userType, username: foundUser.username, token });
-  } else {
-    return next(
-      createError(500, "User not found")
+    const token = jwt.sign(
+      { username: foundUser.username, id: foundUser._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
     );
+    return res.json({
+      id: foundUser._id,
+      userType: foundUser.userType,
+      username: foundUser.username,
+      token,
+    });
+  } else {
+    return next(createError(500, "User not found"));
   }
-
-  res.json({
-    id: foundUser._id,
-    userType: foundUser.userType,
-    username: foundUser.username,
-  });
 };
 
 // TODO Encryption missing.
