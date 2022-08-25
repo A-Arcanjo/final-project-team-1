@@ -1,13 +1,20 @@
 import { useState } from "react";
-import "./SearchBar.css";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getPostsBySearch } from '../../actions/posts';
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import { TextField } from '@material-ui/core';
-import { dividerClasses } from "@mui/material";
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import useStyles from './styles';
+
+
+const theme = createTheme({
+    primary: {
+        main: '#fff',
+
+    },
+});
 
 
 const SearchBar = () => {
@@ -16,12 +23,14 @@ const SearchBar = () => {
     const [tags, setTags] = useState([]);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const classes = useStyles();
 
     const searchPost = () => {
         if (search.trim() || tags) {
+            console.log("search", search);
             dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
             navigate(`/posts?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
+            console.log("navigate", navigate);
         } else {
             navigate('/');
         }
@@ -35,21 +44,30 @@ const SearchBar = () => {
 
     return (
 
-        <div className="containerSearch">
-            <TextField
-                label=""
-                InputProps={{
-                    endAdornment: (
-                        <InputAdornment type="text" onKeyDown={handleKeyPress} onChange={(e) => setSearch(e.target.value)}>
+        <div className={classes.containerSearch}>
+            <ThemeProvider theme={theme}>
+                <TextField
+                    className={classes.colorText}
+                    label=""
+                    onChange={(e) => setSearch(e.target.value)}
 
-                            <SearchIcon className="search-icon" onClick={searchPost} />
+                    InputProps={{
 
-                        </InputAdornment>
-                    )
-                }}
-            />
-        </div>
+                        endAdornment: (
+                            <InputAdornment type="text" onKeyDown={handleKeyPress}>
+                                <SearchIcon className={classes.searchIcon} onClick={searchPost} />
+
+                            </InputAdornment>
+                        )
+                    }}
+                />
+            </ThemeProvider>
+
+        </div >
+
+
     );
+
 
 
 

@@ -6,14 +6,15 @@ export default makeStyles((theme) => ({
         objectFit: 'cover',
         width: '100%',
         maxHeight: '300px',
-
     },
+
     card: {
         display: 'flex',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
             flexWrap: 'wrap',
             flexDirection: 'column',
+            marginBottom: '8rem',
         },
     },
     section: {
@@ -25,6 +26,9 @@ export default makeStyles((theme) => ({
         marginLeft: '20px',
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: '20px',
         },
     },
     recommendedPosts: {

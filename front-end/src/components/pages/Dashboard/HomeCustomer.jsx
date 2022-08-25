@@ -4,6 +4,7 @@ import useStylesDetails from "../../PostDetails/styles.js";
 import { getPosts } from "../../../actions/posts.js";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
+import "../Home/Home.css";
 
 import useStyles from "../../../styles.js";
 import { Pagination } from "@material-ui/lab";
@@ -26,12 +27,14 @@ export const HomeCustomer = () => {
     dispatch(getPosts());
   }, []);
   return (
-    <div>
-      <p>Home customer</p>
-      <Posts setCurrentId={setCurrentId} />
-      <Paper className={classes.pagination} elevation={6}>
-        <Pagination page={page} />
-      </Paper>
+    <div className="services">
+      <h2>Products</h2>
+      <div className="services-container">
+        <Posts setCurrentId={setCurrentId} />
+        <Paper className={classes.pagination} elevation={6}>
+          <Pagination page={page} />
+        </Paper>
+      </div>
     </div>
   );
 };
