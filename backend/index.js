@@ -33,6 +33,9 @@ mongoose.connection.on("open", () =>
 );
 mongoose.connection.on("error", () => console.error);
 
+// connect heroku with  DB
+const uri = process.env.MONGODB_URI;
+
 // allow cors requests
 app.use(cors());
 
@@ -66,6 +69,6 @@ app.use('/posts', postRoutes);
 
 app.use(globalErrorHandler);
 
-app.listen(3001, () => {
-  console.log(`Server has started on port  3001!`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server has started on port ${process.env.PORT || 3001}!`);
 });
