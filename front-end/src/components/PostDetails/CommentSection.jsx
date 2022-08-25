@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react";
 import { Typography, TextField, Button } from "@material-ui/core/";
 import { useDispatch } from "react-redux";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-
 import { commentPost } from "../../actions/posts.js";
 import useStyles from "./styles";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const theme = createTheme({
   palette: {

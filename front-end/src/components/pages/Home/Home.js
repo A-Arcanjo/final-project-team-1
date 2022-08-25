@@ -7,18 +7,14 @@ import image5 from "../../images/image5.jpg";
 import iceCream from "../../images/ice-cream.jpg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import partner1 from "../../images/partner-1.png";
-import partner2 from "../../images/partner-2.png";
-import partner3 from "../../images/partner-3.png";
-import partner4 from "../../images/partner-4.png";
-import partner5 from "../../images/partner-5.png";
-import partner6 from "../../images/partner-6.png";
-import partner7 from "../../images/partner-7.png";
-import partner8 from "../../images/partner-8.png";
-import partner9 from "../../images/partner-9.png";
-import partner10 from "../../images/partner-10.png";
-import partner11 from "../../images/partner-11.png";
-import partner12 from "../../images/partner-12.png";
+import mitVergnügen from "../../images/mitVergnügen.png";
+import biobread from "../../images/biobread.png";
+import farmFresh from "../../images/farmFresh.png";
+import metroPartner from "../../images/metroPartner.png";
+import mashrooms from "../../images/mashrooms.png";
+import dontWasteFood from "../../images/dontWasteFood.jpg";
+import tooGoodToGo from "../../images/tooGoodToGo.png";
+import honey from "../../images/honey.png";
 import services1 from "../../images/Bioproducts.png";
 import services2 from "../../images/Bakeries.png";
 import services3 from "../../images/Desserts.png";
@@ -44,7 +40,7 @@ const Home = () => {
                 <img alt="" src={image5} className="slider-img" />
                 <img alt="" src={iceCream} className="slider-img" />
             </Carousel>
-             {/* Start Services Section */}
+            {/* Start Services Section */}
             <div className="services">
                 <h2>Services</h2>
                 <div className="services-container">
@@ -120,7 +116,7 @@ const Home = () => {
                             <p>Here we are offering you the best food quality around you</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             {/* End Services Section */}
@@ -130,41 +126,31 @@ const Home = () => {
                 <h2>Our Partners</h2>
                 <div className="partners-container">
                     <div className="partners-box">
-                        <img alt="" src={partner1} />
+                        <img alt="" src={mitVergnügen} />
                     </div>
                     <div className="partners-box">
-                        <img alt="" src={partner2} />
+                        <img alt="" src={metroPartner} />
                     </div>
                     <div className="partners-box">
-                        <img alt="" src={partner3} />
+                        <img alt="" src={biobread} />
                     </div>
                     <div className="partners-box">
-                        <img alt="" src={partner4} />
+                        <img alt="" src={farmFresh} />
+                    </div>
+
+                    <div className="partners-box">
+                        <img alt="" src={mashrooms} />
                     </div>
                     <div className="partners-box">
-                        <img alt="" src={partner5} />
+                        <img alt="" src={dontWasteFood} />
+                    </div>
+
+                    <div className="partners-box">
+                        <img alt="" src={tooGoodToGo} />
                     </div>
                     <div className="partners-box">
-                        <img alt="" src={partner6} />
+                        <img alt="" src={honey} />
                     </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner7} />
-                    </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner8} />
-                    </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner9} />
-                    </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner10} />
-                    </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner11} />
-                    </div>
-                    <div className="partners-box">
-                        <img alt="" src={partner12} />
-                    </div>     
                 </div>
             </div>
             {/* End Partner Section */}

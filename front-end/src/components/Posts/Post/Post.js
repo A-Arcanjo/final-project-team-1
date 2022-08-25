@@ -95,7 +95,7 @@ const Post = ({ post, setCurrentId }) => {
                 </Button>
 
                 {(currentUser.result === post?.creator) && (
-                    currentUser.userType !== "customerUsers" ?
+                    currentUser.userType !== "customerUsers" && currentUser._id != null ?
                         (<Button size="small" color="secondary" disabled={userId === null} onClick={() => dispatch(deletePost(post._id))}>
                             <DeleteIcon fontSize="small" /> &nbsp; Delete
                         </Button>) : (<></>)

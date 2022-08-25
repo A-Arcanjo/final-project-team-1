@@ -111,7 +111,6 @@ nav{
         display: block;
         width: 100%;
         position: absolute;
-        padding: 20px;
         transition: all 0.5s ease-in-out;
         background-color: #fae6b1;
         right: 0;
@@ -135,9 +134,7 @@ nav{
         right: -100%;
         transition: all 0.5s ease-in-out;
     }
-    .logo{
-        margin-top: 10px;
-    }
+   
 }
 @media screen and (max-width: 600px){
 .logo {
@@ -153,7 +150,7 @@ nav{
         top:0px
     }
     .logo {
-        margin-top: 10px;
+        margin-left: 10px;
        
     }
    
