@@ -7,6 +7,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { TextField } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import useStyles from './styles';
+import { collapseClasses } from "@mui/material";
+
 
 
 const theme = createTheme({
@@ -47,7 +49,7 @@ const SearchBar = () => {
         <div className={classes.containerSearch}>
             <ThemeProvider theme={theme}>
                 <TextField
-                    className={classes.colorText}
+                    className={classes.text}
                     label=""
                     onChange={(e) => setSearch(e.target.value)}
 

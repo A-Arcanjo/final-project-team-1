@@ -111,7 +111,6 @@ nav{
         display: block;
         width: 100%;
         position: absolute;
-        padding: 20px;
         transition: all 0.5s ease-in-out;
         background-color: #fae6b1;
         right: 0;

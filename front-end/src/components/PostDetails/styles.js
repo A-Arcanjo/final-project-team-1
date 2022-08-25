@@ -2,12 +2,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     media: {
+        backgroundColor: ' #fae6b1;',
+
         borderRadius: '20px',
         objectFit: 'cover',
         width: '100%',
         maxHeight: '300px',
-    },
 
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 0,
+            width: '250px',
+
+        },
+        [theme.breakpoints.down('xs')]: {
+
+
+        },
+    },
     card: {
         display: 'flex',
         width: '100%',
@@ -23,13 +34,22 @@ export default makeStyles((theme) => ({
         flex: 1,
     },
     imageSection: {
-        marginLeft: '20px',
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
+
+
         },
-        [theme.breakpoints.down('xs')]: {
-            marginLeft: '20px',
+        [theme.breakpoints.only('xs')]: {
+
         },
+    },
+    imageSectionImage: {
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 0,
+            width: '100%',
+
+        },
+
     },
     recommendedPosts: {
         display: 'flex',
@@ -48,6 +68,12 @@ export default makeStyles((theme) => ({
     commentsOuterContainer: {
         display: 'flex',
         justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
+            width: '300px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'column-reverse',
+        },
     },
     commentsInnerContainer: {
         height: '200px',

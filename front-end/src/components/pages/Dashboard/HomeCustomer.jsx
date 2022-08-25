@@ -9,6 +9,16 @@ import "../Home/Home.css";
 import useStyles from "../../../styles.js";
 import { Pagination } from "@material-ui/lab";
 import { Paper } from "@material-ui/core";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ffa101",
+      contrastText: "#31525b",
+    },
+  },
+});
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -30,10 +40,12 @@ export const HomeCustomer = () => {
     <div className="services">
       <h2>Products</h2>
       <div className="services-container">
-        <Posts setCurrentId={setCurrentId} />
-        <Paper className={classes.pagination} elevation={6}>
-          <Pagination page={page} />
-        </Paper>
+        <ThemeProvider theme={theme}>
+          <Posts setCurrentId={setCurrentId} />
+          <Paper className={classes.pagination} elevation={6}>
+            <Pagination page={page} />
+          </Paper>
+        </ThemeProvider>
       </div>
     </div>
   );

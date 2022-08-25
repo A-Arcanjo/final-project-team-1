@@ -1,10 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+
+
     searchIcon: {
         color: '#ffa101',
+        cursor: 'pointer'
     },
-    colorText: {
+    text: {
         color: '#fff',
     },
 

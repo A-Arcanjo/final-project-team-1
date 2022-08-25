@@ -41,7 +41,7 @@
 .services h2{
     color: #FAE6B1;
     text-align: center;
-    margin: 2rem auto;
+    padding: 20px;
 }
 .services-box{
     background-color: #fae6b1c7;
@@ -87,7 +87,7 @@
 .partners-container{
     display: flex;
     flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto;
 }
 .partners-box{
