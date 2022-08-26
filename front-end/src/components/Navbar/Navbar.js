@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import SearchBar from "../Searchbar/SearchBar.js";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider.js";
+import { Link } from "react-router-dom";
 
 
 
@@ -35,7 +36,7 @@ const Navbar = () => {
 
     return (
         <nav >
-            <div className="logo"></div>
+            <Link to="/" className="logo"></Link>
             <SearchBar />
             <div className="menu-icon" onClick={handleClick}>
                 <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
