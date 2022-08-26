@@ -21,5 +21,9 @@
     "url": "https://github.com/A-Arcanjo/final-project-team-1/issues"
   },
   "homepage": "https://github.com/A-Arcanjo/final-project-team-1#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "webpack": "^5.74.0"
+  }
 }
