@@ -8,8 +8,7 @@ import makeStyles from "./styles";
 import Contact from "../Contact/Contact";
 import { Paper, Divider } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import Pagination from "../../../components/Pagination";
-import ContainerSearch from "../../../ContainerSearch.js";
+import ContainerSearch from "../../../SearchPage.js";
 
 const theme = createTheme({
   palette: {

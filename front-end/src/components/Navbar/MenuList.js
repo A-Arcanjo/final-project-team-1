@@ -17,12 +17,7 @@ export const MenuList = [
         viewauth: true,
         viewAlways: true
     },
-    {
-        title: "Rating",
-        url: "/rating",
-        viewauth: true,
-        viewAlways: true
-    },
+
     {
         title: "Contact",
         url: "/contact",
