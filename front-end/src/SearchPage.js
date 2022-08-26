@@ -42,7 +42,7 @@ const ContainerSearch = () => {
 
 
     useEffect(() => {
-        dispatch(getPosts());
+        dispatch(getPosts(page));
     }, [currentId, dispatch]);
 
     const searchPost = () => {

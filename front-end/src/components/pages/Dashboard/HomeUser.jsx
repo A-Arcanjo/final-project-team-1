@@ -5,11 +5,11 @@ import styled from "styled-components";
 import { HomeBusiness } from "./HomeBusiness.jsx";
 import { HomeCustomer } from "./HomeCustomer.jsx";
 
-const Nav = styled.nav`
+const Name = styled.div`
   background: #fae6b1;
   padding: 10px 20px;
   margin: 0px;
-  margin-top: 2px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -50,9 +50,9 @@ export const Dashboard = (props) => {
 
   return (
     <div>
-      <Nav>
+      <Name>
         <h2 id="greeting">Welcome {firstName}!</h2>
-      </Nav>
+      </Name>
       {currentUser.userType !== "customerUsers" ? (
         <HomeBusiness />
       ) : (

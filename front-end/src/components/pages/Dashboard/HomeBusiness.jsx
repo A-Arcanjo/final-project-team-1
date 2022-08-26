@@ -33,8 +33,8 @@ export const HomeBusiness = () => {
   const [currentId, setCurrentId] = useState(0);
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, []);
+    dispatch(getPosts(page));
+  }, [page]);
 
   return (
     <div className="services">

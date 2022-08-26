@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
         mainContainer: {
+            backgroundColor: '#31525B',
             flexDirection: 'column-reverse',
         },
     },
@@ -25,6 +26,7 @@ export default makeStyles((theme) => ({
         backgroundColor: '#fae6b1'
     },
     gridContainer: {
+        backgroundColor: '#31525B',
         padding: '16px',
         marginRight: '20rem',
         marginTop: '40px',

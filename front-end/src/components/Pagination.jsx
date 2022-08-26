@@ -21,6 +21,7 @@ const Paginate = ({ page }) => {
   return (
     <>
       <Pagination
+        // style={{ marginTop: "35rem" }}
         classes={{ ul: classes.ul }}
         count={numberOfPages}
         page={Number(page) || 1}
@@ -28,6 +29,7 @@ const Paginate = ({ page }) => {
         color="primary"
         renderItem={(item) => (
           <PaginationItem
+            style={{ textAlign: "center" }}
             {...item}
             component={Link}
             to={`/posts?page=${item.page}`}

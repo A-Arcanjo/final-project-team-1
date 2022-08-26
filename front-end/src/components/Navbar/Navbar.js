@@ -35,7 +35,7 @@ const Navbar = () => {
     });
 
     return (
-        <nav >
+        <nav className="fixedNavTop">
             <Link to="/" className="logo"></Link>
             <SearchBar />
             <div className="menu-icon" onClick={handleClick}>

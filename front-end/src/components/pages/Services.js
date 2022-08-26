@@ -5,7 +5,7 @@ import services from "../images/services.jpg";
 const About = () => {
     return (
         <>
-            <img alt="" src={services} className="blueberry" />
+            <img style={{ padding: '60px' }} alt="" src={services} className="blueberry" />
             <Cards />
         </>
 
