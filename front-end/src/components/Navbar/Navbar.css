@@ -5,7 +5,7 @@ a{
 
 .fixedNavTop{
     background: #fae6b1;
-    padding: 0px 20px;
+    padding: 0px 10px;
     margin: 0px;
     width: 100%;
     display: flex;
@@ -150,7 +150,7 @@ a{
     .menu-icon{
         position: absolute;
         left:5px;
-        top:0px
+        top:3px
     }
     .logo {
         margin-left: 10px;

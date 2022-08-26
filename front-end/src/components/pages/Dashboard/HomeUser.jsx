@@ -9,7 +9,7 @@ const Name = styled.div`
   background: #fae6b1;
   padding: 10px 20px;
   margin: 0px;
-  margin-top: 30px;
+  margin-top: 39px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

@@ -9,7 +9,7 @@ export const MenuList = [
         title: "About",
         url: "/about",
         viewauth: false,
-        viewAlways: true
+        viewAlways: false
     },
     {
         title: "Services",
