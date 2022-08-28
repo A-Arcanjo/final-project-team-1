@@ -5,6 +5,9 @@ import SearchBar from "../Searchbar/SearchBar.js";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider.js";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+
 
 
 
@@ -38,7 +41,9 @@ const Navbar = () => {
         <nav className="fixedNavTop">
             <Link to="/" className="logo"></Link>
             <SearchBar />
+
             <div className="menu-icon" onClick={handleClick}>
+
                 <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
             </div>
 
@@ -47,7 +52,7 @@ const Navbar = () => {
             </ul>
 
 
-        </nav>
+        </nav >
     );
 };
 
