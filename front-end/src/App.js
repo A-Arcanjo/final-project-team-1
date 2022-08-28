@@ -17,7 +17,7 @@ import { AuthContext, AuthProvider } from "./context/AuthProvider.js";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Logout from "./components/Logout.jsx";
 import { Dashboard1 } from "./components/pages/Dashboard/AboutUser.jsx";
-import { Dashboard2 } from "./components/pages/Dashboard/Dashboard2.jsx";
+import { Dashboard2 } from "./components/pages/Dashboard/ServicesUser";
 import PostDetails from './components/PostDetails/PostDetails.jsx';
 // import HomeSearch from './components/Home/HomeSearch.js';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';

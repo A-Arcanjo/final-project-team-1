@@ -1,3 +1,15 @@
+.ServicesTopPic{
+  background-image: url(../images/services.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border: none;
+  margin-top:19px;
+  max-width: 100rem;
+  height: 70vh;
+  background-size: cover;
+}
+
+
 .cards {
     padding: 4rem;
     background: #fff;
@@ -102,21 +114,85 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  @media only screen and (max-width: 1300px) {
+
+    .ServicesTopPic{
+      
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-top:0px;
+      height: 64vh;
+      background-size: contain;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+
+    .ServicesTopPic{
+      
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-top:0px;
+      height: 64vh;
+      background-size: contain;
+    }
+  }
+
   
   @media only screen and (min-width: 1200px) {
     .content__blog__container {
       width: 84%;
     }
-  }
+   
+  } 
   
   @media only screen and (min-width: 1024px) {
     .cards__items {
       display: flex;
     }
+  
   }
   
   @media only screen and (max-width: 1024px) {
     .cards__item {
       margin-bottom: 2rem;
     }
+
+    .ServicesTopPic{
+      
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-top:0px;
+      height: 54vh;
+      background-size: contain;
+    }
   }
+
+  @media screen and (max-width: 900px){
+
+    .ServicesTopPic{
+      
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-top:0px;
+      height: 54vh;
+      background-size: contain;
+    }
+  }
+
+  @media screen and (max-width: 700px){
+
+    .ServicesTopPic{
+      
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-top:0px;
+      height: 35vh;
+      background-size: contain;
+    }
+  }
+
+
+
+ 

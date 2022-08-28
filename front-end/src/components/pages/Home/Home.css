@@ -1,7 +1,7 @@
 
 
 .carousel-root{
-    margin:27px;
+    margin-top:19px;
 }
 
 .carousel.carousel-slider{
@@ -142,6 +142,10 @@
 
 
 @media screen and (max-width: 600px){
+
+    .carousel-root{
+        margin-top:22px;
+    }
     
     .carousel.carousel-slider{
         margin: 20px 0;
