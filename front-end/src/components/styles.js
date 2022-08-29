@@ -1,8 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles/index.js';
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-    ul: {
-        justifyContent: 'space-around',
-
-    }
+  ul: {
+    justifyContent: "space-around",
+  },
 }));
