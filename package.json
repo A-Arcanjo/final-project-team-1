@@ -1,20 +1,32 @@
 {
-  "name": "final-project-team-1",
+  "name": "final-project-team-1-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node front-end/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "heroku-postbuild": "cd front-end && npm install && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/A-Arcanjo/final-project-team-1"
-  },
-  "author": "group-1",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/A-Arcanjo/final-project-team-1/issues"
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   },
-  "homepage": "https://github.com/A-Arcanjo/final-project-team-1#readme"
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
+    "react-file-base64": "^1.0.3"
+  },
+  "type": "module"
 }
