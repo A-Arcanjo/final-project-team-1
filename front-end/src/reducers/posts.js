@@ -43,7 +43,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => { /*{in red
         case CREATE:
             return { ...state, posts: [...state.posts, action.payload] }; //spread all the posts and then we have to add a new post
         case UPDATE:
-            return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };
+            return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };//the output of any map method is an array, action.payload is the newly updated post
         case DELETE:
             return { ...state, posts: state.posts.filter((post) => post._id !== action.payload) };
         default:

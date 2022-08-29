@@ -19,7 +19,7 @@ export const fetchPostsByCreator = (name) => API.get(`/posts/creator?name=${name
 export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
 export const createPost = (newPost) => API.post('/posts', newPost); //specify Url and the data the we are sending
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
-export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { value });
+export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { value }); //id because i want to know which post i want to update
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);
 

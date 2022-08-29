@@ -70,7 +70,7 @@ export const createPost = (post, navigate) => async (dispatch) => {
 
 export const updatePost = (id, post) => async (dispatch) => {
     try {
-        const { data } = await api.updatePost(id, post);
+        const { data } = await api.updatePost(id, post); //destructure the response and get data
 
         dispatch({ type: UPDATE, payload: data });
     } catch (error) {

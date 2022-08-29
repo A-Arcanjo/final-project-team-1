@@ -34,7 +34,7 @@ const ContainerSearch = () => {
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
 
-    const [currentId, setCurrentId] = useState(0);
+    const [currentId, setCurrentId] = useState(0); //useState will be null if we don´t have any id selected
     const dispatch = useDispatch(); //use as an Hook , dispatch in every new component the action that we want to use
 
     const [search, setSearch] = useState('');

@@ -9,7 +9,7 @@ import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 import { AuthContext } from "../../context/AuthProvider.js";
 
-//to change the palette from MUI
+//to customize the palette from MUI
 const theme = createTheme({
     palette: {
         primary: {
@@ -22,11 +22,11 @@ const theme = createTheme({
         }
     }
 });
-
-
+// GET THE CURRENT ID
 
 const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
+    //to fetch not all the post from redux but only the data for the updated post
     const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch();
     const classes = useStyles();
@@ -37,7 +37,7 @@ const Form = ({ currentId, setCurrentId }) => {
         setCurrentId(0);
         setPostData({ title: '', message: '', tags: [], selectedFile: '' });
     };
-
+    //to populate the values of the form
     useEffect(() => {
         if (!post?.title) clear();
         if (post) setPostData(post);
