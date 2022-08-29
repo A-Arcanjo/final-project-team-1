@@ -33,9 +33,6 @@ mongoose.connection.on("open", () =>
 );
 mongoose.connection.on("error", () => console.error);
 
-// connect heroku with  DB
-const uri = process.env.MONGODB_URI;
-
 // allow cors requests
 app.use(cors());
 
