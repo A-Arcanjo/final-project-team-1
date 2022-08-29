@@ -6,7 +6,7 @@ import { AuthProvider } from './context/AuthProvider.js';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { reducers } from './reducers';
+import { reducers } from './reducers/index.js';
 
 const store = createStore(reducers, {}, compose(applyMiddleware(thunk)));
 
