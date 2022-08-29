@@ -20,13 +20,8 @@ import { Dashboard1 } from "./components/pages/Dashboard/AboutUser.jsx";
 import { Dashboard2 } from "./components/pages/Dashboard/ServicesUser";
 import PostDetails from './components/PostDetails/PostDetails.jsx';
 // import HomeSearch from './components/Home/HomeSearch.js';
-<<<<<<< HEAD
-import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag.jsx';
-import ContainerSearch from "./ContainerSearch.js";
-=======
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 import ContainerSearch from "./SearchPage.js";
->>>>>>> 0a087c03f3458f926f8bf55fa16d199c5b37740b
 
 
 
