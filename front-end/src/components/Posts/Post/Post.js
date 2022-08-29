@@ -52,7 +52,6 @@ const Post = ({ post, setCurrentId }) => {
 
         navigate(`/posts/${post._id}`);
     };
-    console.log(openPost);
 
     return (
         <Card className={classes.card} raised elevation={6}>

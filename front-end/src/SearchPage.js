@@ -9,8 +9,8 @@ import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from './styles';
-import { getPostsBySearch } from '../src/actions/posts.js';
-import Pagination from '../src/components/Pagination.jsx';
+import { getPostsBySearch } from './actions/posts.js';
+import Pagination from './components/Pagination.jsx';
 
 
 
@@ -42,7 +42,7 @@ const ContainerSearch = () => {
 
 
     useEffect(() => {
-        dispatch(getPosts());
+        dispatch(getPosts(page));
     }, [currentId, dispatch]);
 
     const searchPost = () => {

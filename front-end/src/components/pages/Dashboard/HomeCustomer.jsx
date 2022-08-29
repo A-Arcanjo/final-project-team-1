@@ -10,6 +10,7 @@ import useStyles from "../../../styles.js";
 import { Pagination } from "@material-ui/lab";
 import { Paper } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import ContainerSearch from "../../../SearchPage.js";
 
 const theme = createTheme({
   palette: {
@@ -34,17 +35,14 @@ export const HomeCustomer = () => {
   const [currentId, setCurrentId] = useState(0);
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, []);
+    dispatch(getPosts(page));
+  }, [page]);
   return (
     <div className="services">
       <h2>Products</h2>
       <div className="services-container">
         <ThemeProvider theme={theme}>
-          <Posts setCurrentId={setCurrentId} />
-          <Paper className={classes.pagination} elevation={6}>
-            <Pagination page={page} />
-          </Paper>
+          <ContainerSearch />
         </ThemeProvider>
       </div>
     </div>

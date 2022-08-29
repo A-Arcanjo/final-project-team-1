@@ -1,6 +1,7 @@
 
 .about{
    display: inline-block;
+   margin: 2rem;
    padding: 2rem;
    width: 250px;
    height: 250px;

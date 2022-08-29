@@ -3,20 +3,23 @@ a{
     color: #31525b;
 }
 
-nav{
+.fixedNavTop{
     background: #fae6b1;
-    padding: 0px 20px;
+    padding: 0px 10px;
     margin: 0px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap ;
     color: #31525b;
-    position: relative;
-    z-index: 999999;
+    position:fixed;
+    top:0;
+    z-index: 100;
     min-height: 2.3rem;
     padding-top: 0.2rem;
     padding-bottom: 0.3rem;
 }
+
 
 /*Begin the Icon*/
 
@@ -25,13 +28,19 @@ nav{
 }
 
 .menu-icon .fa-times{
-    transform: rotate(360deg);
+    transform: rotate(-180deg);
     transition: all 0.2s ease-in-out;
+    width: 20px;
+    height: 10px;
+    margin: 1px;
 }
 
 .menu-icon .fa-bars{
     transform: rotate(180deg);
     transition: all 0.2s ease-in-out;
+    width: 20px;
+    height: 10px;
+    margin: 1px;
 }
 
 /*End The Icon*/
@@ -108,14 +117,16 @@ nav{
         margin-top: 10px;
     }
     .menu-list{
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-content: center;
         width: 100%;
         position: absolute;
         transition: all 0.5s ease-in-out;
-        background-color: #fae6b1;
+        background:rgba(250, 231, 178, 0.981);
         right: 0;
         top: 2.35rem;
-        height: 96vh;
+        height: 97vh;
     }
     .menu-list li{
         margin-bottom: 2rem;
@@ -146,11 +157,11 @@ nav{
 @media screen and (max-width: 400px) {
     .menu-icon{
         position: absolute;
-        left:5px;
-        top:0px
+        left:2px;
+        top:3px
     }
     .logo {
-        margin-left: 10px;
+        margin-left: 25px;
        
     }
    

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import Cards from "../../components/Cards/Cards.js";
-import services from "../images/services.jpg";
+import { AuthContext } from "../../context/AuthProvider.js";
+import '../Cards/Cards.css';
+
+
 
 const About = () => {
-    return (
-        <>
-            <img alt="" src={services} className="blueberry" />
-            <Cards />
-        </>
+    const { currentUser } = useContext(AuthContext);
+    if (currentUser._id === null) {
+        return (
+            <>
+                <div alt="" className="ServicesTopPic" />
 
-    );
+                <Cards />
+
+            </>
+
+        );
+    };
 };
-
 export default About;
