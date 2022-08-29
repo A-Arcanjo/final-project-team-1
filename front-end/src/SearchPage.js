@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid, Paper, Divider, TextField, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles/index.js';
 import ChipInput from 'material-ui-chip-input';
 
-import Posts from './components/Posts/Posts';
-import Form from './components/Form/Form';
-import { getPosts } from './actions/posts';
+import Posts from './components/Posts/Posts.js';
+import Form from './components/Form/Form.js';
+import { getPosts } from './actions/posts.js';
 import { useNavigate, useLocation } from 'react-router-dom';
-import useStyles from './styles';
+import useStyles from './styles.js';
 import { getPostsBySearch } from './actions/posts.js';
 import Pagination from './components/Pagination.jsx';
 

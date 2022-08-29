@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles/index.js';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
-import { createPost, updatePost } from '../../actions/posts';
-import useStyles from './styles';
+import { createPost, updatePost } from '../../actions/posts.js';
+import useStyles from './styles.js';
 import { AuthContext } from "../../context/AuthProvider.js";
 
 

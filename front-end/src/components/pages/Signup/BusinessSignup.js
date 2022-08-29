@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from 'react-icons-kit';
-import { eyeDisabled } from 'react-icons-kit/ionicons/eyeDisabled';
-import { eye } from 'react-icons-kit/ionicons/eye';
+import { eyeDisabled } from 'react-icons-kit/ionicons/eyeDisabled.js';
+import { eye } from 'react-icons-kit/ionicons/eye.js';
 import "./Signup.css";
 
 const BusinessSignup = () => {
