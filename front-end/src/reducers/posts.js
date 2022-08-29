@@ -1,7 +1,12 @@
+//What is reducer? It is a function that accepts the state and also it accepts the action
+
+
 import { FETCH_ALL, FETCH_BY_SEARCH, FETCH_BY_CREATOR, FETCH_POST, CREATE, UPDATE, DELETE, LIKE, COMMENT } from '../constants/actionTypes.js';
 
-const variable = (state = { isLoading: true, posts: [] }, action) => {
-    switch (action.type) {
+
+//We have different statements for a lot of different things and for this reason we use the switch statement
+const variable = (state = { isLoading: true, posts: [] }, action) => { /*{in reducers the state has to be always equal to something, in our case posts=[]}*/
+    switch (action.type) { /*{as a key we have the action.type}*/
         case 'START_LOADING':
             return { ...state, isLoading: true };
         case 'END_LOADING':
@@ -36,7 +41,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => {
                 }),
             };
         case CREATE:
-            return { ...state, posts: [...state.posts, action.payload] };
+            return { ...state, posts: [...state.posts, action.payload] }; //spread all the posts and then we have to add a new post
         case UPDATE:
             return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };
         case DELETE:

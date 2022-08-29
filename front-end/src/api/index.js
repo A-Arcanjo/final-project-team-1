@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'; //use axios to make api calls
 
-const API = axios.create({ baseURL: 'http://localhost:3001' });
+const API = axios.create({ baseURL: 'http://localhost:3001' }); //Url is a string
 
 
 API.interceptors.request.use((req) => {
@@ -13,11 +13,11 @@ API.interceptors.request.use((req) => {
     return req;
 });
 
-export const fetchPost = (id) => API.get(`/posts/${id}`);
+export const fetchPost = (id) => API.get(`/posts/${id}`); // function to return all the posts that we currently have
 export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
 export const fetchPostsByCreator = (name) => API.get(`/posts/creator?name=${name}`);
 export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
-export const createPost = (newPost) => API.post('/posts', newPost);
+export const createPost = (newPost) => API.post('/posts', newPost); //specify Url and the data the we are sending
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { value });
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);

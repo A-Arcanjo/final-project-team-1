@@ -1,12 +1,11 @@
 import React from 'react';
 import { Grid, CircularProgress } from '@material-ui/core';
-import { useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux'; //fetch the data from that global redux store
 import Post from './Post/Post.js';
 import useStyles from './styles';
 
 const Posts = ({ setCurrentId }) => {
-    const { posts, isLoading } = useSelector((state) => state.posts);
+    const { posts, isLoading } = useSelector((state) => state.posts); //initialize as a Hook , posts from reducers
     const classes = useStyles();
 
     if (!posts.length && !isLoading) return 'No posts';

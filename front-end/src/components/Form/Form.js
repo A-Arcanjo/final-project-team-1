@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import FileBase from 'react-file-base64';
+import FileBase from 'react-file-base64'; //import FileBase as a component
 import { useNavigate } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 import { AuthContext } from "../../context/AuthProvider.js";
 
-
+//to change the palette from MUI
 const theme = createTheme({
     palette: {
         primary: {
@@ -44,10 +44,10 @@ const Form = ({ currentId, setCurrentId }) => {
     }, [post]);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); //no to get the refresh in the browser
 
         if (currentId === 0) {
-            dispatch(createPost({ ...postData, name: currentUser.username }, navigate));
+            dispatch(createPost({ ...postData, name: currentUser.username }, navigate)); //we want to dispatch the action here
             clear();
         } else {
             dispatch(updatePost(currentId, { ...postData, name: currentUser.username }));
