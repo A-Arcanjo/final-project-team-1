@@ -27,9 +27,13 @@ const app = express();
 
 dotenv.config();
 
+// connect DB with heroku
+const uri = process.env.MONGODB_URI;
+
 // connect to mongodb
 mongoose.connect(
-  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.pptto.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  uri
+  // `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.pptto.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 );
 
 // check mongodb connection
@@ -37,9 +41,6 @@ mongoose.connection.on("open", () =>
   console.log("Database connection established!")
 );
 mongoose.connection.on("error", () => console.error);
-
-// connect DB with heroku
-const uri = process.env.MONGODB_URI;
 
 // allow cors requests
 app.use(cors());
