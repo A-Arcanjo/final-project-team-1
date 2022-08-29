@@ -16,7 +16,12 @@ import registerBusinessRouter from "./routes/businessRegister.js";
 import customerRouter from "./routes/customerUsers.js";
 import businessRouter from "./routes/businessUsers.js";
 
+import path from 'path'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -66,6 +71,13 @@ app.use('/posts', postRoutes);
 
 app.use(globalErrorHandler);
 
+<<<<<<< HEAD:backend/index.js
 app.listen(process.env.PORT || 3001, () => {
   console.log(`Server has started on port ${process.env.PORT || 3001}!`);
+=======
+app.use(express.static(path.join(__dirname, "font-end/build")));
+
+app.listen(3001, () => {
+  console.log(`Server has started on port  3001!`);
+>>>>>>> 0a087c03f3458f926f8bf55fa16d199c5b37740b:index.js
 });

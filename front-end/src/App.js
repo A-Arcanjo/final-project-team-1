@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/pages/Home/Home.js";
 import About from "./components/pages/About/About.js";
 import Services from "./components/pages/Services.js";
-import Rating from "./components/pages/Rating.js";
 import Contact from "./components/pages/Contact/Contact.js";
 import Signin from "./components/pages/Signin/Signin.js";
 import Signup from "./components/pages/Signup/Signup.js";
@@ -18,11 +17,16 @@ import { AuthContext, AuthProvider } from "./context/AuthProvider.js";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Logout from "./components/Logout.jsx";
 import { Dashboard1 } from "./components/pages/Dashboard/AboutUser.jsx";
-import { Dashboard2 } from "./components/pages/Dashboard/Dashboard2.jsx";
+import { Dashboard2 } from "./components/pages/Dashboard/ServicesUser";
 import PostDetails from './components/PostDetails/PostDetails.jsx';
 // import HomeSearch from './components/Home/HomeSearch.js';
+<<<<<<< HEAD
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag.jsx';
 import ContainerSearch from "./ContainerSearch.js";
+=======
+import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
+import ContainerSearch from "./SearchPage.js";
+>>>>>>> 0a087c03f3458f926f8bf55fa16d199c5b37740b
 
 
 
@@ -59,7 +63,7 @@ function App() {
           <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/home" />)} />
           <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} />
           <Route path="/services" element={currentUser._id ? <Dashboard2 /> : <Services />} />
-          <Route path="/rating" element={<Rating />} />
+          {/* <Route path="/rating" element={<Rating />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
           <Route path="/signup" element={<Signup />} />

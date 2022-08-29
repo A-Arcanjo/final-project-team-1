@@ -21,6 +21,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => {
         case FETCH_BY_CREATOR:
             return { ...state, posts: action.payload };
         case FETCH_POST:
+            console.log("fetchPost", action.payload.post);
             return { ...state, post: action.payload.post };
         case LIKE:
             return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };

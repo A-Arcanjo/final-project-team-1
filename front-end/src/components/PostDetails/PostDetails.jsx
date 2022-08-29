@@ -54,7 +54,7 @@ const Post = () => {
   // const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
   // const recommendedPosts = posts;
   return (
-    <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
+    <Paper style={{ padding: "10px", borderRadius: "15px" }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">
@@ -69,7 +69,7 @@ const Post = () => {
             {post.tags.map((tag) => (
               <Link
                 to={`/tags/${tag}`}
-                style={{ textDecoration: "none", color: "#3f51b5" }}
+                style={{ textDecoration: "none", color: "#ffa101" }}
               >
                 {` #${tag} `}
               </Link>
@@ -82,7 +82,7 @@ const Post = () => {
             Created by:
             <Link
               to={`/creators/${post.name}`}
-              style={{ textDecoration: "none", color: "#3f51b5" }}
+              style={{ textDecoration: "none", color: "#ffa101" }}
             >
               {` ${post.name}`}
             </Link>
@@ -90,13 +90,13 @@ const Post = () => {
           <Typography variant="body1">
             {moment(post.createdAt).fromNow()}
           </Typography>
-          <Divider style={{ margin: "20px 200px" }} />
+          <Divider style={{ margin: "20px 170px 60px 10px" }} />
           <Typography variant="body1">
             <strong>Realtime Chat - coming soon!</strong>
           </Typography>
-          <Divider style={{ margin: "20px 0" }} />
+          <Divider style={{ margin: "20px 170px 60px 10px" }} />
           <CommentSection post={post} />
-          <Divider style={{ margin: "20px 0" }} />
+          <Divider style={{ margin: "20px 170px 60px 10px" }} />
         </div>
         <div className={classes.imageSection}>
           <img
