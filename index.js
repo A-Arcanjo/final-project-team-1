@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
-import postRoutes from './routes/posts.js';
+import postRoutes from "./routes/posts.js";
 
 import productsRouter from "./routes/products.js";
 
@@ -16,9 +16,9 @@ import registerBusinessRouter from "./routes/businessRegister.js";
 import customerRouter from "./routes/customerUsers.js";
 import businessRouter from "./routes/businessUsers.js";
 
-import path from 'path'
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -37,6 +37,9 @@ mongoose.connection.on("open", () =>
   console.log("Database connection established!")
 );
 mongoose.connection.on("error", () => console.error);
+
+// connect DB with heroku
+const uri = process.env.MONGODB_URI;
 
 // allow cors requests
 app.use(cors());
@@ -67,7 +70,7 @@ app.use("/customerUsers", customerRouter);
 // business Users
 app.use("/businessUsers", businessRouter);
 
-app.use('/posts', postRoutes);
+app.use("/posts", postRoutes);
 
 app.use(globalErrorHandler);
 
