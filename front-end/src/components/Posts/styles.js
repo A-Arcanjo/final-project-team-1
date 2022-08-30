@@ -1,6 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'; //import not as default import but ad a named import with {}
 import { deepPurple } from '@material-ui/core/colors';
 
+//arrow function will return an Object
 export default makeStyles((theme) => ({
     mainContainer: {
         borderRadius: 15,

@@ -9,7 +9,6 @@ import Signin from "./components/pages/Signin/Signin.js";
 import Signup from "./components/pages/Signup/Signup.js";
 import CustomerSignup from "./components/pages/Signup/CustomerSignup.js";
 import BusinessSignup from "./components/pages/Signup/BusinessSignup.js";
-import Client from "./components/pages/Client/Client.js";
 import Footer from "./components/Footer/Footer.js";
 import './App.css';
 import { Dashboard } from "./components/pages/Dashboard/HomeUser.jsx";
@@ -68,8 +67,6 @@ function App() {
             <Dashboard />
           </ProtectedRoute>} />
           <Route path="/logout" element={<Logout />} />
-
-          {/* <Route path="/client" element={<Client/>} />  */}
         </Routes>
       </div>
       <Footer />

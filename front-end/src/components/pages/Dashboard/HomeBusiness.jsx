@@ -6,9 +6,16 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../Home/Home.css";
 import makeStyles from "./styles";
 import Contact from "../Contact/Contact";
-import { Paper, Divider } from "@material-ui/core";
+import {
+  Paper,
+  Divider,
+  Typography,
+  AppBar,
+  Container,
+} from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import ContainerSearch from "../../../SearchPage.js";
+import products from "../../images/products.jpg";
 
 const theme = createTheme({
   palette: {
@@ -37,14 +44,19 @@ export const HomeBusiness = () => {
   }, [page]);
 
   return (
-    <div className="services">
-      <h2>Products</h2>
-      <div className="services-container">
-        <ThemeProvider theme={theme}>
-          <ContainerSearch />
-        </ThemeProvider>
-      </div>
-      <Contact />
+    <div style={{ margin: "10px" }} className="services">
+      <Container maxWidth="lg">
+        <AppBar position="static" color="inherit">
+          <Typography variant="h2">Products</Typography>
+          <img src={products} alt="products" />
+        </AppBar>
+        <div className="services-container">
+          <ThemeProvider theme={theme}>
+            <ContainerSearch />
+          </ThemeProvider>
+        </div>
+        <Contact />
+      </Container>
     </div>
   );
 };

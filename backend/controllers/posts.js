@@ -37,7 +37,7 @@ export const getPostsBySearch = async (req, res) => {
 
 export const getPostsByCreator = async (req, res) => {
     const { name } = req.query;
-
+    // Block "try" if it is successful and "catch" if we have an error
     try {
         const posts = await PostMessage.find({ name });
 
@@ -62,27 +62,28 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-    const post = req.body;
+    const post = req.body; // access to a req.body for different post
 
     const newPostMessage = new PostMessage({ ...post, creator: req.userId, createdAt: new Date().toISOString() });
 
     try {
-        await newPostMessage.save();
+        await newPostMessage.save();  //asynchronous function to save a Post
 
-        res.status(201).json(newPostMessage);
+        res.status(201).json(newPostMessage);  //201 created
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
 };
 
 export const updatePost = async (req, res) => {
-    const { id } = req.params;
-    const { title, message, creator, selectedFile, tags } = req.body;
-
+    const { id } = req.params; //extract the id, obj destructuring
+    const { title, message, creator, selectedFile, tags } = req.body; //we´re receiving all the data for the updates (sent from the frontend)
+    //check to see if id is really a mongoose object id
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+    const updatedPost = { creator, title, message, tags, selectedFile, _id: id }; //or we can spread the post and add the _id
 
+    //To call our model which is the post message, we´re going to call a method (where we pass the id)
     await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 
     res.json(updatedPost);
@@ -108,7 +109,7 @@ export const likePost = async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    const post = await PostMessage.findById(id);
+    const post = await PostMessage.findById(id); //find the post that we are looking for
 
     const index = post.likes.findIndex((id) => id === String(req.userId));
 

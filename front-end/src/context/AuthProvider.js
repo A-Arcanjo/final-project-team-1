@@ -5,6 +5,8 @@ export const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
     // const userType = "customerUsers";
 
+
+    //When we sign in parse the login data or initialize everything to zero
     const loginSession = JSON.parse(sessionStorage.getItem("login")) || {
         _id: null,
         username: null,
@@ -21,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-
+        //using AuthContext as a createContext
         <AuthContext.Provider value={{ currentUser, setCurrentUser }}>
             {children}
         </AuthContext.Provider>

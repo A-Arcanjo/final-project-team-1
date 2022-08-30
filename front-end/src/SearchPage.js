@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid, Paper, Divider, TextField, Button } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+//Import all the components that i use in use in this file from MUI/core
+import { Container, AppBar, Grow, Grid, Paper, Divider, TextField, Button } from '@material-ui/core';
+import { useDispatch } from 'react-redux';//dispatch our actions
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import ChipInput from 'material-ui-chip-input';
 
@@ -8,7 +9,7 @@ import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
 import { useNavigate, useLocation } from 'react-router-dom';
-import useStyles from './styles';
+import useStyles from './styles'; //import useStyles
 import { getPostsBySearch } from './actions/posts.js';
 import Pagination from './components/Pagination.jsx';
 
@@ -28,13 +29,13 @@ function useQuery() {
 }
 
 const ContainerSearch = () => {
-    const classes = useStyles();
+    const classes = useStyles();  //use styles inside the code through classes
     const query = useQuery();
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
 
-    const [currentId, setCurrentId] = useState(0);
-    const dispatch = useDispatch();
+    const [currentId, setCurrentId] = useState(0); //useState will be null if we don´t have any id selected
+    const dispatch = useDispatch(); //use as an Hook , dispatch in every new component the action that we want to use
 
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
@@ -42,8 +43,8 @@ const ContainerSearch = () => {
 
 
     useEffect(() => {
-        dispatch(getPosts(page));
-    }, [currentId, dispatch]);
+        dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
+    }, [currentId, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
 
     const searchPost = () => {
         if (search.trim() || tags) {
@@ -75,7 +76,7 @@ const ContainerSearch = () => {
                             <Grid item xs={12} sm={6} md={9}>
                                 <Posts setCurrentId={setCurrentId} />
                             </Grid>
-                            <Grid item xs={12} sm={6} md={3}>
+                            <Grid item xs={12} sm={6} md={3}> {/*xs: extra small devices(fullWidth), sm:small devices, md:medium devices*/}
 
                                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                                     <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Memories" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />

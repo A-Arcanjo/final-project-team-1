@@ -33,6 +33,7 @@ export default makeStyles((theme) => ({
         margin: '10px',
         flex: 1,
         marginTop: "3rem"
+
     },
     imageSection: {
         [theme.breakpoints.down('sm')]: {

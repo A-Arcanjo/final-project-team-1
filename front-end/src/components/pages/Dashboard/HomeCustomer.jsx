@@ -8,7 +8,7 @@ import "../Home/Home.css";
 
 import useStyles from "../../../styles.js";
 import { Pagination } from "@material-ui/lab";
-import { Paper } from "@material-ui/core";
+import { AppBar, Container, Paper, Typography } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import ContainerSearch from "../../../SearchPage.js";
 
@@ -38,13 +38,17 @@ export const HomeCustomer = () => {
     dispatch(getPosts(page));
   }, [page]);
   return (
-    <div className="services">
-      <h2>Products</h2>
-      <div className="services-container">
-        <ThemeProvider theme={theme}>
-          <ContainerSearch />
-        </ThemeProvider>
-      </div>
+    <div style={{ margin: "10px" }} className="services">
+      <Container maxWidth="lg">
+        <AppBar position="static" color="inherit">
+          <Typography variant="h2">Products</Typography>
+        </AppBar>
+        <div className="services-container">
+          <ThemeProvider theme={theme}>
+            <ContainerSearch />
+          </ThemeProvider>
+        </div>
+      </Container>
     </div>
   );
 };
