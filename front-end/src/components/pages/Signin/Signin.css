@@ -88,9 +88,26 @@
 }
 
 /*Start Responsive*/
+
+@media screen and (max-width: 1800px){
+    .signin-container form{
+        width: 60%;
+padding:3rem;
+        margin-top: 6rem;
+    }
+
+}
+@media screen and (max-width: 600px){
+    .signin-container form{
+        width: 80%;
+padding:3rem;
+        margin-top: 6rem;
+    }
+
+}
 @media screen and (max-width: 400px){
     .signin-container form{
-        width: 70%;
+        width: 90%;
         margin: 10% auto;
     }
 
