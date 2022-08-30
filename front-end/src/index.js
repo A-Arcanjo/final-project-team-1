@@ -15,7 +15,7 @@ const store = createStore(reducers, {}, compose(applyMiddleware(thunk)));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    //  1. Wrap or application with a provider component where we specify the store
+    //  1. Wrap our application with a provider component where we specify the store
     <BrowserRouter>
         <Provider store={store}>
             <AuthProvider store={store}>
