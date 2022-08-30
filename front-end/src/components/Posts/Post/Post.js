@@ -15,7 +15,7 @@ import { AuthContext } from "../../../context/AuthProvider.js";
 const Post = ({ post, setCurrentId }) => {
     //const user = JSON.parse(localStorage.getItem('login'));
     const [likes, setLikes] = useState(post?.likes);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); //initialize the dispatch to the delete action
     const navigate = useNavigate();
     const { currentUser } = useContext(AuthContext);
 

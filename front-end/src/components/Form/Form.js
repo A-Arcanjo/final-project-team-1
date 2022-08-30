@@ -26,7 +26,7 @@ const theme = createTheme({
 
 const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
-    //to fetch not all the post from redux but only the data for the updated post
+    //to fetch not all the post (data) from redux but only the data for the updated post
     const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch();
     const classes = useStyles();
@@ -37,11 +37,11 @@ const Form = ({ currentId, setCurrentId }) => {
         setCurrentId(0);
         setPostData({ title: '', message: '', tags: [], selectedFile: '' });
     };
-    //to populate the values of the form
+    //to populate the values of the form when we edit a post
     useEffect(() => {
         if (!post?.title) clear();
         if (post) setPostData(post);
-    }, [post]);
+    }, [post]); //Dependency array
 
     const handleSubmit = async (e) => {
         e.preventDefault(); //no to get the refresh in the browser
@@ -51,7 +51,7 @@ const Form = ({ currentId, setCurrentId }) => {
             clear();
         } else {
             dispatch(updatePost(currentId, { ...postData, name: currentUser.username }));
-            clear();
+            clear(); //clear the input 
         }
     };
 
@@ -80,7 +80,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? `Editing "${post?.title}"` : 'Creating a Memory'}</Typography>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-                <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+                <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value.split(',') })} />
                 <div style={{ padding: '5px 0', width: '94%' }}>
                     <ChipInput
                         name="tags"

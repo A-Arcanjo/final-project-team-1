@@ -38,9 +38,10 @@
     justify-content: center;
 }
 .services h2{
+    display: flex;
+    justify-content: center;
     color: #FAE6B1;
-    text-align: center;
-    padding: 20px;
+    padding: 1px;
 }
 .services-box{
     background-color: #fae6b1c7;
@@ -223,6 +224,4 @@
 .partners-box{
     margin: 2rem auto;
 }
-}
-@media screen and (max-width: 300px){
 }

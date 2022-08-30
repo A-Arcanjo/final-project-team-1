@@ -106,7 +106,7 @@ export const commentPost = (value, id) => async (dispatch) => {
 
 export const deletePost = (id) => async (dispatch) => {
     try {
-        await await api.deletePost(id);
+        await await api.deletePost(id); //we don´t need to do const response = ....because we are not interested in return data
 
         dispatch({ type: DELETE, payload: id });
     } catch (error) {

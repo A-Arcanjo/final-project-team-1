@@ -29,7 +29,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => { /*{in red
             console.log("fetchPost", action.payload.post);
             return { ...state, post: action.payload.post };
         case LIKE:
-            return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };
+            return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) }; //like the update post
         case COMMENT:
             return {
                 ...state,
@@ -45,7 +45,7 @@ const variable = (state = { isLoading: true, posts: [] }, action) => { /*{in red
         case UPDATE:
             return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };//the output of any map method is an array, action.payload is the newly updated post
         case DELETE:
-            return { ...state, posts: state.posts.filter((post) => post._id !== action.payload) };
+            return { ...state, posts: state.posts.filter((post) => post._id !== action.payload) }; //we filter out the post that we want to delete 
         default:
             return state;
     }

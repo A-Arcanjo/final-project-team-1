@@ -44,7 +44,7 @@ const ContainerSearch = () => {
 
     useEffect(() => {
         dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
-    }, [currentId, dispatch]);
+    }, [currentId, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
 
     const searchPost = () => {
         if (search.trim() || tags) {
