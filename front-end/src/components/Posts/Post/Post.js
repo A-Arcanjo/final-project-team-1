@@ -88,8 +88,8 @@ const Post = ({ post, setCurrentId }) => {
                     <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
                 </CardContent>
             </ButtonBase>
-            <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" disabled={userId === null} onClick={handleLike}>
+            <CardActions style={{ padding: '4px' }} className={classes.cardActions}>
+                <Button style={{ padding: '4px' }} size="medium" color="primary" disabled={userId === null} onClick={handleLike}>
                     <Likes />
                 </Button>
 
