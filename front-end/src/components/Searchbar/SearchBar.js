@@ -58,16 +58,12 @@ const SearchBar = () => {
                         endAdornment: (
                             <InputAdornment type="text" onKeyDown={handleKeyPress}>
                                 <SearchIcon className={classes.searchIcon} onClick={searchPost} />
-
                             </InputAdornment>
                         )
                     }}
                 />
             </ThemeProvider>
-
         </div >
-
-
     );
 
 

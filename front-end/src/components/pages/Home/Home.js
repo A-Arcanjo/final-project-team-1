@@ -15,15 +15,15 @@ import mashrooms from "../../images/mashrooms.png";
 import dontWasteFood from "../../images/dontWasteFood.jpg";
 import tooGoodToGo from "../../images/tooGoodToGo.png";
 import honey from "../../images/honey.png";
-import services1 from "../../images/Bioproducts.png";
-import services2 from "../../images/Bakeries.png";
-import services3 from "../../images/Desserts.png";
+import services1 from "../../images/services/Bioproducts.png";
+import services2 from "../../images/services/Bakeries.png";
+import services3 from "../../images/services/Desserts.png";
 import services4 from "../../images/Foodmarkets.png";
-import services5 from "../../images/Halalproducts.png";
-import services6 from "../../images/Recipes.png";
-import services7 from "../../images/Restaurants.png";
-import services8 from "../../images/Spices&Herbs.png";
-import services9 from "../../images/Vegan.png";
+import services5 from "../../images/services/Halalproducts.png";
+import services6 from "../../images/services/Recipes.png";
+import services7 from "../../images/services/Restaurants.png";
+import services8 from "../../images/services/Spices&Herbs.png";
+import services9 from "../../images/services/Vegan.png";
 import "./Home.css";
 
 

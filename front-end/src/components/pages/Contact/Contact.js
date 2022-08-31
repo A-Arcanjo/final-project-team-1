@@ -2,8 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Signup/Signup.css";
 import "./Contact.css";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const form = useRef();
+    const sendEmail = () => {
+        emailjs.sendForm('service_bgisc2v', 'template_wsyd8l2', form.current, '7BkDWcpjWcsXmIKax')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
 
     const initialValues = { fullName: "", email: "", phone: "", message: "" };
 
@@ -25,6 +37,7 @@ const Contact = () => {
         event.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+        sendEmail();
     };
 
     const validate = (values) => {
@@ -50,8 +63,8 @@ const Contact = () => {
 
     return (
         <div className="signup-container">
-            {Object.keys(formErrors).length === 0 && isSubmit ? (navigate("/login")) : (<p></p>)}
-            <form onSubmit={handleSubmit}>
+            {Object.keys(formErrors).length === 0 && isSubmit ? (navigate("/success")) : (<p></p>)}
+            <form ref={form} onSubmit={handleSubmit}>
                 <h1>Contact</h1>
                 <hr />
                 <div className="form">
@@ -74,7 +87,7 @@ const Contact = () => {
                         <textarea className="message" type="text" name="message" placeholder="Write your message" value={formValues.message} onChange={handleChange} />
                     </div>
                     <p className="err">{formErrors.message}</p>
-                    <button>Send</button>
+                    <button type="submit">Send</button>
                 </div>
             </form>
         </div>
