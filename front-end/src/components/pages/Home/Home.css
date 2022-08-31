@@ -40,8 +40,8 @@
 .services h2{
     display: flex;
     justify-content: center;
-    color: #FAE6B1;
-    padding: 1px;
+    color: #ffa101;
+    margin-top: 10px;
 }
 .services-box{
     background-color: #fae6b1c7;
