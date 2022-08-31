@@ -9,30 +9,30 @@ const Contact = () => {
 
     const form = useRef();
     const sendEmail = () => {
-        emailjs.sendForm('service_bgisc2v', 'template_wsyd8l2', form.current , '7BkDWcpjWcsXmIKax')
+        emailjs.sendForm('service_bgisc2v', 'template_wsyd8l2', form.current, '7BkDWcpjWcsXmIKax')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });
-        };
+    };
 
-    const initialValues = { fullName:"", email:"", phone:"", message:"" };
+    const initialValues = { fullName: "", email: "", phone: "", message: "" };
 
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
     useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit){
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-    },[formErrors])
+    }, [formErrors]);
 
     const handleChange = event => {
         const { name, value } = event.target;
-        setFormValues({ ...formValues, [name]: value })
+        setFormValues({ ...formValues, [name]: value });
     };
-    
+
     const handleSubmit = event => {
         event.preventDefault();
         setFormErrors(validate(formValues));
@@ -44,54 +44,54 @@ const Contact = () => {
         const errors = {};
         const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-        if(!values.fullName) {
+        if (!values.fullName) {
             errors.fullName = "First name is required";
         }
 
-        if(!values.email) {
+        if (!values.email) {
             errors.email = "Email is required";
         }
 
-        if(!values.message) {
+        if (!values.message) {
             errors.message = "Write your message";
         }
 
         return errors;
-    }
+    };
 
     const navigate = useNavigate();
-    
+
     return (
         <div className="signup-container">
-            {Object.keys(formErrors).length === 0 && isSubmit? ( navigate("/success") ): (<p></p>)}
+            {Object.keys(formErrors).length === 0 && isSubmit ? (navigate("/success")) : (<p></p>)}
             <form ref={form} onSubmit={handleSubmit}>
                 <h1>Contact</h1>
-                <hr/>
+                <hr />
                 <div className="form">
                     <div className="field">
                         <label>Full Name</label>
-                        <input type="text" name="fullName" placeholder="First Name" value={ formValues.fullName } onChange={handleChange} />
+                        <input type="text" name="fullName" placeholder="First Name" value={formValues.fullName} onChange={handleChange} />
                     </div>
                     <p className="err">{formErrors.fullName}</p>
                     <div className="field">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Email" value={ formValues.email } onChange={handleChange} />
+                        <input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange} />
                     </div>
                     <p className="err">{formErrors.email}</p>
                     <div className="field">
                         <label>Telephone</label>
-                        <input type="number" name="telephone" placeholder="Telephone" value={ formValues.email } onChange={handleChange} />
+                        <input type="number" name="telephone" placeholder="Telephone" value={formValues.email} onChange={handleChange} />
                     </div>
                     <div className="field">
                         <label>Message</label>
-                        <textarea className="message" type="text" name="message" placeholder="Write your message" value={ formValues.message } onChange={handleChange} />
+                        <textarea className="message" type="text" name="message" placeholder="Write your message" value={formValues.message} onChange={handleChange} />
                     </div>
                     <p className="err">{formErrors.message}</p>
                     <button type="submit">Send</button>
                 </div>
             </form>
         </div>
-    )
+    );
 };
 
 export default Contact;

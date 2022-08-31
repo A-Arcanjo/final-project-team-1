@@ -91,7 +91,7 @@
 
 @media screen and (max-width: 1800px){
     .signin-container form{
-        width: 60%;
+        width: 35%;
 padding:3rem;
         margin-top: 6rem;
     }
