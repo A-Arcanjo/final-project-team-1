@@ -27,13 +27,12 @@ export default makeStyles((theme) => ({
     },
     gridContainer: {
         backgroundColor: '#31525B',
-        padding: '16px',
-        marginRight: '20rem',
         marginTop: '40px',
         marginBottom: '40px',
     },
-
-
+    [theme.breakpoints.down('xs')]: {
+        width: '100%',
+    },
     searchButton: {
         marginTop: '20px',
 

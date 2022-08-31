@@ -72,7 +72,7 @@ const ContainerSearch = () => {
             <Grow in>
                 <ThemeProvider theme={theme}>
                     <Container>
-                        <Grid container justify="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
+                        <Grid container justify="space-between" alignItems="stretch" spacing={2} className={classes.gridContainer}>
                             <Grid item xs={12} sm={6} md={9}>
                                 <Posts setCurrentId={setCurrentId} />
                             </Grid>
