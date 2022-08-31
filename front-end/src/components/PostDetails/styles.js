@@ -8,6 +8,7 @@ export default makeStyles((theme) => ({
         objectFit: 'cover',
         width: '100%',
         maxHeight: '300px',
+        marginTop: '50px',
 
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
