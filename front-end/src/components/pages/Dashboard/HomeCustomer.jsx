@@ -40,9 +40,13 @@ export const HomeCustomer = () => {
   return (
     <div style={{ margin: "10px" }} className="services">
       <Container maxWidth="lg">
-        <AppBar position="static" color="inherit">
-          <Typography variant="h2">Products</Typography>
-        </AppBar>
+        <Typography
+          style={{ textAlign: "center", color: "#ffa101" }}
+          variant="h2"
+        >
+          Products
+        </Typography>
+        <AppBar position="static" color="inherit"></AppBar>
         <div className="services-container">
           <ThemeProvider theme={theme}>
             <ContainerSearch />

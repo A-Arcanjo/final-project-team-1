@@ -71,6 +71,7 @@ const Signin = (props) => {
           _id: parsedRes.id,
           username: parsedRes.username,
           userType: parsedRes.userType,
+          companyName: parsedRes.companyName,
           token: parsedRes.token,
         };
         props.setCurrentUser(newUser);

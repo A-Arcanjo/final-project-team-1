@@ -37,11 +37,12 @@
     align-items: center;
     justify-content: center;
 }
-.services h2{
+.services .servicesTitle{
     display: flex;
     justify-content: center;
     color: #ffa101;
     margin-top: 10px;
+    font-size: 4rem;
 }
 .services-box{
     background-color: #fae6b1c7;
@@ -100,6 +101,22 @@
     width: 80px;
 }
 /*End Partner Section*/
+
+.flexBusiness{
+    display: flex;
+    
+   text-align: center;
+}
+
+
+.businessImg{
+ 
+    width: 50%;
+}
+
+
+
+
 /*Responsive Start*/
 @media screen and (max-width: 900px){
 
