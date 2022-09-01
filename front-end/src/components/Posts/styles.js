@@ -3,6 +3,9 @@ import { deepPurple } from '@material-ui/core/colors';
 
 //arrow function will return an Object
 export default makeStyles((theme) => ({
+    container: {
+        margin: '0'
+    },
     mainContainer: {
         borderRadius: 15,
         margin: '30px 0',

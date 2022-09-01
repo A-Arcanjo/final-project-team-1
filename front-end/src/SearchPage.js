@@ -78,7 +78,7 @@ const ContainerSearch = () => {
 
 
     return (
-        <Container maxWidth="xl">
+        <Container style={{ marginTop: '2rem' }} maxWidth="xl">
 
             <Grow in>
                 <ThemeProvider theme={theme}>
