@@ -11,7 +11,7 @@ const BusinessSignup = () => {
     firstName: "",
     lastName: "",
     companyOwner: "",
-    companyName: "",
+    name: "",
     city: "",
     street: "",
     zipCode: "",
@@ -61,7 +61,7 @@ const BusinessSignup = () => {
       firstName: formValues.firstName,
       lastName: formValues.lastName,
       companyOwner: formValues.companyOwner,
-      companyName: formValues.companyName,
+      name: formValues.name,
       city: formValues.city,
       street: formValues.street,
       zipCode: formValues.zipCode,
@@ -107,8 +107,8 @@ const BusinessSignup = () => {
       errors.companyOwner = "Owner name is required";
     }
 
-    if (!values.companyName) {
-      errors.companyName = "Company name is required";
+    if (!values.name) {
+      errors.name = "Company name is required";
     }
 
     if (!values.city) {
@@ -176,13 +176,13 @@ const BusinessSignup = () => {
             <label>Company Name</label>
             <input
               type="text"
-              name="companyName"
+              name="name"
               placeholder="Company Name"
-              value={formValues.companyName}
+              value={formValues.name}
               onChange={handleChange}
             />
           </div>
-          <p className="err">{formErrors.companyName}</p>
+          <p className="err">{formErrors.name}</p>
           <div className="field">
             <div className="address">
               <div className="address-input">

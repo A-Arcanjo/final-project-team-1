@@ -64,6 +64,7 @@ const Signin = (props) => {
     );
     console.log("RESPONSE", response);
     const parsedRes = await response.json();
+    console.log(parsedRes);
     try {
       if (response.ok) {
         const newUser = {

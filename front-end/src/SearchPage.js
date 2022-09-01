@@ -12,8 +12,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from './styles'; //import useStyles
 import { getPostsBySearch } from './actions/posts.js';
 import Pagination from './components/Pagination.jsx';
-
-
+import { useSearchParams } from "react-router-dom";
 
 const theme = createTheme({
     palette: {
@@ -32,24 +31,35 @@ const ContainerSearch = () => {
     const classes = useStyles();  //use styles inside the code through classes
     const query = useQuery();
     const page = query.get('page') || 1;
-    const searchQuery = query.get('searchQuery');
-
+    //const searchQuery = query.get('searchQuery');
+    const { search: searchLocation } = useLocation();
     const [currentId, setCurrentId] = useState(0); //useState will be null if we don´t have any id selected
     const dispatch = useDispatch(); //use as an Hook , dispatch in every new component the action that we want to use
 
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
 
 
     useEffect(() => {
         console.log("getting Post");
-        dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
-    }, [currentId]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
+        console.log("searchParams", searchParams.get("searchQuery"));
+        if (!searchParams.get("searchQuery")) {
+            console.log("loading post");
+            dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
+
+        }
+    }, [currentId, page]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
+
+    useEffect(() => {
+        console.log("search changes");
+        dispatch(getPostsBySearch({ search: searchParams.get("searchQuery"), tags: tags.join(',') }));
+    }, [searchLocation]);
 
     const searchPost = () => {
         if (search.trim() || tags) {
-            dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
+            //dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
             navigate(`/posts?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
         } else {
             navigate('/');

@@ -47,10 +47,10 @@ const Form = ({ currentId, setCurrentId }) => {
         e.preventDefault(); //no to get the refresh in the browser
 
         if (currentId === 0) {
-            dispatch(createPost({ ...postData, name: currentUser.username }, navigate)); //we want to dispatch the action here
+            dispatch(createPost({ ...postData, name: currentUser.companyName }, navigate)); //we want to dispatch the action here
             clear();
         } else {
-            dispatch(updatePost(currentId, { ...postData, name: currentUser.username }));
+            dispatch(updatePost(currentId, { ...postData, name: currentUser.companyName }));
             clear(); //clear the input 
         }
     };
