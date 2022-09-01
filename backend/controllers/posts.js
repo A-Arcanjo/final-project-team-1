@@ -77,11 +77,11 @@ export const createPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
     const { id } = req.params; //extract the id, obj destructuring
-    const { title, message, creator, selectedFile, tags } = req.body; //we´re receiving all the data for the updates (sent from the frontend)
+    const { title, message, selectedFile, tags, name } = req.body; //we´re receiving all the data for the updates (sent from the frontend)
     //check to see if id is really a mongoose object id
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    const updatedPost = { creator, title, message, tags, selectedFile, _id: id }; //or we can spread the post and add the _id
+    const updatedPost = { name, title, message, tags, selectedFile, _id: id }; //or we can spread the post and add the _id
 
     //To call our model which is the post message, we´re going to call a method (where we pass the id)
     await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
