@@ -18,8 +18,10 @@ export default makeStyles({
         flexDirection: 'column',
         justifyContent: 'space-between',
         borderRadius: '15px',
+        border: '3px solid white',
         height: '100%',
         position: 'relative',
+        backgroundColor: '#FAE6B1',
     },
     overlay: {
         position: 'absolute',
@@ -42,6 +44,7 @@ export default makeStyles({
     },
     title: {
         padding: '0 16px',
+        color: '#31525B'
     },
     cardActions: {
         display: 'flex',
