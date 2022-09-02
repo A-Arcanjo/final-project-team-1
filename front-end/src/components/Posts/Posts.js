@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux'; //fetch the data from that global red
 import Post from './Post/Post.js';
 import useStyles from './styles';
 //send the same props over and over to the most child component to avoid that we use setCurrentId
-
-const Posts = ({ setCurrentId }) => {
+const Posts = ({ setCurrentId, sForm }, ref) => {
     const { posts, isLoading } = useSelector((state) => state.posts); //initialize as a Hook , posts from reducers
     const classes = useStyles();
 
@@ -15,7 +14,7 @@ const Posts = ({ setCurrentId }) => {
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {posts?.map((post) => (
                     <Grid key={post._id} item xs={12} sm={12} md={6} lg={4}>
-                        <Post post={post} setCurrentId={setCurrentId} />
+                        <Post sForm={sForm} post={post} setCurrentId={setCurrentId} />
                     </Grid>
                 ))}
             </Grid>
@@ -27,4 +26,4 @@ const Posts = ({ setCurrentId }) => {
 
 };
 
-export default Posts;
+export default React.forwardRef(Posts);

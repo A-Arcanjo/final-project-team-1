@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 //Import all the components that i use in use in this file from MUI/core
 import { Container, AppBar, Grow, Grid, Paper, Divider, TextField, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';//dispatch our actions
@@ -76,6 +76,8 @@ const ContainerSearch = () => {
 
     const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
+    const sForm = useRef();
+
 
     return (
         <Container style={{ marginTop: '2rem' }} maxWidth="xl">
@@ -85,7 +87,7 @@ const ContainerSearch = () => {
                     <Container>
                         <Grid container justify="space-between" alignItems="stretch" spacing={2} className={classes.gridContainer}>
                             <Grid item xs={12} sm={6} md={9}>
-                                <Posts setCurrentId={setCurrentId} />
+                                <Posts sForm={sForm} setCurrentId={setCurrentId} />
                             </Grid>
                             <Grid style={{ paddingLeft: '1rem' }} item xs={12} sm={6} md={3}> {/*xs: extra small devices(fullWidth), sm:small devices, md:medium devices*/}
 
@@ -103,7 +105,7 @@ const ContainerSearch = () => {
                                     <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
                                 </AppBar>
 
-                                <Form currentId={currentId} setCurrentId={setCurrentId} />
+                                <Form sForm={sForm} currentId={currentId} setCurrentId={setCurrentId} />
                             </Grid>
                         </Grid>
                         <Divider style={{ margin: "20px 0" }} />

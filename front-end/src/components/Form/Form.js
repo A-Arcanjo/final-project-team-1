@@ -24,7 +24,7 @@ const theme = createTheme({
 });
 // GET THE CURRENT ID
 
-const Form = ({ currentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId, sForm }, ref) => {
     const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
     //to fetch not all the post (data) from redux but only the data for the updated post
     const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
@@ -77,7 +77,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
 
         currentUser.userType !== "customerUsers" ? (<Paper className={classes.paper} elevation={6}>
-            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <form ref={sForm} autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? `Editing "${post?.title}"` : 'Add a Product'}</Typography>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
                 <TextField style={{ padding: '10px 0' }} name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
@@ -105,4 +105,4 @@ const Form = ({ currentId, setCurrentId }) => {
     );
 };
 
-export default Form;
+export default React.forwardRef(Form);

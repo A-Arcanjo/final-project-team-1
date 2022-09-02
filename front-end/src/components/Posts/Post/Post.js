@@ -12,7 +12,7 @@ import useStyles from './styles';
 import { AuthContext } from "../../../context/AuthProvider.js";
 
 //destructure Post
-const Post = ({ post, setCurrentId }) => {
+const Post = ({ post, setCurrentId, sForm }, ref) => {
     //const user = JSON.parse(localStorage.getItem('login'));
     const [likes, setLikes] = useState(post?.likes);
     const dispatch = useDispatch(); //initialize the dispatch to the delete action
@@ -71,13 +71,15 @@ const Post = ({ post, setCurrentId }) => {
                     <div className={classes.overlay2} name="edit">
                         <Button
                             onClick={(e) => {
+                                sForm.current.scrollIntoView({ behavior: "smooth" });
                                 e.stopPropagation();
+                                console.log("something");
                                 setCurrentId(post._id);
                             }}
                             style={{ color: 'white' }}
                             size="small"
                         >
-                            <MoreHorizIcon fontSize="default" />
+                            <MoreHorizIcon fontSize="medium" />
                         </Button>
                     </div>
                 )}
@@ -101,8 +103,8 @@ const Post = ({ post, setCurrentId }) => {
                         </Button>) : (<></>)
                 )}
             </CardActions>
-        </Card>
+        </Card >
     );
 };
 
-export default Post;
+export default React.forwardRef(Post);

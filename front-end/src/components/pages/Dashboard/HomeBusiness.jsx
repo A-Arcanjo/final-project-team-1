@@ -46,18 +46,18 @@ export const HomeBusiness = () => {
   return (
     <div style={{ margin: "10px" }} className="services">
       <Container maxWidth="lg">
-        <AppBar position="static" color="inherit">
+        <div position="static" color="inherit">
           <div className="flexBusiness">
             <img className="businessImg" src={products} alt="products" />
-            <Typography
+            <div
               className="servicesTitle"
               style={{ width: "50%", alignItems: "center" }}
               variant="h2"
             >
               Products
-            </Typography>
+            </div>
           </div>
-        </AppBar>
+        </div>
 
         <div className="services-container">
           <ThemeProvider theme={theme}>

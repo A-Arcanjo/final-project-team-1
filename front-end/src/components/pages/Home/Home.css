@@ -41,8 +41,10 @@
     display: flex;
     justify-content: center;
     color: #ffa101;
-    margin-top: 10px;
-    font-size: 4rem;
+   
+    font-size: 6rem;
+    font-weight: 600;
+
 }
 .services-box{
     background-color: #fae6b1c7;
@@ -104,7 +106,7 @@
 
 .flexBusiness{
     display: flex;
-    
+    padding-top:40px;
    text-align: center;
 }
 
@@ -156,6 +158,12 @@
     flex: 1 1;
     width: 100%;
 }
+.services .servicesTitle{
+    
+     
+     font-size: 4rem;
+ }
+
 }
 
 
@@ -184,8 +192,18 @@
         width: 100%;
         z-index: 1;
     }
-}
+    
    
+
+}
+
+@media screen and (max-width:565px){
+    .services .servicesTitle{
+
+       
+         font-size: 2.5rem;
+     }
+    }
 @media screen and (max-width:400px){
 .carousel.carousel-slider{
         margin: 20px 0;
@@ -208,6 +226,13 @@
     }
     
 }
+@media screen and (max-width:374px){
+    .services .servicesTitle{
+
+       
+         font-size: 1.5rem;
+     }
+    }
 @media screen and (max-width: 300px){
 
 .carousel.carousel-slider{

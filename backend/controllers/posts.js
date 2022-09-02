@@ -84,9 +84,10 @@ export const updatePost = async (req, res) => {
     const updatedPost = { name, title, message, tags, selectedFile, _id: id }; //or we can spread the post and add the _id
 
     //To call our model which is the post message, we´re going to call a method (where we pass the id)
-    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+    let updatedDBPost = await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 
-    res.json(updatedPost);
+
+    res.json(updatedDBPost);
 };
 
 export const deletePost = async (req, res) => {
