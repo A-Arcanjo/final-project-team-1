@@ -22,7 +22,8 @@ import PostDetails from './components/PostDetails/PostDetails.jsx';
 // import HomeSearch from './components/Home/HomeSearch.js';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 import ContainerSearch from "./SearchPage.js";
-
+import Success from "./components/pages/Contact/success.js";
+import Team from "./components/pages/About/Team.js";
 
 
 function App() {
@@ -62,6 +63,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<Signin setCurrentUser={setCurrentUser} />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/customer-signup" element={<CustomerSignup setCurrentUser={setCurrentUser} />} />
           <Route path="/business-signup" element={<BusinessSignup setCurrentUser={setCurrentUser} />} />
           <Route path="/profile" element={<ProtectedRoute auth={(currentUser._id != null)}>
