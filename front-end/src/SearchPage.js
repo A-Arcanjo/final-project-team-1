@@ -50,7 +50,7 @@ const ContainerSearch = () => {
             dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
 
         }
-    }, [currentId, page]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
+    }, [currentId, page, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
 
     useEffect(() => {
         console.log("search changes");
