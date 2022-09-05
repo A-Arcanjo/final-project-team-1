@@ -41,7 +41,12 @@ export const HomeCustomer = () => {
     <div style={{ margin: "10px" }} className="services">
       <Container maxWidth="lg">
         <Typography
-          style={{ textAlign: "center", color: "#ffa101" }}
+          style={{
+            paddingTop: "2rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            color: "#ffa101",
+          }}
           variant="h2"
         >
           Products

@@ -54,7 +54,8 @@ export const HomeBusiness = () => {
               style={{ width: "50%", alignItems: "center" }}
               variant="h2"
             >
-              Products
+              {" "}
+              Business Products
             </div>
           </div>
         </div>
