@@ -114,7 +114,7 @@
 /*Start Responsive*/
 @media screen and (max-width: 1810px){
     .main-signup{
-        width: 40%;
+        width: 30%;
         margin: 2rem 0;
         margin-top: 6rem;
     }

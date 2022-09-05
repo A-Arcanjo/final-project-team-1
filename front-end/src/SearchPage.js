@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 //Import all the components that i use in use in this file from MUI/core
 import { Container, AppBar, Grow, Grid, Paper, Divider, TextField, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';//dispatch our actions
@@ -12,8 +12,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from './styles'; //import useStyles
 import { getPostsBySearch } from './actions/posts.js';
 import Pagination from './components/Pagination.jsx';
-
-
+import { useSearchParams } from "react-router-dom";
 
 const theme = createTheme({
     palette: {
@@ -32,23 +31,35 @@ const ContainerSearch = () => {
     const classes = useStyles();  //use styles inside the code through classes
     const query = useQuery();
     const page = query.get('page') || 1;
-    const searchQuery = query.get('searchQuery');
-
+    //const searchQuery = query.get('searchQuery');
+    const { search: searchLocation } = useLocation();
     const [currentId, setCurrentId] = useState(0); //useState will be null if we don´t have any id selected
     const dispatch = useDispatch(); //use as an Hook , dispatch in every new component the action that we want to use
 
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
 
 
     useEffect(() => {
-        dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
-    }, [currentId, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
+        console.log("getting Post");
+        console.log("searchParams", searchParams.get("searchQuery"));
+        if (!searchParams.get("searchQuery")) {
+            console.log("loading post");
+            dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
+
+        }
+    }, [currentId, page, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
+
+    useEffect(() => {
+        console.log("search changes");
+        dispatch(getPostsBySearch({ search: searchParams.get("searchQuery"), tags: tags.join(',') }));
+    }, [searchLocation]);
 
     const searchPost = () => {
         if (search.trim() || tags) {
-            dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
+            //dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
             navigate(`/posts?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
         } else {
             navigate('/');
@@ -65,18 +76,20 @@ const ContainerSearch = () => {
 
     const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
+    const sForm = useRef();
+
 
     return (
-        <Container maxWidth="xl">
+        <Container style={{ marginTop: '2rem' }} maxWidth="xl">
 
             <Grow in>
                 <ThemeProvider theme={theme}>
                     <Container>
-                        <Grid container justify="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
+                        <Grid container justify="space-between" alignItems="stretch" spacing={2} className={classes.gridContainer}>
                             <Grid item xs={12} sm={6} md={9}>
-                                <Posts setCurrentId={setCurrentId} />
+                                <Posts sForm={sForm} setCurrentId={setCurrentId} />
                             </Grid>
-                            <Grid item xs={12} sm={6} md={3}> {/*xs: extra small devices(fullWidth), sm:small devices, md:medium devices*/}
+                            <Grid style={{ paddingLeft: '1rem' }} item xs={12} sm={6} md={3}> {/*xs: extra small devices(fullWidth), sm:small devices, md:medium devices*/}
 
                                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                                     <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Products" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -92,7 +105,7 @@ const ContainerSearch = () => {
                                     <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
                                 </AppBar>
 
-                                <Form currentId={currentId} setCurrentId={setCurrentId} />
+                                <Form sForm={sForm} currentId={currentId} setCurrentId={setCurrentId} />
                             </Grid>
                         </Grid>
                         <Divider style={{ margin: "20px 0" }} />

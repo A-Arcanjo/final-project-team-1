@@ -63,7 +63,7 @@ const Contact = () => {
 
     return (
         <div className="signup-container">
-            {Object.keys(formErrors).length === 0 && isSubmit ? (navigate("/success")) : (<p></p>)}
+            {Object.keys(formErrors).length === 0 && isSubmit ? (navigate("/signin")) : (<p></p>)}
             <form ref={form} onSubmit={handleSubmit}>
                 <h1>Contact</h1>
                 <hr />

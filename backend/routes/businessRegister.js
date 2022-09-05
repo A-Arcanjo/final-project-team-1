@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post(
   "/",
-  requiredValues(["username", "firstName", "lastName", "password", "emailAddress"]),
+  requiredValues(["username", "firstName", "lastName", "companyName", "password", "emailAddress"]),
   registerBusinessValidator(),
   checkValidation,
   registerBusinessPost

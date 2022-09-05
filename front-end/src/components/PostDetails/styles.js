@@ -15,10 +15,6 @@ export default makeStyles((theme) => ({
             width: '250px',
 
         },
-        [theme.breakpoints.down('xs')]: {
-
-
-        },
     },
     card: {
         display: 'flex',
@@ -40,9 +36,6 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
 
-
-        },
-        [theme.breakpoints.only('xs')]: {
 
         },
     },

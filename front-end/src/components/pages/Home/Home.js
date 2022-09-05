@@ -25,6 +25,7 @@ import services7 from "../../images/services/Restaurants.png";
 import services8 from "../../images/services/Spices&Herbs.png";
 import services9 from "../../images/services/Vegan.png";
 import "./Home.css";
+import { Typography } from "@material-ui/core";
 
 
 const Home = () => {
@@ -41,8 +42,12 @@ const Home = () => {
                 <img alt="" src={iceCream} className="slider-img" />
             </Carousel>
             {/* Start Services Section */}
+
             <div className="services">
-                <h2>Services</h2>
+                <Typography>
+                    <h2 className="servicesTitle">Services</h2>
+                </Typography>
+
                 <div className="services-container">
 
                     <div className="services-box">
@@ -152,7 +157,7 @@ const Home = () => {
                         <img alt="" src={honey} />
                     </div>
                 </div>
-            </div>
+            </div>;
             {/* End Partner Section */}
         </>
     );

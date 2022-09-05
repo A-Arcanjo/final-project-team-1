@@ -36,3 +36,7 @@ html{
     flex-direction: column;
 }
 /*Home page style*/
+
+input[type="file"] {
+    width: -webkit-fill-available;
+}

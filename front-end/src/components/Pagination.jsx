@@ -12,11 +12,11 @@ const Paginate = ({ page }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  useEffect(() => {
-    if (page) {
-      dispatch(getPosts(page));
-    }
-  }, [dispatch, page]);
+  // useEffect(() => {
+  //   if (page) {
+  //     dispatch(getPosts(page));
+  //   }
+  // }, [dispatch, page]);
 
   return (
     <>
