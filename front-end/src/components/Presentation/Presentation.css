@@ -27,6 +27,11 @@ font-weight: 600;
 
 }
 
+.teamAbout{
+    display: flex;
+    justify-content: center;
+}
+
 
 @media only screen and (max-width: 415px) {
     .containerPresentation{

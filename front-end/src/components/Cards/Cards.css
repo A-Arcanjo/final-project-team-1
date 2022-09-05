@@ -1,10 +1,9 @@
 .ServicesTopPic{
   background-image: url(../images/services.jpg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   border: none;
   margin-top:19px;
-  max-width: 100rem;
+  width: 100%;
   height: 70vh;
   background-size: cover;
 }

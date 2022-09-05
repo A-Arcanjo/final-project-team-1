@@ -1,19 +1,21 @@
 import { Icon } from "react-icons-kit";
-import {facebook_1} from 'react-icons-kit/ikons/facebook_1';
-import {instagram} from 'react-icons-kit/ikons/instagram';
-import {twitter} from 'react-icons-kit/ikons/twitter';
-import {pin_2} from 'react-icons-kit/ikons/pin_2';
-import {mail} from 'react-icons-kit/ikons/mail';
+import { facebook_1 } from 'react-icons-kit/ikons/facebook_1';
+import { instagram } from 'react-icons-kit/ikons/instagram';
+import { twitter } from 'react-icons-kit/ikons/twitter';
+import { pin_2 } from 'react-icons-kit/ikons/pin_2';
+import { mail } from 'react-icons-kit/ikons/mail';
 import teamlogo from "../../images/team-logo.png";
 import member1 from "../../images/member-1.png";
 import member2 from "../../images/member-2.png";
 import member3 from "../../images/member-3.png";
+import member4 from "../../images/member-4.png";
+
 import "./Team.css";
 
 
 
 const Team = () => {
-    return(
+    return (
         <div className="team">
             <div className="team-row">
                 <div className="team-box">
@@ -96,7 +98,7 @@ const Team = () => {
                 </div>
                 <div className="team-box">
                     <div className="team-photo">
-                        <img alt="" src="" />
+                        <img alt="" src={member4} />
                     </div>
                     <div className="top-part">
                         <img src={teamlogo} alt="" />
@@ -122,7 +124,7 @@ const Team = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Team;

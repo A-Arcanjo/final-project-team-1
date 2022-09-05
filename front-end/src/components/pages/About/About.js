@@ -52,7 +52,6 @@ const About = () => {
 
   return (
     <>
-      {/* <Team /> */}
       <Container>
         <Presentation />
         <Button onClick={openModal}>More about us</Button>

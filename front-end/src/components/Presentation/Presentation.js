@@ -5,10 +5,11 @@ import logo from "../images/team-logo.png";
 import { Link } from 'react-router-dom';
 
 const Logo = styled.img`
+width: 45%;
+margin-top:45px
+   text-align:center;
+    padding:55px;
 
-width: 100%;
-   
-    padding:100px;
 `;
 
 
@@ -16,7 +17,7 @@ width: 100%;
 const Presentation = () => {
     return (
         <>
-            <Link to="/team" className="logo">  <Logo src={logo} />
+            <Link to="/team" className='teamAbout' >  <Logo src={logo} />
             </Link>
             <div className='containerAbout'>
                 <h2 className='containerPresentation'>About us</h2>
