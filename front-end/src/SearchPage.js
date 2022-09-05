@@ -47,8 +47,9 @@ const ContainerSearch = () => {
         console.log("searchParams", searchParams.get("searchQuery"));
         if (!searchParams.get("searchQuery")) {
             console.log("loading post");
-            dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
-
+            setTimeout(() => {
+                dispatch(getPosts(page)); //dispatch actions inside useEffect, in our case getPosts()
+            }, 200);
         }
     }, [currentId, page, dispatch]); //change the current id in the app, is going to dispatch to get post action, every change we get new post
 

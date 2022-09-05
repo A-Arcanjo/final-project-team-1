@@ -50,13 +50,16 @@ function App() {
       <div className="container">
         <Routes>
           {/* <Route path="/" element={<Navigate to='/' />} /> */}
-          <Route path="/" element={currentUser._id ? <Dashboard /> : <Home />} />
+          <Route exact path="/" element={<Navigate replace to="/home" />} />
+          <Route path="/home" element={currentUser._id ? <Dashboard /> : <Home />} />
           <Route path="/posts" element={<ContainerSearch />} />
           {/* <Route path="/posts/search" component={<HomeSearch />} /> */}
           <Route path="/posts/:id" element={<PostDetails />} />
           {/* <Route path={['/creators/:name', '/tags/:name']} component={<CreatorOrTag />} /> */}
           <Route path="/auth" exact component={() => (!currentUser ? <AuthProvider /> : <Navigate to="/home" />)} />
           <Route path="/about" element={currentUser._id ? <Dashboard1 /> : <About />} />
+          <Route path="/team" element={<Team />} />
+
           <Route path="/services" element={currentUser._id ? <Dashboard2 /> : <Services />} />
           {/* <Route path="/rating" element={<Rating />} /> */}
           <Route path="/contact" element={<Contact />} />
@@ -74,7 +77,7 @@ function App() {
       </div>
       <Footer />
 
-    </div>
+    </div >
   );
 }
 

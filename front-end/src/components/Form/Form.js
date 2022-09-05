@@ -53,7 +53,7 @@ const Form = ({ currentId, setCurrentId, sForm }, ref) => {
             dispatch(updatePost(currentId, { ...postData, name: currentUser.companyName }));
             clear(); //clear the input 
         }
-        window.location.reload();
+        // window.location.reload();
     };
 
     if (currentUser._id === null) {

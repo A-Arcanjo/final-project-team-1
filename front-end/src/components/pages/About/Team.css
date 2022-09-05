@@ -1,6 +1,6 @@
 .team{
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    background-color: #31525b;
+    margin-top: 1rem;
     text-align: center;
     padding: 1rem;
     color: var(--second-color);
@@ -31,8 +31,10 @@
 .team-box{
     position: relative;
     padding: 0px;
-    width: 300px;
-    height: 500px;
+    width: 296px;
+    height: 520px;
+    border: 10px solid white;
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
