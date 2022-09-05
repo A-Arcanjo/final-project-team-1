@@ -31,9 +31,9 @@ const Navbar = () => {
         //         <NavLink to={url} className="active">{title}</NavLink>
         //     </li>
         // );
-        return ((viewAlways || (viewauth && currentUser._id != null) || (!viewauth && currentUser._id === null)) ? (<li key={index} onClick={handleClick}>
+        return ((viewAlways || (viewauth && currentUser._id != null) || (!viewauth && currentUser._id === null)) && (<li key={index} onClick={handleClick}>
             <NavLink to={url} className="active">{title}</NavLink>
-        </li>) : (<></>));
+        </li>));
 
     });
 

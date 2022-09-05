@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
         _id: null,
         username: null,
         userType: null,
+        companyName: null,
         token: null,
     };
 

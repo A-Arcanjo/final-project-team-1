@@ -1,6 +1,6 @@
 # GUSTO
 
-1 - For the frontend i used as technology React-Redux
+1 - The technology that we used for frontend is React-Redux
 
 2 - How to use Redux?
 

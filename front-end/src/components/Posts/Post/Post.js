@@ -12,7 +12,7 @@ import useStyles from './styles';
 import { AuthContext } from "../../../context/AuthProvider.js";
 
 //destructure Post
-const Post = ({ post, setCurrentId }) => {
+const Post = ({ post, setCurrentId, sForm }, ref) => {
     //const user = JSON.parse(localStorage.getItem('login'));
     const [likes, setLikes] = useState(post?.likes);
     const dispatch = useDispatch(); //initialize the dispatch to the delete action
@@ -22,7 +22,7 @@ const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
 
     const userId = currentUser._id;
-    const hasLikedPost = post.likes.find((like) => like === userId);
+    const hasLikedPost = post.likes?.find((like) => like === userId);
 
     const handleLike = async () => {
         dispatch(likePost(post._id));
@@ -35,7 +35,7 @@ const Post = ({ post, setCurrentId }) => {
     };
 
     const Likes = () => {
-        if (likes.length > 0) {
+        if (likes && likes.length > 0) {
             return likes.find((like) => like === userId)
                 ? (
                     <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}`}</>
@@ -60,36 +60,39 @@ const Post = ({ post, setCurrentId }) => {
                 name="test"
                 className={classes.cardAction}
                 onClick={openPost}
+                style={{ backgroundColor: '#FAE6B1 ' }}
             >
                 <CardMedia className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title} />
                 <div className={classes.overlay}>
                     <Typography variant="h6">{post.name}</Typography>
-                    <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>  /created 1 minute ago
+                    <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
                 </div>
                 {(currentUser.result?._id === post?.creator) && (
                     <div className={classes.overlay2} name="edit">
                         <Button
                             onClick={(e) => {
+                                sForm.current.scrollIntoView({ behavior: "smooth" });
                                 e.stopPropagation();
+                                console.log("something");
                                 setCurrentId(post._id);
                             }}
                             style={{ color: 'white' }}
                             size="small"
                         >
-                            <MoreHorizIcon fontSize="default" />
+                            <MoreHorizIcon fontSize="medium" />
                         </Button>
                     </div>
                 )}
                 <div className={classes.details}>
-                    <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                    <Typography style={{ marginLeft: '10px', color: '#31525B' }} variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
                 </div>
-                <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
+                <Typography style={{ color: '#31525B' }} className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
                 <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 10).join(' ')}... <b style={{ color: 'black' }}>read more</b></Typography>
                 </CardContent>
             </ButtonBase>
-            <CardActions style={{ padding: '4px' }} className={classes.cardActions}>
-                <Button style={{ padding: '4px' }} size="medium" color="primary" disabled={userId === null} onClick={handleLike}>
+            <CardActions style={{ padding: '4px', backgroundColor: '#FAE6B1' }} className={classes.cardActions}>
+                <Button style={{ padding: '4px', color: '#31525B ' }} size="medium" color="primary" disabled={userId === null} onClick={handleLike}>
                     <Likes />
                 </Button>
 
@@ -100,8 +103,8 @@ const Post = ({ post, setCurrentId }) => {
                         </Button>) : (<></>)
                 )}
             </CardActions>
-        </Card>
+        </Card >
     );
 };
 
-export default Post;
+export default React.forwardRef(Post);

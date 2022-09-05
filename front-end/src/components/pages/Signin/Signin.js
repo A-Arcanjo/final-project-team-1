@@ -64,12 +64,14 @@ const Signin = (props) => {
     );
     console.log("RESPONSE", response);
     const parsedRes = await response.json();
+    console.log(parsedRes);
     try {
       if (response.ok) {
         const newUser = {
           _id: parsedRes.id,
           username: parsedRes.username,
           userType: parsedRes.userType,
+          companyName: parsedRes.companyName,
           token: parsedRes.token,
         };
         props.setCurrentUser(newUser);

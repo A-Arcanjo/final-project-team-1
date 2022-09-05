@@ -10,10 +10,13 @@
 }
 
 .containerPresentation{
-position: relative;
 margin-bottom:10px;
-font-family: 'Real Nova', serif;
 line-height:1.6;
+display: flex;
+justify-content:flex-start;
+color: #ffa101;
+font-size: 2rem;
+font-weight: 600;
 }
 
 
@@ -29,7 +32,6 @@ line-height:1.6;
     .containerPresentation{
         position: relative;
         margin-bottom:10px;
-        font-family: 'Real Nova', serif;
         line-height:1.6;
         }
 

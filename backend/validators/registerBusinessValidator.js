@@ -20,22 +20,22 @@ const registerBusinessValidator = () => {
     check("companyName").escape(),
     // check business owner
     check("companyOwner")
-    .escape(), 
+      .escape(),
     // check email address
     check("emailAddress")
       .normalizeEmail()
       .isEmail()
       .withMessage("Email address is not valid!"),
-      // check address
-      check("street").escape(),
-      check("zipCode").isNumeric(),
-      check("city").escape().trim(),
+    // check address
+    check("street").escape(),
+    check("zipCode").isNumeric(),
+    check("city").escape().trim(),
     // check business telephone
     check("businessTelephone")
       .isNumeric()
       .isLength({ min: 5 })
       .withMessage("Telephone details must be a number!"),
-  ]
+  ];
 };
 
 export default registerBusinessValidator;

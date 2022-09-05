@@ -43,6 +43,7 @@ export const loginPost = async (req, res, next) => {
       id: foundUser._id,
       userType: foundUser.userType,
       username: foundUser.username,
+      companyName: foundUser.companyName,
       token,
     });
   } else {
