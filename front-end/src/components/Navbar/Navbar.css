@@ -149,7 +149,7 @@ a{
 }
 @media screen and (max-width: 600px){
 .logo {
-    margin-top: 14px;
+    margin-top: 10px;
     margin-left: 30px;
 }
 }
@@ -158,13 +158,11 @@ a{
     .menu-icon{
         position: absolute;
         left:2px;
-        top:3px
+        top:7px
     }
     .logo {
         margin-left: 25px;
-       
     }
-   
 }
 /*End Responsive*/
 
