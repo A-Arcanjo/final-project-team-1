@@ -1,8 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-    media: {
-        backgroundColor: ' #fae6b1;',
+  media: {
+    backgroundColor: " #fae6b1;",
 
         borderRadius: '20px',
         objectFit: 'cover',
@@ -45,35 +45,51 @@ export default makeStyles((theme) => ({
             width: '100%',
 
         },
-
+  },
+  section: {
+    borderRadius: "20px",
+    margin: "10px",
+    flex: 1,
+  },
+  imageSection: {
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
     },
-    recommendedPosts: {
-        display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            flexDirection: 'column',
-        },
+    [theme.breakpoints.only("xs")]: {},
+  },
+  imageSectionImage: {
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+      width: "100%",
     },
-    loadingPaper: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '20px',
-        borderRadius: '15px',
-        height: '39vh',
+  },
+  recommendedPosts: {
+    display: "flex",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
     },
-    commentsOuterContainer: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-            width: '300px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexDirection: 'column-reverse',
-        },
+  },
+  loadingPaper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "20px",
+    borderRadius: "15px",
+    height: "39vh",
+  },
+  commentsOuterContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      width: "300px",
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column-reverse",
     },
-    commentsInnerContainer: {
-        height: '200px',
-        overflowY: 'auto',
-        marginRight: '30px',
-    },
+  },
+  commentsInnerContainer: {
+    height: "200px",
+    overflowY: "auto",
+    marginRight: "30px",
+  },
 }));

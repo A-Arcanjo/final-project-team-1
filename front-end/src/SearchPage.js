@@ -15,16 +15,16 @@ import Pagination from './components/Pagination.jsx';
 import { useSearchParams } from "react-router-dom";
 
 const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#ffa101',
-            contrastText: '#31525b',
-        },
-    }
+  palette: {
+    primary: {
+      main: "#ffa101",
+      contrastText: "#31525b",
+    },
+  },
 });
 
 function useQuery() {
-    return new URLSearchParams(useLocation().search);
+  return new URLSearchParams(useLocation().search);
 }
 
 const ContainerSearch = () => {

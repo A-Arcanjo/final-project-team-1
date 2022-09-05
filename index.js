@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 
-import postRoutes from './routes/posts.js';
+import postRoutes from "./routes/posts.js";
 
 import productsRouter from "./routes/products.js";
 
@@ -16,7 +16,12 @@ import registerBusinessRouter from "./routes/businessRegister.js";
 import customerRouter from "./routes/customerUsers.js";
 import businessRouter from "./routes/businessUsers.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -24,7 +29,11 @@ dotenv.config();
 
 // connect to mongodb
 mongoose.connect(
-  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.pptto.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  process.env.MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
 );
 
 // check mongodb connection
@@ -62,10 +71,18 @@ app.use("/customerUsers", customerRouter);
 // business Users
 app.use("/businessUsers", businessRouter);
 
-app.use('/posts', postRoutes);
+app.use("/posts", postRoutes);
 
 app.use(globalErrorHandler);
 
-app.listen(3001, () => {
-  console.log(`Server has started on port  3001!`);
+// handle serving react static files 
+app.use(express.static(path.join(__dirname, "front-end/build")));
+
+// handle serving react static assets 
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "front-end/build", "index.html"));
+});
+
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server has started on port ${process.env.PORT || 3001}!`);
 });

@@ -16,56 +16,22 @@ export default makeStyles((theme) => ({
         padding: '10px 50px',
     },
     heading: {
-        color: 'rgba(0,183,255, 1)',
-        textDecoration: 'none',
-
-    },
-    toolbar: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-        width: '400px',
-    },
-    profile: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '400px',
+      display: "none",
     },
     userName: {
-        display: 'flex',
-        alignItems: 'center',
+      display: "none",
     },
-    brandContainer: {
-        display: 'flex',
-        alignItems: 'center',
+    image: {
+      marginLeft: "5px",
     },
-    smMargin: {
-        margin: theme.spacing(1),
+    toolbar: {
+      display: "flex",
+      justifyContent: "flex-end",
+      width: "160px",
     },
-    purple: {
-        color: theme.palette.getContrastText(deepPurple[500]),
-        backgroundColor: deepPurple[500],
-    },
-    [theme.breakpoints.down('sm')]: {
-        appBar: {
-            padding: '10px 20px',
-        },
-        heading: {
-            display: 'none',
-        },
-        userName: {
-            display: 'none',
-        },
-        image: {
-            marginLeft: '5px',
-        },
-        toolbar: {
-            display: 'flex',
-            justifyContent: 'flex-end',
-            width: '160px',
-        },
-    },
+ 
 
-    actionDiv: {
-        textAlign: 'center',
-    },
+  actionDiv: {
+    textAlign: "center",
+  },
 }));

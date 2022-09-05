@@ -1,23 +1,19 @@
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { getPostsBySearch } from '../../actions/posts';
-import InputAdornment from "@mui/material/InputAdornment";
-import SearchIcon from "@mui/icons-material/Search";
-import { TextField } from '@material-ui/core';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import useStyles from './styles';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getPostsBySearch } from "../../actions/posts.js";
+import InputAdornment from "@mui/material/InputAdornment/index.js";
+import SearchIcon from "@mui/icons-material/Search.js";
+import { TextField } from "@material-ui/core";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import useStyles from "./styles.js";
 import { collapseClasses } from "@mui/material";
 
-
-
 const theme = createTheme({
-    primary: {
-        main: '#fff',
-
-    },
+  primary: {
+    main: "#fff",
+  },
 });
-
 
 const SearchBar = () => {
 
@@ -66,16 +62,6 @@ const SearchBar = () => {
         </div >
     );
 
-
-
-
-
-
-
-
 };
-
-
-
 
 export default SearchBar;

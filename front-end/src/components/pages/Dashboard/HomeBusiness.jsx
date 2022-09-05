@@ -4,7 +4,7 @@ import { getPosts } from "../../../actions/posts.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../Home/Home.css";
-import makeStyles from "./styles";
+import makeStyles from "./styles.js";
 import Contact from "../Contact/Contact";
 import {
   Paper,

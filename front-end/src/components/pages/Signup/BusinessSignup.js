@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Icon } from 'react-icons-kit';
-import { eyeDisabled } from 'react-icons-kit/ionicons/eyeDisabled';
-import { eye } from 'react-icons-kit/ionicons/eye';
+import { Icon } from "react-icons-kit";
+import { eyeDisabled } from "react-icons-kit/ionicons/eyeDisabled";
+import { eye } from "react-icons-kit/ionicons/eye";
 import "./Signup.css";
 
 const BusinessSignup = () => {
@@ -19,7 +19,6 @@ const BusinessSignup = () => {
     emailAddress: "",
     password: "",
   };
-
 
   /* Start Password visibility */
   const [type, setType] = useState("password");
@@ -282,7 +281,9 @@ const BusinessSignup = () => {
                 value={formValues.password}
                 onChange={handleChange}
               />
-              <span onClick={handleToggle} className="eye"><Icon icon={icon} /></span>
+              <span onClick={handleToggle} className="eye">
+                <Icon icon={icon} />
+              </span>
             </div>
           </div>
           <p className="err">{formErrors.password}</p>

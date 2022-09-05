@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
-import { MdClose } from 'react-icons/md';
+import { MdClose } from 'react-icons/md/index.esm.js';
 
 const Background = styled.div`
   width: 100%;

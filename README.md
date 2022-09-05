@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GUSTO
 
 1 - The technology that we used for frontend is React-Redux
@@ -31,3 +32,5 @@
 - We go in the component that needs the posts and we fetch the data from that global redux store
 
 - Using the selectors that we initialize as a Hook
+=======
+>>>>>>> deploy-test

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { MenuList } from "./MenuList";
+import { MenuList } from "./MenuList.js";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../Searchbar/SearchBar.js";
 import "./Navbar.css";
