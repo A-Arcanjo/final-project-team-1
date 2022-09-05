@@ -75,7 +75,7 @@ app.use("/posts", postRoutes);
 
 app.use(globalErrorHandler);
 
-app.use(express.static(path.join(__dirname, "front-end/build")));
+app.use(express.static(path.join(__dirname, "front-end/build", "index.html")));
 
 app.listen(process.env.PORT || 3001, () => {
   console.log(`Server has started on port ${process.env.PORT || 3001}!`);
