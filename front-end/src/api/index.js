@@ -1,6 +1,6 @@
 import axios from 'axios'; //use axios to make api calls
 
-// ! To try with deploy
+// ! To try with deployment
 //const API = axios.create({ baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001' });
 
 const API = axios.create({ baseURL: 'http://localhost:3001' }); //axios instance
