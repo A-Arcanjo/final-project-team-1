@@ -75,8 +75,10 @@ app.use("/posts", postRoutes);
 
 app.use(globalErrorHandler);
 
+// handle serving react static files 
 app.use(express.static(path.join(__dirname, "front-end/build")));
 
+// handle serving react static assets 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "front-end/build", "index.html"));
 });
